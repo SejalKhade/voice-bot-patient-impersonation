@@ -1,0 +1,28 @@
+# Ground truth about the practice under test.
+#
+# Copy to data/ground_truth.yaml and fill in only what you can actually
+# confirm. Leave anything you are unsure about blank or delete the line.
+#
+# Why this file matters: without a fact on record, the harness will not
+# score a claim that depends on it. If the agent says the clinic opens at
+# seven and this file is silent on hours, the finding is quarantined at
+# gate 3 rather than counted as a bug. Filling this in converts those
+# quarantined findings into scoreable ones. Run:
+#
+#     python run_batch.py --reanalyse <run_id>
+#
+# to re-score stored transcripts afterwards without placing new calls.
+#
+# Populate this from the pgai.us/athena test account and from anything the
+# agent states consistently across several calls. Do not guess.
+
+office_hours:
+closed_days:
+address:
+phone:
+accepted_insurers:
+copay_amounts:
+providers:
+services:
+refill_turnaround:
+cancellation_policy:

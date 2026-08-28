@@ -1,0 +1,15 @@
+# Telephony and web
+twilio==9.3.7
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+websockets==14.1
+httpx==0.28.1
+python-multipart==0.0.20
+
+# Interface
+streamlit==1.41.1
+
+# Audio and data
+numpy==2.2.1
+PyYAML==6.0.2
+python-dotenv==1.0.1
