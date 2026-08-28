@@ -204,7 +204,7 @@ above.
 ## Tests
 
 ```bash
-pytest tests/ -q
+pytest test_pipeline.py -q
 ```
 
 Covers the codec, evidence matching and scoring arithmetic — the three places

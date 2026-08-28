@@ -63,8 +63,8 @@ The encoder works in a **14-bit domain** (input shifted right by two, clip
 (bias 132, mantissa shift 3). Mixing the domains produces audio four times
 too loud, which clips into distortion and wrecks the far end's own speech
 recognition. This bug was in the first version and the tests exist to catch
-its return. If you touch `pcm16_to_mulaw`, run `pytest tests/` before
-anything else.
+its return. If you touch `pcm16_to_mulaw`, run `pytest test_pipeline.py`
+before anything else.
 
 Outbound frames are **paced in real time**, one per 20 ms. Twilio will accept
 a whole buffer at once, but audio already in its jitter buffer cannot be
@@ -84,7 +84,7 @@ pacing loop away.
 
 ## Testing
 
-`pytest tests/` covers the three places where a silent bug invalidates
+`pytest test_pipeline.py` covers the three places where a silent bug invalidates
 everything downstream: the codec, evidence matching, and scoring arithmetic.
 It does not cover the realtime path, which needs a live call. Verify that
 with a single real call (`python run_batch.py --scenarios S01`) before any
