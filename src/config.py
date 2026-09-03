@@ -68,9 +68,13 @@ class SpeechConfig:
     model: str = "nova-2-phonecall"
     # Endpointing is the single biggest lever on how natural the bot sounds.
     # Too low and it talks over the agent's mid-sentence pauses; too high and
-    # every turn carries a dead second. 320 ms was settled on by listening.
-    endpointing_ms: int = 320
-    utterance_end_ms: int = 1000
+    # every turn carries a dead second. 320 ms was the original setting but a
+    # live call against the real agent (run_20260903_063047) showed it firing
+    # on the agent's natural pauses while it looked up appointment data -
+    # speech_final kept tripping mid-sentence, and every agent turn from that
+    # point on came back as a fragment. Raised after listening to that call.
+    endpointing_ms: int = 700
+    utterance_end_ms: int = 1500
     interim_results: bool = True
 
 
