@@ -144,7 +144,20 @@ that hangs up on dead air.
   agent utterance with no terminal punctuation and under 12 words ("I don't
   have") is now held 1.2s for a possible continuation and merged rather than
   replied to immediately (see `_looks_complete` / `_finalize_agent_turn` in
-  `media_server.py`). run_20260903_080225 confirmed it working - one early
-  fragment, caught and merged into a single coherent agent turn, zero
-  cascade for the rest of the call. Endpointing stayed at 1100ms/2200ms;
-  raising it further was a dead end for this specific failure mode.
+  `media_server.py`). run_20260903_080225 confirmed the cascade was fixed -
+  one early fragment, caught and merged into a single coherent agent turn,
+  zero cascade for the rest of the call. Endpointing stayed at
+  1100ms/2200ms; raising it further was a dead end for this specific
+  failure mode.
+
+  This did not eliminate the underlying issue at the call opening
+  specifically: run_20260903_085130 (S07) still shows two separate
+  truncated agent turns in its first four turns (both times the 1.2s
+  debounce window ran out before the agent's actual continuation arrived).
+  The fix's real effect is containment, not elimination - it stops one
+  early misfire from snowballing through the rest of the call, but the
+  agent's pause during its own opening routing logic can still exceed a
+  1.2s hold. Left as-is per the same reasoning as before: the alternative
+  is either a longer hold (more dead air on every turn, everywhere) or a
+  more complex signal than utterance content alone, and this is now
+  contained to the first couple of exchanges rather than the whole call.

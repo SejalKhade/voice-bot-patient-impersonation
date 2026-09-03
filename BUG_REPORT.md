@@ -256,3 +256,17 @@ above — they were used to diagnose and fix two harness bugs (a dead
 ngrok tunnel, and premature turn-taking cutting the agent off mid-sentence)
 before a clean re-run. Those runs are still in `data/runs/` as documented
 evidence of iteration; see `CONTEXT.md` for the fixes.
+
+**A residual harness limitation, disclosed rather than hidden:** S04 and
+S07 both show 1-2 agent turns truncated right at the call opening (e.g.
+S07 turns 2 and 4, `"...would you like to create"`, cut off both times).
+Deepgram's confidence on these is 0.99+, meaning this is a real interrupt
+by our own patient bot, not the agent glitching on its own - our
+turn-taking fix (see `CONTEXT.md`) reduced this from cascading through
+entire calls to being contained to the first exchange or two, but did not
+eliminate it outright. The per-call auto-generated report for S07
+(`data/runs/run_20260903_085130/bug_report.md`) lists a finding
+("Agent repeats truncated onboarding prompt twice") that reads as if it
+were the agent's own behaviour; given the pattern above, it more likely
+reflects this harness limitation and should be read with that caveat
+rather than counted as a clean agent-side bug.
