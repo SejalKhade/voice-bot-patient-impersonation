@@ -178,22 +178,34 @@ class Analyst:
             transcript=_render(transcript),
         )
 
-        try:
-            raw = self._call(
-                system=ANALYST_SYSTEM.format(ground_truth=self._ground_truth.render()),
-                user=prompt,
-            )
-        except Exception as exc:  # noqa: BLE001
-            return AnalysisResult(
-                call_id=transcript.call_id,
-                findings=[],
-                positive_observations=[],
-                discarded=[],
-                raw_response="",
-                error=f"{type(exc).__name__}: {exc}",
-            )
+        system = ANALYST_SYSTEM.format(ground_truth=self._ground_truth.render())
 
-        parsed = _parse_json(raw)
+        # run_20260903_081915 (S09) lost all 3 real findings to a response
+        # that stopped mid-string with no closing braces - a transient
+        # truncation, not a systematic one (a same-call re-run over the
+        # stored transcript came back complete and well-formed). One retry
+        # is cheap insurance against losing an entire call's findings to
+        # what re-running proved was a one-off.
+        raw = ""
+        parsed = None
+        for attempt in range(2):
+            try:
+                raw = self._call(system=system, user=prompt)
+            except Exception as exc:  # noqa: BLE001
+                if attempt == 1:
+                    return AnalysisResult(
+                        call_id=transcript.call_id,
+                        findings=[],
+                        positive_observations=[],
+                        discarded=[],
+                        raw_response="",
+                        error=f"{type(exc).__name__}: {exc}",
+                    )
+                continue
+            parsed = _parse_json(raw)
+            if parsed is not None:
+                break
+
         if parsed is None:
             return AnalysisResult(
                 call_id=transcript.call_id,
@@ -201,7 +213,7 @@ class Analyst:
                 positive_observations=[],
                 discarded=[],
                 raw_response=raw,
-                error="Analyst response was not valid JSON.",
+                error="Analyst response was not valid JSON after 2 attempts.",
             )
 
         findings: list[Finding] = []

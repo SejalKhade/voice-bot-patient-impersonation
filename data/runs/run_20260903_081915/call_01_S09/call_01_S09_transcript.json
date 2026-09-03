@@ -1,0 +1,298 @@
+{
+  "call_id": "call_01_S09",
+  "scenario_id": "S09",
+  "scenario_title": "Interrupting caller, barge-in stress",
+  "started_at": "2026-09-03T08:19:20.422360+00:00",
+  "ended_at": "2026-09-03T08:23:20.386059+00:00",
+  "call_sid": "CA03ff6e397423b26b5bb45fd85cafc545",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T08:19:35.145761+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "Yeah, fine. I need a Thursday afternoon appointment, can you help with that?",
+      "started_at": "2026-09-03T08:19:37.879081+00:00",
+      "ended_at": null,
+      "response_latency": 0.875098499998785,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "AGENT",
+      "text": "Thank you for calling PivotPoint Orthopedics. Would you like to",
+      "started_at": "2026-09-03T08:19:43.953701+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99902344
+    },
+    {
+      "index": 3,
+      "speaker": "PATIENT",
+      "text": "Sorry, sorry\u2014I just need Thursday afternoon, that's all that works for me.",
+      "started_at": "2026-09-03T08:19:46.285350+00:00",
+      "ended_at": null,
+      "response_latency": 0.8013012000010349,
+      "interrupted": true,
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "speaker": "AGENT",
+      "text": "I can help with that. First, I'll meet",
+      "started_at": "2026-09-03T08:19:51.265632+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9995117
+    },
+    {
+      "index": 5,
+      "speaker": "PATIENT",
+      "text": "Yeah, look\u2014can you just check what you've got available Thursday afternoon?",
+      "started_at": "2026-09-03T08:19:53.517511+00:00",
+      "ended_at": null,
+      "response_latency": 0.7025040999997145,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "speaker": "AGENT",
+      "text": "no problem. I'll help you with a Thursday afternoon appoint.",
+      "started_at": "2026-09-03T08:19:57.799874+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9990234499999999
+    },
+    {
+      "index": 7,
+      "speaker": "AGENT",
+      "text": "I can check Thursday afternoon openings for you. Before I do that, I'll need your first and last name to create a demo patient profile. Could you please provide your name?",
+      "started_at": "2026-09-03T08:20:13.717004+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 8,
+      "speaker": "PATIENT",
+      "text": "It's Alex Trentham. T-R-E-N-T-H-A-M.",
+      "started_at": "2026-09-03T08:20:16.361609+00:00",
+      "ended_at": null,
+      "response_latency": 1.0517555999995238,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 9,
+      "speaker": "AGENT",
+      "text": "Your patient profile is set up. And your date of birth is 07/04/2000 for demo purposes. How can I help you today?",
+      "started_at": "2026-09-03T08:20:36.398313+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99967448
+    },
+    {
+      "index": 10,
+      "speaker": "PATIENT",
+      "text": "No, that's wrong\u2014I'm thirty-one, born in ninety-three. But never mind that, what Thursday slots do you actually have?",
+      "started_at": "2026-09-03T08:20:39.607002+00:00",
+      "ended_at": null,
+      "response_latency": 1.06691630000023,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 11,
+      "speaker": "AGENT",
+      "text": "Let me check the schedule for Thursday afternoon openings. One moment.",
+      "started_at": "2026-09-03T08:21:00.471994+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 12,
+      "speaker": "PATIENT",
+      "text": "Sure, thanks.",
+      "started_at": "2026-09-03T08:21:01.936340+00:00",
+      "ended_at": null,
+      "response_latency": 0.7311817999998311,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 13,
+      "speaker": "AGENT",
+      "text": "You already have an office visit booked for Friday, September yeah. The office visit's already scheduled for Friday, September 4 at 03:30PM. If you'd like to reschedule this to a Thursday afternoon instead, I can help with that. Would you like to move your appointment?",
+      "started_at": "2026-09-03T08:21:18.695050+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9983724
+    },
+    {
+      "index": 14,
+      "speaker": "PATIENT",
+      "text": "Yes, I need to move it to Thursday afternoon instead\u2014that's the only time that works for me.",
+      "started_at": "2026-09-03T08:21:21.017349+00:00",
+      "ended_at": null,
+      "response_latency": 0.742497999999614,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 15,
+      "speaker": "AGENT",
+      "text": "The next available Thursday afternoon slot is September 10 at 2PM in Nashville with doctor Zeebigniew, Lukas, Would you like to move your appointment to this time?",
+      "started_at": "2026-09-03T08:21:40.503862+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99804688
+    },
+    {
+      "index": 16,
+      "speaker": "PATIENT",
+      "text": "September 10th at 2 PM works\u2014that's Thursday afternoon, perfect. Just confirm that's booked for me.",
+      "started_at": "2026-09-03T08:21:42.913746+00:00",
+      "ended_at": null,
+      "response_latency": 0.9140649999990273,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 17,
+      "speaker": "AGENT",
+      "text": "Before I reschedule, can you tell me the reason you need to move your appointment?",
+      "started_at": "2026-09-03T08:21:59.013834+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9958496
+    },
+    {
+      "index": 18,
+      "speaker": "PATIENT",
+      "text": "Look, I don't have time for that\u2014just move it to Thursday at two PM, that's all you need to do.",
+      "started_at": "2026-09-03T08:22:01.474995+00:00",
+      "ended_at": null,
+      "response_latency": 0.8684462000001076,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 19,
+      "speaker": "AGENT",
+      "text": "I understand you're in a hurry. I do need a brief reason for the reschedule even just schedule conflict or personal reasons. Could you give me a quick answer so I can finish moving your appointment?",
+      "started_at": "2026-09-03T08:22:24.218845+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9951171866666666
+    },
+    {
+      "index": 20,
+      "speaker": "PATIENT",
+      "text": "Schedule conflict, fine. Now can you just confirm the appointment is moved to Thursday the 10th at 2 PM?",
+      "started_at": "2026-09-03T08:22:26.576182+00:00",
+      "ended_at": null,
+      "response_latency": 0.7168220000003203,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 21,
+      "speaker": "AGENT",
+      "text": "Yes. Your appointment is now set for Thursday, September 10. At 2PM. Would you like a text message with these details?",
+      "started_at": "2026-09-03T08:22:46.442713+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 22,
+      "speaker": "PATIENT",
+      "text": "Yeah, text is fine. So that's confirmed\u2014Thursday the 10th at 2 PM, right?",
+      "started_at": "2026-09-03T08:22:50.063696+00:00",
+      "ended_at": null,
+      "response_latency": 2.135444899999129,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 23,
+      "speaker": "AGENT",
+      "text": "That's right. Your appointment is confirmed for Thursday, September 10 at 2PM.",
+      "started_at": "2026-09-03T08:23:07.848654+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9879964133333333
+    },
+    {
+      "index": 24,
+      "speaker": "PATIENT",
+      "text": "Perfect, that's all I needed. Thanks, and .",
+      "started_at": "2026-09-03T08:23:09.838625+00:00",
+      "ended_at": null,
+      "response_latency": 0.7865813999997044,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 25,
+      "speaker": "AGENT",
+      "text": "You're all set.",
+      "started_at": "2026-09-03T08:23:16.824918+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9995117
+    },
+    {
+      "index": 26,
+      "speaker": "PATIENT",
+      "text": "Alright, that's everything I needed. Thanks very much for your help. Goodbye.",
+      "started_at": "2026-09-03T08:23:17.885551+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T08:19:48.792205+00:00",
+      "kind": "barge_in",
+      "detail": "Agent began speaking during caller playback",
+      "turn_index": null
+    },
+    {
+      "at": "2026-09-03T08:23:20.386113+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_081915\\call_01_S09.mp3",
+  "termination_reason": "policy:max-duration"
+}

@@ -1,0 +1,97 @@
+Call ID       : call_01_S09
+Scenario      : S09 - Interrupting caller, barge-in stress
+Twilio SID    : CA03ff6e397423b26b5bb45fd85cafc545
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T08:19:20.422360+00:00
+Ended (UTC)   : 2026-09-03T08:23:20.386059+00:00
+Duration      : 240.0s
+Turns         : 27
+Ended because : policy:max-duration
+========================================================================
+
+[000] 08:19:35 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 08:19:37 PATIENT [+0.88s]
+      Yeah, fine. I need a Thursday afternoon appointment, can you help with that?
+
+[002] 08:19:43 AGENT
+      Thank you for calling PivotPoint Orthopedics. Would you like to
+
+[003] 08:19:46 PATIENT [+0.80s] [interrupted]
+      Sorry, sorry—I just need Thursday afternoon, that's all that works for me.
+
+[004] 08:19:51 AGENT
+      I can help with that. First, I'll meet
+
+[005] 08:19:53 PATIENT [+0.70s]
+      Yeah, look—can you just check what you've got available Thursday afternoon?
+
+[006] 08:19:57 AGENT
+      no problem. I'll help you with a Thursday afternoon appoint.
+
+[007] 08:20:13 AGENT
+      I can check Thursday afternoon openings for you. Before I do that, I'll need your first and last name to create a demo patient profile. Could you please provide your name?
+
+[008] 08:20:16 PATIENT [+1.05s]
+      It's Alex Trentham. T-R-E-N-T-H-A-M.
+
+[009] 08:20:36 AGENT
+      Your patient profile is set up. And your date of birth is 07/04/2000 for demo purposes. How can I help you today?
+
+[010] 08:20:39 PATIENT [+1.07s]
+      No, that's wrong—I'm thirty-one, born in ninety-three. But never mind that, what Thursday slots do you actually have?
+
+[011] 08:21:00 AGENT
+      Let me check the schedule for Thursday afternoon openings. One moment.
+
+[012] 08:21:01 PATIENT [+0.73s]
+      Sure, thanks.
+
+[013] 08:21:18 AGENT
+      You already have an office visit booked for Friday, September yeah. The office visit's already scheduled for Friday, September 4 at 03:30PM. If you'd like to reschedule this to a Thursday afternoon instead, I can help with that. Would you like to move your appointment?
+
+[014] 08:21:21 PATIENT [+0.74s]
+      Yes, I need to move it to Thursday afternoon instead—that's the only time that works for me.
+
+[015] 08:21:40 AGENT
+      The next available Thursday afternoon slot is September 10 at 2PM in Nashville with doctor Zeebigniew, Lukas, Would you like to move your appointment to this time?
+
+[016] 08:21:42 PATIENT [+0.91s]
+      September 10th at 2 PM works—that's Thursday afternoon, perfect. Just confirm that's booked for me.
+
+[017] 08:21:59 AGENT
+      Before I reschedule, can you tell me the reason you need to move your appointment?
+
+[018] 08:22:01 PATIENT [+0.87s]
+      Look, I don't have time for that—just move it to Thursday at two PM, that's all you need to do.
+
+[019] 08:22:24 AGENT
+      I understand you're in a hurry. I do need a brief reason for the reschedule even just schedule conflict or personal reasons. Could you give me a quick answer so I can finish moving your appointment?
+
+[020] 08:22:26 PATIENT [+0.72s]
+      Schedule conflict, fine. Now can you just confirm the appointment is moved to Thursday the 10th at 2 PM?
+
+[021] 08:22:46 AGENT
+      Yes. Your appointment is now set for Thursday, September 10. At 2PM. Would you like a text message with these details?
+
+[022] 08:22:50 PATIENT [+2.14s]
+      Yeah, text is fine. So that's confirmed—Thursday the 10th at 2 PM, right?
+
+[023] 08:23:07 AGENT
+      That's right. Your appointment is confirmed for Thursday, September 10 at 2PM.
+
+[024] 08:23:09 PATIENT [+0.79s]
+      Perfect, that's all I needed. Thanks, and .
+
+[025] 08:23:16 AGENT
+      You're all set.
+
+[026] 08:23:17 PATIENT
+      Alright, that's everything I needed. Thanks very much for your help. Goodbye.
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T08:19:48.792205+00:00  barge_in: Agent began speaking during caller playback
+  2026-09-03T08:23:20.386113+00:00  probe_coverage: 100% of scenario probes raised (3/3)
