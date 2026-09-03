@@ -1,0 +1,218 @@
+{
+  "call_id": "call_01_S02",
+  "scenario_id": "S02",
+  "scenario_title": "Prescription refill with dosage detail",
+  "started_at": "2026-09-03T07:04:46.130190+00:00",
+  "ended_at": "2026-09-03T07:06:36.555850+00:00",
+  "call_sid": "CA05bbb69864ccdcd5df9b184db8255eaf",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "PATIENT",
+      "text": "Hi, I'm calling to get a refill of my blood pressure medication, lisinopril.",
+      "started_at": "2026-09-03T07:04:56.389644+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": true,
+      "confidence": null
+    },
+    {
+      "index": 1,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T07:04:56.450396+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 2,
+      "speaker": "PATIENT",
+      "text": "Yeah, that's fine with me. I've been a patient there for about three years now.",
+      "started_at": "2026-09-03T07:04:58.217008+00:00",
+      "ended_at": null,
+      "response_latency": 0.7425726000001305,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 3,
+      "speaker": "AGENT",
+      "text": "Thank you for calling to the",
+      "started_at": "2026-09-03T07:05:02.820489+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99902344
+    },
+    {
+      "index": 4,
+      "speaker": "PATIENT",
+      "text": "My name is James Okoro, and I need to refill my lisinopril ten milligrams.",
+      "started_at": "2026-09-03T07:05:05.341909+00:00",
+      "ended_at": null,
+      "response_latency": 0.6712013000005754,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 5,
+      "speaker": "AGENT",
+      "text": "Would you like to create a",
+      "started_at": "2026-09-03T07:05:10.809551+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 6,
+      "speaker": "PATIENT",
+      "text": "No, I'm already a patient there. My date of birth is March fifteenth, nineteen sixty-eight.",
+      "started_at": "2026-09-03T07:05:12.933134+00:00",
+      "ended_at": null,
+      "response_latency": 0.7923167999997531,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 7,
+      "speaker": "AGENT",
+      "text": "Let me finish setting up your demo patient profile. That'll help with your lisinopril refill. One moment.",
+      "started_at": "2026-09-03T07:05:20.964912+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.998291015
+    },
+    {
+      "index": 8,
+      "speaker": "PATIENT",
+      "text": "Sure, no problem. I'll wait.",
+      "started_at": "2026-09-03T07:05:22.816909+00:00",
+      "ended_at": null,
+      "response_latency": 0.546886999999515,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 9,
+      "speaker": "AGENT",
+      "text": "Still creating your profile.",
+      "started_at": "2026-09-03T07:05:27.018344+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9970703
+    },
+    {
+      "index": 10,
+      "speaker": "PATIENT",
+      "text": "Okay, take your time.",
+      "started_at": "2026-09-03T07:05:28.467606+00:00",
+      "ended_at": null,
+      "response_latency": 0.655826100000013,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 11,
+      "speaker": "AGENT",
+      "text": "Your patient profile is set up, and your date of birth is 07/04/2000. How can I help you today?",
+      "started_at": "2026-09-03T07:05:32.947436+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 12,
+      "speaker": "PATIENT",
+      "text": "Wait, that's not right. My date of birth is March fifteenth, nineteen sixty-eight, not that date.",
+      "started_at": "2026-09-03T07:05:35.032032+00:00",
+      "ended_at": null,
+      "response_latency": 0.6694074999995792,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 13,
+      "speaker": "AGENT",
+      "text": "I don't see any medications your chart that I can refill right now. If you'd like, I can connect you to our patient support team for more help. Would you like to speak with someone?",
+      "started_at": "2026-09-03T07:05:56.727720+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9998372333333334
+    },
+    {
+      "index": 14,
+      "speaker": "PATIENT",
+      "text": "Yes, I think I need to speak with someone. But before that, I use CVS on Main Street for my pharmacy \u2014 that's where I need the refill sent.",
+      "started_at": "2026-09-03T07:06:00.235846+00:00",
+      "ended_at": null,
+      "response_latency": 0.9258448000000499,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 15,
+      "speaker": "AGENT",
+      "text": "Transferring you now. Thank you.",
+      "started_at": "2026-09-03T07:06:10.003502+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 16,
+      "speaker": "PATIENT",
+      "text": "Okay, thanks for getting me connected.",
+      "started_at": "2026-09-03T07:06:11.997169+00:00",
+      "ended_at": null,
+      "response_latency": 0.55927470000006,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 17,
+      "speaker": "AGENT",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye.",
+      "started_at": "2026-09-03T07:06:14.603510+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9980469
+    },
+    {
+      "index": 18,
+      "speaker": "PATIENT",
+      "text": "Wait, hold on \u2014 I didn't get my refill request logged. I need lisinopril ten milligrams sent to CVS on Main Street, and my date of birth is March fifteenth, nineteen sixty-eight. Can you help me with that?",
+      "started_at": "2026-09-03T07:06:17.903205+00:00",
+      "ended_at": null,
+      "response_latency": 1.1562340000000404,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T07:04:56.405395+00:00",
+      "kind": "barge_in",
+      "detail": "Agent began speaking during caller playback",
+      "turn_index": null
+    },
+    {
+      "at": "2026-09-03T07:06:36.555898+00:00",
+      "kind": "probe_coverage",
+      "detail": "75% of scenario probes raised (3/4)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_070441\\call_01_S02.mp3",
+  "termination_reason": "twilio:completed"
+}

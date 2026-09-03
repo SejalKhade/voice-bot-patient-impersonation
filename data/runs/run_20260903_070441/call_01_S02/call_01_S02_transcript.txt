@@ -1,0 +1,73 @@
+Call ID       : call_01_S02
+Scenario      : S02 - Prescription refill with dosage detail
+Twilio SID    : CA05bbb69864ccdcd5df9b184db8255eaf
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T07:04:46.130190+00:00
+Ended (UTC)   : 2026-09-03T07:06:36.555850+00:00
+Duration      : 110.4s
+Turns         : 19
+Ended because : twilio:completed
+========================================================================
+
+[000] 07:04:56 PATIENT [interrupted]
+      Hi, I'm calling to get a refill of my blood pressure medication, lisinopril.
+
+[001] 07:04:56 AGENT
+      This call may be recorded for quality and training purposes.
+
+[002] 07:04:58 PATIENT [+0.74s]
+      Yeah, that's fine with me. I've been a patient there for about three years now.
+
+[003] 07:05:02 AGENT
+      Thank you for calling to the
+
+[004] 07:05:05 PATIENT [+0.67s]
+      My name is James Okoro, and I need to refill my lisinopril ten milligrams.
+
+[005] 07:05:10 AGENT
+      Would you like to create a
+
+[006] 07:05:12 PATIENT [+0.79s]
+      No, I'm already a patient there. My date of birth is March fifteenth, nineteen sixty-eight.
+
+[007] 07:05:20 AGENT
+      Let me finish setting up your demo patient profile. That'll help with your lisinopril refill. One moment.
+
+[008] 07:05:22 PATIENT [+0.55s]
+      Sure, no problem. I'll wait.
+
+[009] 07:05:27 AGENT
+      Still creating your profile.
+
+[010] 07:05:28 PATIENT [+0.66s]
+      Okay, take your time.
+
+[011] 07:05:32 AGENT
+      Your patient profile is set up, and your date of birth is 07/04/2000. How can I help you today?
+
+[012] 07:05:35 PATIENT [+0.67s]
+      Wait, that's not right. My date of birth is March fifteenth, nineteen sixty-eight, not that date.
+
+[013] 07:05:56 AGENT
+      I don't see any medications your chart that I can refill right now. If you'd like, I can connect you to our patient support team for more help. Would you like to speak with someone?
+
+[014] 07:06:00 PATIENT [+0.93s]
+      Yes, I think I need to speak with someone. But before that, I use CVS on Main Street for my pharmacy — that's where I need the refill sent.
+
+[015] 07:06:10 AGENT
+      Transferring you now. Thank you.
+
+[016] 07:06:11 PATIENT [+0.56s]
+      Okay, thanks for getting me connected.
+
+[017] 07:06:14 AGENT
+      Hello. You've reached the Pretty Good AI test line. Goodbye.
+
+[018] 07:06:17 PATIENT [+1.16s]
+      Wait, hold on — I didn't get my refill request logged. I need lisinopril ten milligrams sent to CVS on Main Street, and my date of birth is March fifteenth, nineteen sixty-eight. Can you help me with that?
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T07:04:56.405395+00:00  barge_in: Agent began speaking during caller playback
+  2026-09-03T07:06:36.555898+00:00  probe_coverage: 75% of scenario probes raised (3/4)

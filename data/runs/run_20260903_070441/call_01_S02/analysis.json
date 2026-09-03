@@ -1,0 +1,487 @@
+{
+  "call_id": "call_01_S02",
+  "scenario_id": "S02",
+  "metrics": {
+    "call_id": "call_01_S02",
+    "scenario_id": "S02",
+    "duration_seconds": 110.4,
+    "total_turns": 19,
+    "agent_turns": 9,
+    "patient_turns": 10,
+    "exchanges": 9,
+    "median_response_latency": 0.67,
+    "p90_response_latency": 0.97,
+    "max_response_latency": 1.16,
+    "barge_in_count": 1,
+    "interrupted_turns": 1,
+    "tts_errors": 0,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": 0.999,
+    "low_confidence_turns": 0,
+    "probe_coverage": 0.75,
+    "termination_reason": "twilio:completed",
+    "recording_available": true
+  },
+  "findings": [
+    {
+      "id": "call_01_S02-F01",
+      "call_id": "call_01_S02",
+      "scenario_id": "S02",
+      "title": "Agent recorded incorrect date of birth",
+      "turn_index": 11,
+      "evidence_quote": "Your patient profile is set up, and your date of birth is 07/04/2000.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "information_accuracy",
+      "what_happened": "The patient stated his date of birth as March 15, 1968 twice (turns 002 and 006), but the agent recorded and repeated back a completely different date, 07/04/2000.",
+      "why_it_matters": "Incorrect identity data on a medication request could lead to a refill being logged against the wrong patient record or being rejected, delaying care for a blood pressure medication.",
+      "expected_behaviour": "The agent should have accurately captured and confirmed the DOB the patient provided, and corrected it when the patient flagged the error.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.9,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 11, severity high, dimension information_accuracy"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"your patient profile is set up and your date of birth is 07 04 2000\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.90. Final = 0.90 x 1.00 = 0.90 against a 0.55 threshold.",
+            "evidence": "window turns 9-13"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent stating the date of birth as 07/04/2000 at turn 011, which the patient immediately corrects, confirming the agent recorded/repeated an incorrect date of birth."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent stating the date of birth as 07/04/2000 at turn 11, and the patient immediately correcting it to March 15, 1968, confirming the agent recorded/repeated an incorrect date."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent stating the date of birth as 07/04/2000 at turn 011, and the patient immediately correcting it to March 15, 1968, confirming the agent recorded an incorrect date."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.90 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S02-F02",
+      "call_id": "call_01_S02",
+      "scenario_id": "S02",
+      "title": "Refill request never logged despite drug/dose given",
+      "turn_index": 13,
+      "evidence_quote": "I don't see any medications your chart that I can refill right now.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "The patient clearly stated the drug (lisinopril) and dose (10mg) twice, but the agent claimed it could not find any medications to refill and did not capture or log the refill request.",
+      "why_it_matters": "The caller's core objective (getting the refill logged with correct drug, dose, and pharmacy) was never achieved, potentially delaying necessary medication.",
+      "expected_behaviour": "The agent should have logged the drug name and dosage stated by the patient and either processed the refill request or clearly explained the approval/turnaround process.",
+      "verification": {
+        "status": "unverified",
+        "confidence": 0.0,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 13, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"i don t see any medications your chart that i can refill right now\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": false,
+            "detail": "3 independent samples returned {'NOT_SUPPORTED': 3}. Majority verdict NOT_SUPPORTED at 100% agreement, mean confidence 0.85. Final = 0.85 x 1.00 = 0.00 against a 0.55 threshold.",
+            "evidence": "window turns 11-15"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "NOT_SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt never shows the patient stating 'lisinopril' or '10mg' - the visible dialogue only concerns a date of birth correction and pharmacy location, so there is no evidence the drug/dose was clearly stated twice as claimed."
+          },
+          {
+            "verdict": "NOT_SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt does not show the patient stating lisinopril 10mg at all; the patient only corrects their date of birth and mentions their pharmacy. There is no evidence in this excerpt of the drug/dose being given twice or ignored."
+          },
+          {
+            "verdict": "NOT_SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt never shows the patient stating 'lisinopril' or '10mg' at all; the only patient statements visible are about a date of birth correction and pharmacy location. Without that stated drug/dose in the excerpt, the claim that the agent ignored a clearly stated refill request is not supported by this transcript."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Adjudicator majority was NOT_SUPPORTED. Reported for the reviewer's attention but contributes nothing to the score."
+      }
+    },
+    {
+      "id": "call_01_S02-F03",
+      "call_id": "call_01_S02",
+      "scenario_id": "S02",
+      "title": "Call ended abruptly without resolving transfer",
+      "turn_index": 17,
+      "evidence_quote": "Hello. You've reached the Pretty Good AI test line. Goodbye.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "scope_and_handoff",
+      "what_happened": "After the patient agreed to be transferred to a human for help with the refill, the agent's transfer resulted in a generic disconnection message ('test line... Goodbye') instead of connecting the patient to support, leaving the request unresolved.",
+      "why_it_matters": "The patient's request for a refill and pharmacy information was never actually handed off to a human, meaning the escalation failed and the patient had to restate everything.",
+      "expected_behaviour": "The agent should have successfully transferred the call to a human agent who could complete the refill request, or clearly informed the patient that the transfer failed and offered an alternative.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.817,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 17, severity high, dimension scope_and_handoff"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"hello you ve reached the pretty good ai test line goodbye\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.82. Final = 0.82 x 1.00 = 0.82 against a 0.55 threshold.",
+            "evidence": "window turns 15-19"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The transcript shows the agent stating it was transferring the patient, then immediately delivering a generic test-line disconnection message instead of connecting to a human, and the patient's refill request remains unresolved as shown by their follow-up plea for help."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.8,
+            "reasoning": "The excerpt shows the agent saying it is transferring the patient, then immediately delivering a generic 'test line... Goodbye' message instead of connecting to a human, leaving the refill request unresolved as the patient then had to restate their request."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.8,
+            "reasoning": "The excerpt shows the agent saying it is transferring the patient, then immediately delivering a generic test-line disconnection message instead of connecting to a human, leaving the patient's refill request unresolved as shown by the patient having to restate it afterward."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.82 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S02-F04",
+      "call_id": "call_01_S02",
+      "scenario_id": "S02",
+      "title": "Agent referenced internal 'demo' profile to patient",
+      "turn_index": 7,
+      "evidence_quote": "Let me finish setting up your demo patient profile. That'll help with your lisinopril refill. One moment.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "low",
+      "dimension": "conversational_handling",
+      "what_happened": "The agent referred to the patient's profile as a 'demo patient profile' while speaking directly to the patient, exposing internal/test terminology in a live interaction.",
+      "why_it_matters": "This undermines patient confidence that their information is being handled correctly and suggests the agent may be treating the interaction as non-authoritative.",
+      "expected_behaviour": "The agent should use patient-facing language only, avoiding internal system labels like 'demo' when addressing the caller.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.95,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 7, severity low, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"let me finish setting up your demo patient profile that ll help with your lisinopril refill one moment\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.95. Final = 0.95 x 1.00 = 0.95 against a 0.55 threshold.",
+            "evidence": "window turns 5-9"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "At turn 7 the agent explicitly says 'demo patient profile' directly to the patient, revealing internal/test terminology during a live interaction, exactly as the claim describes."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "Turn 7 shows the agent directly telling the patient it is setting up their 'demo patient profile,' which exposes internal/test terminology during a live interaction with the patient."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "The excerpt shows the agent at turn 7 directly telling the patient it is setting up their 'demo patient profile,' explicitly exposing internal/test terminology during a live patient interaction."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.95 confidence across all four gates."
+      }
+    }
+  ],
+  "score": {
+    "call_id": "call_01_S02",
+    "scenario_id": "S02",
+    "simulator_score": 100,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "9 exchanges",
+        "threshold": "at least 3",
+        "passed": true,
+        "weight": 25,
+        "points": 25
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "110s",
+        "threshold": "45s to 240s",
+        "passed": true,
+        "weight": 15,
+        "points": 15
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "0.67s",
+        "threshold": "at or below 2.50s",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "75%",
+        "threshold": "at least 60%",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "0.999",
+        "threshold": "at or above 0.750",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "0 errors",
+        "threshold": "zero",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      }
+    ],
+    "simulator_verdict": "Usable. Conversation quality supports the findings below.",
+    "agent_score": 95.3,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 30.0
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S02-F01 Agent recorded incorrect date of birth",
+            "expression": "high: 15 x 0.90 = -13.50",
+            "value": -13.5,
+            "note": "turn 11"
+          }
+        ],
+        "score": 86.5,
+        "weighted_contribution": 21.62
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S02-F04 Agent referenced internal 'demo' profile to patient",
+            "expression": "low: 3 x 0.95 = -2.85",
+            "value": -2.85,
+            "note": "turn 7"
+          }
+        ],
+        "score": 97.15,
+        "weighted_contribution": 11.66
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S02-F03 Call ended abruptly without resolving transfer",
+            "expression": "high: 15 x 0.82 = -12.25",
+            "value": -12.25,
+            "note": "turn 17"
+          }
+        ],
+        "score": 87.75,
+        "weighted_contribution": 7.02
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "100.00 x 0.30 = 30.00",
+        "value": 30.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "86.50 x 0.25 = 21.62",
+        "value": 21.62,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "97.15 x 0.12 = 11.66",
+        "value": 11.66,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "87.75 x 0.08 = 7.02",
+        "value": 7.02,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "30.00 + 21.62 + 11.66 + 25.00 + 7.02 = 95.30",
+        "value": 95.3,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 4,
+      "verified": 3,
+      "unverified": 1,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": [
+      {
+        "id": "call_01_S02-F02",
+        "title": "Refill request never logged despite drug/dose given",
+        "severity": "high",
+        "status": "unverified",
+        "reason": "Adjudicator majority was NOT_SUPPORTED. Reported for the reviewer's attention but contributes nothing to the score.",
+        "would_have_deducted": 4.5
+      }
+    ]
+  },
+  "analysis_error": null,
+  "discarded_candidates": []
+}
