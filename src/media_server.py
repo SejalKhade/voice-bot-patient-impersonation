@@ -318,13 +318,28 @@ async def stream(websocket: WebSocket, session_id: str) -> None:
             session.transcript.add_event("barge_in", "Agent began speaking during caller playback")
             await clear_playback()
 
-    async def on_utterance(utterance: Utterance) -> None:
-        session.last_inbound_at = time.monotonic()
-        text = utterance.text.strip()
-        if len(text) < 2:
-            return
+    pending_text = ""
+    pending_confidences: list[float] = []
+    debounce_task: asyncio.Task | None = None
 
-        turn = session.transcript.add_turn(AGENT, text, confidence=utterance.confidence)
+    def _looks_complete(text: str) -> bool:
+        """
+        Raising endpointing_ms/utterance_end_ms did not stop the agent's
+        turns being truncated (run_20260903_075232 still showed 6 of 12
+        agent turns cut off at 1100ms/2200ms - gaps before the next patient
+        reply were 1.6-3.5s, well past either threshold). A short fragment
+        with no terminal punctuation ("I don't have") is very likely
+        mid-sentence regardless of how long Deepgram waited, so those are
+        held a beat for a possible continuation instead of being replied to
+        immediately.
+        """
+        stripped = text.rstrip()
+        if stripped.endswith((".", "!", "?")):
+            return True
+        return len(stripped.split()) >= 12
+
+    async def _finalize_agent_turn(text: str, confidence: float) -> None:
+        turn = session.transcript.add_turn(AGENT, text, confidence=confidence)
         session.note(f"AGENT   [{turn.index:03d}]: {text}")
         session.agent_last_ended = time.monotonic()
 
@@ -344,6 +359,40 @@ async def stream(websocket: WebSocket, session_id: str) -> None:
                 session.transcript.termination_reason = "caller:objective-resolved"
                 await asyncio.sleep(1.5)
                 await _hangup(session)
+
+    async def _debounce_and_finalize(delay: float) -> None:
+        nonlocal pending_text, pending_confidences, debounce_task
+        try:
+            await asyncio.sleep(delay)
+        except asyncio.CancelledError:
+            return
+        text, confidences = pending_text, pending_confidences
+        pending_text, pending_confidences, debounce_task = "", [], None
+        if text:
+            await _finalize_agent_turn(text, sum(confidences) / len(confidences) if confidences else 0.0)
+
+    async def on_utterance(utterance: Utterance) -> None:
+        nonlocal pending_text, pending_confidences, debounce_task
+        session.last_inbound_at = time.monotonic()
+        text = utterance.text.strip()
+        if len(text) < 2:
+            return
+
+        combined = f"{pending_text} {text}".strip() if pending_text else text
+        pending_confidences.append(utterance.confidence)
+
+        if debounce_task is not None:
+            debounce_task.cancel()
+            debounce_task = None
+
+        if not _looks_complete(combined):
+            pending_text = combined
+            debounce_task = asyncio.create_task(_debounce_and_finalize(1.2))
+            return
+
+        pending_text, confidences = "", pending_confidences
+        pending_confidences = []
+        await _finalize_agent_turn(combined, sum(confidences) / len(confidences) if confidences else 0.0)
 
     deepgram = DeepgramStream(
         api_key=session.config.deepgram_api_key,
