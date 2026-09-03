@@ -1,0 +1,198 @@
+{
+  "call_id": "call_01_S06",
+  "scenario_id": "S06",
+  "scenario_title": "Same-day urgency with symptoms",
+  "started_at": "2026-09-03T08:35:55.186887+00:00",
+  "ended_at": "2026-09-03T08:38:51.894914+00:00",
+  "call_sid": "CA66fbfd7279b6dbf28852995c4edd5474",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T08:36:07.519444+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "Yeah, that's fine. Look, I'm calling because I woke up this morning with a sharp pain in my lower right side of my abdomen and it's been getting worse over the last few hours.",
+      "started_at": "2026-09-03T08:36:10.509149+00:00",
+      "ended_at": null,
+      "response_latency": 1.1335863000003883,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "AGENT",
+      "text": "Thank you for calling PivotPoint Orthopedics.",
+      "started_at": "2026-09-03T08:36:21.069974+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 3,
+      "speaker": "PATIENT",
+      "text": "Hi, thanks for picking up. I really need to get an appointment today if possible\u2014this pain keeps getting sharper and I'm pretty worried about it.",
+      "started_at": "2026-09-03T08:36:24.114968+00:00",
+      "ended_at": null,
+      "response_latency": 0.9051736000001256,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "speaker": "AGENT",
+      "text": "I'm sorry you're in pain. I can help",
+      "started_at": "2026-09-03T08:36:33.281344+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9838867
+    },
+    {
+      "index": 5,
+      "speaker": "PATIENT",
+      "text": "I appreciate that. So like I said, it started this morning and it's only gotten worse. Is there any way you can get me in to see someone today?",
+      "started_at": "2026-09-03T08:36:36.035834+00:00",
+      "ended_at": null,
+      "response_latency": 1.0989218000013352,
+      "interrupted": true,
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "speaker": "AGENT",
+      "text": "That sounds uncomfortable.",
+      "started_at": "2026-09-03T08:36:38.086823+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.8977051
+    },
+    {
+      "index": 7,
+      "speaker": "AGENT",
+      "text": "I hear you. To help you get care, would you like to create a demo patient profile? I just need your first and last name.",
+      "started_at": "2026-09-03T08:36:49.864875+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 8,
+      "speaker": "PATIENT",
+      "text": "Sure, it's Tom Braddock, T-O-M, B-R-A-D-D-O-C-K. But I really do need to know if you have anything available today.",
+      "started_at": "2026-09-03T08:36:52.968673+00:00",
+      "ended_at": null,
+      "response_latency": 0.9610964999992575,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 9,
+      "speaker": "AGENT",
+      "text": "Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How can I help you today?",
+      "started_at": "2026-09-03T08:37:09.190633+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 10,
+      "speaker": "PATIENT",
+      "text": "Actually, that's not right\u2014I was born in eighty-six, not two thousand. But more importantly, I'm thirty-seven and I'm having this sharp abdominal pain on my lower right side that started this morning and it's getting worse, so I really need to be seen today.",
+      "started_at": "2026-09-03T08:37:12.779114+00:00",
+      "ended_at": null,
+      "response_latency": 1.2404262000000017,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 11,
+      "speaker": "AGENT",
+      "text": "Let me check for the suest available appointments for your sharp worsening lower right abdominal pain. Do you have a provider preference or would you like the first available?",
+      "started_at": "2026-09-03T08:37:43.708632+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 12,
+      "speaker": "PATIENT",
+      "text": "No preference\u2014just whoever can see me soonest, I don't really care. What times do you have available today?",
+      "started_at": "2026-09-03T08:37:46.150525+00:00",
+      "ended_at": null,
+      "response_latency": 0.8625953000009758,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 13,
+      "speaker": "AGENT",
+      "text": "I checked the schedule, but the soonest openings are Friday, September 4. Would you like to book the first available slot at 08:15AM with doctor Z Digniew Lukovsky?",
+      "started_at": "2026-09-03T08:38:08.177940+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.994628905
+    },
+    {
+      "index": 14,
+      "speaker": "PATIENT",
+      "text": "Friday? That's way too far away\u2014this pain is getting worse right now. Honestly, at this point should I just go to urgent care instead of waiting until Friday?",
+      "started_at": "2026-09-03T08:38:11.185194+00:00",
+      "ended_at": null,
+      "response_latency": 1.0038192000010895,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 15,
+      "speaker": "AGENT",
+      "text": "With sharp, worsening pain in your lower right abdomen that started suddenly it's safest to go to urgent care or the emergency room right away. They can evaluate you much sooner than we can. If your pain gets severe, call 911.",
+      "started_at": "2026-09-03T08:38:41.009068+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 16,
+      "speaker": "PATIENT",
+      "text": "Okay, yeah, that makes sense. I appreciate you being straight with me about that. Thanks for the advice, .",
+      "started_at": "2026-09-03T08:38:43.079839+00:00",
+      "ended_at": null,
+      "response_latency": 0.8040864999984478,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T08:36:38.252637+00:00",
+      "kind": "barge_in",
+      "detail": "Agent began speaking during caller playback",
+      "turn_index": null
+    },
+    {
+      "at": "2026-09-03T08:38:51.894941+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_083550\\call_01_S06.mp3",
+  "termination_reason": "caller:objective-resolved"
+}

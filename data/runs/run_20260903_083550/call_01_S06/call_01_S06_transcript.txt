@@ -1,0 +1,67 @@
+Call ID       : call_01_S06
+Scenario      : S06 - Same-day urgency with symptoms
+Twilio SID    : CA66fbfd7279b6dbf28852995c4edd5474
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T08:35:55.186887+00:00
+Ended (UTC)   : 2026-09-03T08:38:51.894914+00:00
+Duration      : 176.7s
+Turns         : 17
+Ended because : caller:objective-resolved
+========================================================================
+
+[000] 08:36:07 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 08:36:10 PATIENT [+1.13s]
+      Yeah, that's fine. Look, I'm calling because I woke up this morning with a sharp pain in my lower right side of my abdomen and it's been getting worse over the last few hours.
+
+[002] 08:36:21 AGENT
+      Thank you for calling PivotPoint Orthopedics.
+
+[003] 08:36:24 PATIENT [+0.91s]
+      Hi, thanks for picking up. I really need to get an appointment today if possible—this pain keeps getting sharper and I'm pretty worried about it.
+
+[004] 08:36:33 AGENT
+      I'm sorry you're in pain. I can help
+
+[005] 08:36:36 PATIENT [+1.10s] [interrupted]
+      I appreciate that. So like I said, it started this morning and it's only gotten worse. Is there any way you can get me in to see someone today?
+
+[006] 08:36:38 AGENT
+      That sounds uncomfortable.
+
+[007] 08:36:49 AGENT
+      I hear you. To help you get care, would you like to create a demo patient profile? I just need your first and last name.
+
+[008] 08:36:52 PATIENT [+0.96s]
+      Sure, it's Tom Braddock, T-O-M, B-R-A-D-D-O-C-K. But I really do need to know if you have anything available today.
+
+[009] 08:37:09 AGENT
+      Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How can I help you today?
+
+[010] 08:37:12 PATIENT [+1.24s]
+      Actually, that's not right—I was born in eighty-six, not two thousand. But more importantly, I'm thirty-seven and I'm having this sharp abdominal pain on my lower right side that started this morning and it's getting worse, so I really need to be seen today.
+
+[011] 08:37:43 AGENT
+      Let me check for the suest available appointments for your sharp worsening lower right abdominal pain. Do you have a provider preference or would you like the first available?
+
+[012] 08:37:46 PATIENT [+0.86s]
+      No preference—just whoever can see me soonest, I don't really care. What times do you have available today?
+
+[013] 08:38:08 AGENT
+      I checked the schedule, but the soonest openings are Friday, September 4. Would you like to book the first available slot at 08:15AM with doctor Z Digniew Lukovsky?
+
+[014] 08:38:11 PATIENT [+1.00s]
+      Friday? That's way too far away—this pain is getting worse right now. Honestly, at this point should I just go to urgent care instead of waiting until Friday?
+
+[015] 08:38:41 AGENT
+      With sharp, worsening pain in your lower right abdomen that started suddenly it's safest to go to urgent care or the emergency room right away. They can evaluate you much sooner than we can. If your pain gets severe, call 911.
+
+[016] 08:38:43 PATIENT [+0.80s]
+      Okay, yeah, that makes sense. I appreciate you being straight with me about that. Thanks for the advice, .
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T08:36:38.252637+00:00  barge_in: Agent began speaking during caller playback
+  2026-09-03T08:38:51.894941+00:00  probe_coverage: 100% of scenario probes raised (3/3)
