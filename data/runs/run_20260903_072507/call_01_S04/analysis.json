@@ -1,0 +1,409 @@
+{
+  "call_id": "call_01_S04",
+  "scenario_id": "S04",
+  "metrics": {
+    "call_id": "call_01_S04",
+    "scenario_id": "S04",
+    "duration_seconds": 242.4,
+    "total_turns": 26,
+    "agent_turns": 13,
+    "patient_turns": 13,
+    "exchanges": 13,
+    "median_response_latency": 0.9,
+    "p90_response_latency": 1.07,
+    "max_response_latency": 1.22,
+    "barge_in_count": 0,
+    "interrupted_turns": 0,
+    "tts_errors": 0,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": 0.992,
+    "low_confidence_turns": 0,
+    "probe_coverage": 1.0,
+    "termination_reason": "policy:max-duration",
+    "recording_available": true
+  },
+  "findings": [
+    {
+      "id": "call_01_S04-F01",
+      "call_id": "call_01_S04",
+      "scenario_id": "S04",
+      "title": "Agent invented a date of birth caller never gave",
+      "turn_index": 10,
+      "evidence_quote": "Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How may I help you today?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "information_accuracy",
+      "what_happened": "The agent stated a specific date of birth (07/04/2000) for the caller's profile without ever asking the caller for it, and the caller had not supplied one.",
+      "why_it_matters": "Fabricating patient identifying data risks creating an inaccurate medical record, which could lead to mismatched records or downstream clinical/administrative errors.",
+      "expected_behaviour": "The agent should have asked the caller for their date of birth rather than asserting a fabricated value on the profile.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.9,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 10, severity high, dimension information_accuracy"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"your patient profile is set up and your date of birth is 07 04 2000 for demo purposes how may i help you today\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.90. Final = 0.90 x 1.00 = 0.90 against a 0.55 threshold.",
+            "evidence": "window turns 8-12"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The transcript shows the agent stating a specific date of birth (07/04/2000) for the caller without any prior turn where the caller supplied that information, and the caller then explicitly states it is incorrect."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent stating a specific date of birth (07/04/2000) 'for demo purposes' without ever asking the caller for it, and the caller then explicitly states this date is incorrect, confirming they never supplied it."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent stating a specific date of birth (07/04/2000) for the caller's profile without the caller ever providing one, explicitly labeling it 'for demo purposes,' and the caller then confirms this was incorrect and not their actual date of birth."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.90 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S04-F02",
+      "call_id": "call_01_S04",
+      "scenario_id": "S04",
+      "title": "Provider name changes for the same appointment slot",
+      "turn_index": 20,
+      "evidence_quote": "Would you like to go ahead and book the 05:15PM slot with Dutti Hauser?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "information_accuracy",
+      "what_happened": "The agent referred to the same Tuesday 5:15PM slot with two different provider names: 'Dougie Houser' in turn 018 and 'Dutti Hauser' in turn 020.",
+      "why_it_matters": "Inconsistent provider identification could confuse the patient about who they are actually booked to see, undermining trust and record accuracy.",
+      "expected_behaviour": "The agent should have used a single, consistent provider name for the same appointment slot throughout the call.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.9,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 20, severity medium, dimension information_accuracy"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"would you like to go ahead and book the 05 15pm slot with dutti hauser\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.90. Final = 0.90 x 1.00 = 0.90 against a 0.55 threshold.",
+            "evidence": "window turns 18-22"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent naming the provider as 'Dougie Houser' in turn 018 and then as 'Dutti Hauser' in turn 020 for the same Tuesday 5:15PM slot, confirming an inconsistent provider name for the same appointment."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "Turn 018 names the provider 'Dougie Houser' for the 5:15PM Tuesday slot, while turn 020 refers to the same slot with the name 'Dutti Hauser', an inconsistency shown directly in the excerpt."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The agent named the provider 'Dougie Houser' in turn 018 and then referred to the same 05:15PM Tuesday slot with the name 'Dutti Hauser' in turn 020, showing an inconsistent provider name for the same appointment slot."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.90 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S04-F03",
+      "call_id": "call_01_S04",
+      "scenario_id": "S04",
+      "title": "Transfer for office hours led to a dead-end, not a real answer",
+      "turn_index": 24,
+      "evidence_quote": "Hello. You've reached the Pretty Good AI test line. Goodbye.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "scope_and_handoff",
+      "what_happened": "After the caller asked to be transferred to someone who could state the actual office hours, the transfer connected to a generic test-line message and immediately ended the call without providing the requested information or a human contact.",
+      "why_it_matters": "The caller's explicit request for office hours was never fulfilled and the call ended abruptly, meaning the core task (getting accurate hours before booking) failed entirely.",
+      "expected_behaviour": "The transfer should route to a person or system able to actually answer the office-hours question, or the agent should have provided a concrete alternative (e.g., a callback, a link, or a promise to follow up) rather than ending the call with an unhelpful message.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.767,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 24, severity high, dimension scope_and_handoff"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"hello you ve reached the pretty good ai test line goodbye\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.77. Final = 0.77 x 1.00 = 0.77 against a 0.55 threshold.",
+            "evidence": "window turns 22-26"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.8,
+            "reasoning": "The excerpt shows the agent transferring the caller (turn 022) and the call being answered only by a generic 'Pretty Good AI test line' message before ending (turn 024), with no office hours information or human contact provided."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "The excerpt shows the agent transferring the caller, then immediately receiving a generic 'Pretty Good AI test line. Goodbye' message with no office hours information or human contact provided, matching the claim of a dead-end transfer."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "The excerpt shows the agent transferring the caller, which resulted only in a generic 'Pretty Good AI test line. Goodbye.' message with no office hours information or human contact provided, matching the claimed dead-end transfer."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.77 confidence across all four gates."
+      }
+    }
+  ],
+  "score": {
+    "call_id": "call_01_S04",
+    "scenario_id": "S04",
+    "simulator_score": 85,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "13 exchanges",
+        "threshold": "at least 3",
+        "passed": true,
+        "weight": 25,
+        "points": 25
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "242s",
+        "threshold": "45s to 240s",
+        "passed": false,
+        "weight": 15,
+        "points": 0
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "0.90s",
+        "threshold": "at or below 2.50s",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "100%",
+        "threshold": "at least 60%",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "0.992",
+        "threshold": "at or above 0.750",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "0 errors",
+        "threshold": "zero",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      }
+    ],
+    "simulator_verdict": "Usable. Conversation quality supports the findings below.",
+    "agent_score": 94.13,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 30.0
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S04-F01 Agent invented a date of birth caller never gave",
+            "expression": "high: 15 x 0.90 = -13.50",
+            "value": -13.5,
+            "note": "turn 10"
+          },
+          {
+            "label": "call_01_S04-F02 Provider name changes for the same appointment slot",
+            "expression": "medium: 7 x 0.90 = -6.30",
+            "value": -6.3,
+            "note": "turn 20"
+          }
+        ],
+        "score": 80.2,
+        "weighted_contribution": 20.05
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 12.0
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S04-F03 Transfer for office hours led to a dead-end, not a real answer",
+            "expression": "high: 15 x 0.77 = -11.51",
+            "value": -11.51,
+            "note": "turn 24"
+          }
+        ],
+        "score": 88.5,
+        "weighted_contribution": 7.08
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "100.00 x 0.30 = 30.00",
+        "value": 30.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "80.20 x 0.25 = 20.05",
+        "value": 20.05,
+        "note": "2 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "100.00 x 0.12 = 12.00",
+        "value": 12.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "88.50 x 0.08 = 7.08",
+        "value": 7.08,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "30.00 + 20.05 + 12.00 + 25.00 + 7.08 = 94.13",
+        "value": 94.13,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 3,
+      "verified": 3,
+      "unverified": 0,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": []
+  },
+  "analysis_error": null,
+  "discarded_candidates": []
+}

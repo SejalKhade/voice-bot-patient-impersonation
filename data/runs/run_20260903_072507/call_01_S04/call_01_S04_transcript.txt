@@ -1,0 +1,93 @@
+Call ID       : call_01_S04
+Scenario      : S04 - Weekend appointment request
+Twilio SID    : CA205c54b8ffbd21f482447272e07607d3
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T07:25:12.653476+00:00
+Ended (UTC)   : 2026-09-03T07:29:15.055347+00:00
+Duration      : 242.4s
+Turns         : 26
+Ended because : policy:max-duration
+========================================================================
+
+[000] 07:25:25 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 07:25:28 PATIENT [+1.22s]
+      That's fine with me. I'm calling because I need to book an appointment and I was wondering if you have anything available on Sunday morning around ten?
+
+[002] 07:25:36 AGENT
+      Thank you for calling Pivot Point Orthopedics. Would you like to
+
+[003] 07:25:38 PATIENT [+0.90s]
+      Yeah, hi, I'm looking to schedule an appointment. Do you have any openings on Sunday at ten in the morning?
+
+[004] 07:25:45 AGENT
+      Before we can look for appoint
+
+[005] 07:25:46 PATIENT [+0.73s]
+      Sure, go ahead, I'm ready to give you whatever information you need.
+
+[006] 07:25:58 AGENT
+      Great. Can I have your first and last name to create your demo patient profile?
+
+[007] 07:26:00 PATIENT [+0.81s]
+      It's David Kim, D-A-V-I-D K-I-M.
+
+[008] 07:26:15 AGENT
+      Thanks, David Kim. Let me set up your profile, and then I'll check Sunday morning availability for you. One moment.
+
+[009] 07:26:18 PATIENT [+0.92s]
+      Thanks, I appreciate that. Just to be clear, I'm looking for Sunday at ten a.m. if that's possible.
+
+[010] 07:26:38 AGENT
+      Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How may I help you today?
+
+[011] 07:26:41 PATIENT [+1.07s]
+      Actually, my date of birth is different, but we can sort that out later. Right now I really need to book an appointment for Sunday morning around ten o'clock if you have anything available then.
+
+[012] 07:27:08 AGENT
+      I'll check the schedule for Sunday morning around 10:00. Before I do, can you tell me the reason for your visit? For example, is this for a routine checkup, a new patient consultation, or something else?
+
+[013] 07:27:10 PATIENT [+0.90s]
+      It's for a new patient consultation. So do you have that Sunday slot open at ten, or would that not work?
+
+[014] 07:27:33 AGENT
+      We don't have any openings on Sunday morning at ten. The soonest available slots are on Tuesday, September 8, starting at 09:45AM. Would you like to book the 09:45AM slot with Abraker? Or hear about other times that day?
+
+[015] 07:27:40 PATIENT [+1.07s]
+      I work nine to five on weekdays, so nine forty-five doesn't work for me. Do you have anything earlier, like before eight in the morning?
+
+[016] 07:28:01 AGENT
+      There aren't any openings before eight in the morning. The earliest available slot is at 09:45AM. Would you like to hear about late afternoon or early evening after 5PM?
+
+[017] 07:28:03 PATIENT [+0.93s]
+      Yeah, actually that would help. What times do you have available after five p.m.?
+
+[018] 07:28:19 AGENT
+      On Tuesday, September 8, there is a slot at 05:15PM with Dougie Houser. Would you like to book that time?
+
+[019] 07:28:22 PATIENT [+0.87s]
+      Five fifteen works better for me. Before I book that though, what are your actual office hours during the week?
+
+[020] 07:28:45 AGENT
+      I don't have the exact office hours on hand. But appointments are available as late as 05:15PM. If you'd like, I can connect you to the office for more details. Would you like to go ahead and book the 05:15PM slot with Dutti Hauser?
+
+[021] 07:28:48 PATIENT [+0.87s]
+      Yeah, I'd like to know the actual office hours before I book. Can you transfer me to someone who can tell me that?
+
+[022] 07:29:00 AGENT
+      Transferring you now. Thank you.
+
+[023] 07:29:02 PATIENT [+0.85s]
+      Thanks for your help. I'll wait for the transfer.
+
+[024] 07:29:05 AGENT
+      Hello. You've reached the Pretty Good AI test line. Goodbye.
+
+[025] 07:29:06 PATIENT
+      Alright, that's everything I needed. Thanks very much for your help. Goodbye.
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T07:29:15.055405+00:00  probe_coverage: 100% of scenario probes raised (3/3)

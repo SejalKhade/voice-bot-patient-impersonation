@@ -133,3 +133,14 @@ that hangs up on dead air.
   agent for the harness's mistakes.
 - Probe coverage is checked by a model reading what the caller said. It is
   the one place a model judges the harness's own performance.
+- Endpointing (`endpointing_ms`, raised 320ms -> 700ms after a live call
+  showed it firing mid-sentence throughout) still occasionally cuts the
+  agent off during its opening exchange specifically - two calls out of
+  four show a short fragment ("Before we can look for appoint...") right
+  as the agent begins a multi-clause opening line, most likely a pause
+  longer than 700ms while it does some initial lookup. Deepgram's
+  confidence on these fragments is 0.99+, so it is a real cutoff, not a
+  mishearing. Raising the threshold further trades this away against
+  dead air on every other turn in every other call, which is the worse
+  failure mode - left as a known, contained limitation rather than
+  chased to zero.

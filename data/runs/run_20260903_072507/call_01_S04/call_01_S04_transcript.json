@@ -1,0 +1,282 @@
+{
+  "call_id": "call_01_S04",
+  "scenario_id": "S04",
+  "scenario_title": "Weekend appointment request",
+  "started_at": "2026-09-03T07:25:12.653476+00:00",
+  "ended_at": "2026-09-03T07:29:15.055347+00:00",
+  "call_sid": "CA205c54b8ffbd21f482447272e07607d3",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T07:25:25.284504+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "That's fine with me. I'm calling because I need to book an appointment and I was wondering if you have anything available on Sunday morning around ten?",
+      "started_at": "2026-09-03T07:25:28.635845+00:00",
+      "ended_at": null,
+      "response_latency": 1.2178874000001088,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "AGENT",
+      "text": "Thank you for calling Pivot Point Orthopedics. Would you like to",
+      "started_at": "2026-09-03T07:25:36.105157+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9980469
+    },
+    {
+      "index": 3,
+      "speaker": "PATIENT",
+      "text": "Yeah, hi, I'm looking to schedule an appointment. Do you have any openings on Sunday at ten in the morning?",
+      "started_at": "2026-09-03T07:25:38.771287+00:00",
+      "ended_at": null,
+      "response_latency": 0.9030978000009782,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "speaker": "AGENT",
+      "text": "Before we can look for appoint",
+      "started_at": "2026-09-03T07:25:45.040768+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 5,
+      "speaker": "PATIENT",
+      "text": "Sure, go ahead, I'm ready to give you whatever information you need.",
+      "started_at": "2026-09-03T07:25:46.718803+00:00",
+      "ended_at": null,
+      "response_latency": 0.7306097999990016,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "speaker": "AGENT",
+      "text": "Great. Can I have your first and last name to create your demo patient profile?",
+      "started_at": "2026-09-03T07:25:58.471812+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 7,
+      "speaker": "PATIENT",
+      "text": "It's David Kim, D-A-V-I-D K-I-M.",
+      "started_at": "2026-09-03T07:26:00.884074+00:00",
+      "ended_at": null,
+      "response_latency": 0.8127399999993941,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "speaker": "AGENT",
+      "text": "Thanks, David Kim. Let me set up your profile, and then I'll check Sunday morning availability for you. One moment.",
+      "started_at": "2026-09-03T07:26:15.159272+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9257812533333333
+    },
+    {
+      "index": 9,
+      "speaker": "PATIENT",
+      "text": "Thanks, I appreciate that. Just to be clear, I'm looking for Sunday at ten a.m. if that's possible.",
+      "started_at": "2026-09-03T07:26:18.933247+00:00",
+      "ended_at": null,
+      "response_latency": 0.9225280999999086,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 10,
+      "speaker": "AGENT",
+      "text": "Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How may I help you today?",
+      "started_at": "2026-09-03T07:26:38.411916+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 11,
+      "speaker": "PATIENT",
+      "text": "Actually, my date of birth is different, but we can sort that out later. Right now I really need to book an appointment for Sunday morning around ten o'clock if you have anything available then.",
+      "started_at": "2026-09-03T07:26:41.475751+00:00",
+      "ended_at": null,
+      "response_latency": 1.0726947000002838,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 12,
+      "speaker": "AGENT",
+      "text": "I'll check the schedule for Sunday morning around 10:00. Before I do, can you tell me the reason for your visit? For example, is this for a routine checkup, a new patient consultation, or something else?",
+      "started_at": "2026-09-03T07:27:08.004311+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 13,
+      "speaker": "PATIENT",
+      "text": "It's for a new patient consultation. So do you have that Sunday slot open at ten, or would that not work?",
+      "started_at": "2026-09-03T07:27:10.447078+00:00",
+      "ended_at": null,
+      "response_latency": 0.900977100000091,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 14,
+      "speaker": "AGENT",
+      "text": "We don't have any openings on Sunday morning at ten. The soonest available slots are on Tuesday, September 8, starting at 09:45AM. Would you like to book the 09:45AM slot with Abraker? Or hear about other times that day?",
+      "started_at": "2026-09-03T07:27:33.992004+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99963379
+    },
+    {
+      "index": 15,
+      "speaker": "PATIENT",
+      "text": "I work nine to five on weekdays, so nine forty-five doesn't work for me. Do you have anything earlier, like before eight in the morning?",
+      "started_at": "2026-09-03T07:27:40.108636+00:00",
+      "ended_at": null,
+      "response_latency": 1.0744058000000223,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 16,
+      "speaker": "AGENT",
+      "text": "There aren't any openings before eight in the morning. The earliest available slot is at 09:45AM. Would you like to hear about late afternoon or early evening after 5PM?",
+      "started_at": "2026-09-03T07:28:01.490258+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.994506825
+    },
+    {
+      "index": 17,
+      "speaker": "PATIENT",
+      "text": "Yeah, actually that would help. What times do you have available after five p.m.?",
+      "started_at": "2026-09-03T07:28:03.672842+00:00",
+      "ended_at": null,
+      "response_latency": 0.932339700000739,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 18,
+      "speaker": "AGENT",
+      "text": "On Tuesday, September 8, there is a slot at 05:15PM with Dougie Houser. Would you like to book that time?",
+      "started_at": "2026-09-03T07:28:19.448190+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.98014323
+    },
+    {
+      "index": 19,
+      "speaker": "PATIENT",
+      "text": "Five fifteen works better for me. Before I book that though, what are your actual office hours during the week?",
+      "started_at": "2026-09-03T07:28:22.498129+00:00",
+      "ended_at": null,
+      "response_latency": 0.8720216000001528,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 20,
+      "speaker": "AGENT",
+      "text": "I don't have the exact office hours on hand. But appointments are available as late as 05:15PM. If you'd like, I can connect you to the office for more details. Would you like to go ahead and book the 05:15PM slot with Dutti Hauser?",
+      "started_at": "2026-09-03T07:28:45.812853+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 21,
+      "speaker": "PATIENT",
+      "text": "Yeah, I'd like to know the actual office hours before I book. Can you transfer me to someone who can tell me that?",
+      "started_at": "2026-09-03T07:28:48.786388+00:00",
+      "ended_at": null,
+      "response_latency": 0.8688345000009576,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 22,
+      "speaker": "AGENT",
+      "text": "Transferring you now. Thank you.",
+      "started_at": "2026-09-03T07:29:00.177057+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 23,
+      "speaker": "PATIENT",
+      "text": "Thanks for your help. I'll wait for the transfer.",
+      "started_at": "2026-09-03T07:29:02.247527+00:00",
+      "ended_at": null,
+      "response_latency": 0.8455685000008089,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 24,
+      "speaker": "AGENT",
+      "text": "Hello. You've reached the Pretty Good AI test line. Goodbye.",
+      "started_at": "2026-09-03T07:29:05.212076+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9980469
+    },
+    {
+      "index": 25,
+      "speaker": "PATIENT",
+      "text": "Alright, that's everything I needed. Thanks very much for your help. Goodbye.",
+      "started_at": "2026-09-03T07:29:06.298354+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T07:29:15.055405+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_072507\\call_01_S04.mp3",
+  "termination_reason": "policy:max-duration"
+}

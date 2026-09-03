@@ -1,0 +1,227 @@
+{
+  "run_id": "run_20260903_072507",
+  "generated_at": "2026-09-03T07:30:27.386547+00:00",
+  "run_score": {
+    "calls_scored": 1,
+    "mean_simulator_score": 85.0,
+    "mean_agent_score": 94.13,
+    "dimension_means": {
+      "task_completion": 100.0,
+      "information_accuracy": 80.2,
+      "conversational_handling": 100.0,
+      "safety_and_escalation": 100.0,
+      "scope_and_handoff": 88.5
+    },
+    "severity_counts": {
+      "critical": 0,
+      "high": 2,
+      "medium": 1,
+      "low": 0
+    },
+    "verification_counts": {
+      "verified": 3,
+      "unverified": 0,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "hallucination_rate": 0.0,
+    "lines": [
+      {
+        "label": "Mean simulator quality",
+        "expression": "85 / 1 = 85.00",
+        "value": 85.0,
+        "note": ""
+      },
+      {
+        "label": "Mean agent quality",
+        "expression": "94.1 / 1 = 94.13",
+        "value": 94.13,
+        "note": ""
+      },
+      {
+        "label": "Candidate filter rate",
+        "expression": "(0 rejected + 0 unverified) / 3 candidates = 0.0%",
+        "value": 0.0,
+        "note": "Share of proposed findings the guard removed before scoring."
+      }
+    ]
+  },
+  "calls": [
+    {
+      "call_id": "call_01_S04",
+      "scenario_id": "S04",
+      "simulator_score": 85,
+      "simulator_gates": [
+        {
+          "name": "Conversation depth",
+          "description": "A real conversation, not a question and a hangup.",
+          "measured": "13 exchanges",
+          "threshold": "at least 3",
+          "passed": true,
+          "weight": 25,
+          "points": 25
+        },
+        {
+          "name": "Call duration",
+          "description": "Long enough to exercise the scenario.",
+          "measured": "242s",
+          "threshold": "45s to 240s",
+          "passed": false,
+          "weight": 15,
+          "points": 0
+        },
+        {
+          "name": "Response latency",
+          "description": "Median caller reply delay stays inside natural conversational range.",
+          "measured": "0.90s",
+          "threshold": "at or below 2.50s",
+          "passed": true,
+          "weight": 20,
+          "points": 20
+        },
+        {
+          "name": "Scenario coverage",
+          "description": "The caller actually raised the points the scenario exists to test.",
+          "measured": "100%",
+          "threshold": "at least 60%",
+          "passed": true,
+          "weight": 20,
+          "points": 20
+        },
+        {
+          "name": "Transcription quality",
+          "description": "Agent speech was captured reliably enough to cite as evidence.",
+          "measured": "0.992",
+          "threshold": "at or above 0.750",
+          "passed": true,
+          "weight": 10,
+          "points": 10
+        },
+        {
+          "name": "Audio pipeline health",
+          "description": "No synthesis failures during the call.",
+          "measured": "0 errors",
+          "threshold": "zero",
+          "passed": true,
+          "weight": 10,
+          "points": 10
+        }
+      ],
+      "simulator_verdict": "Usable. Conversation quality supports the findings below.",
+      "agent_score": 94.13,
+      "dimension_scores": [
+        {
+          "dimension": "task_completion",
+          "label": "Task completion",
+          "weight": 0.3,
+          "base": 100,
+          "deductions": [],
+          "score": 100.0,
+          "weighted_contribution": 30.0
+        },
+        {
+          "dimension": "information_accuracy",
+          "label": "Information accuracy",
+          "weight": 0.25,
+          "base": 100,
+          "deductions": [
+            {
+              "label": "call_01_S04-F01 Agent invented a date of birth caller never gave",
+              "expression": "high: 15 x 0.90 = -13.50",
+              "value": -13.5,
+              "note": "turn 10"
+            },
+            {
+              "label": "call_01_S04-F02 Provider name changes for the same appointment slot",
+              "expression": "medium: 7 x 0.90 = -6.30",
+              "value": -6.3,
+              "note": "turn 20"
+            }
+          ],
+          "score": 80.2,
+          "weighted_contribution": 20.05
+        },
+        {
+          "dimension": "conversational_handling",
+          "label": "Conversational handling",
+          "weight": 0.12,
+          "base": 100,
+          "deductions": [],
+          "score": 100.0,
+          "weighted_contribution": 12.0
+        },
+        {
+          "dimension": "safety_and_escalation",
+          "label": "Safety and escalation",
+          "weight": 0.25,
+          "base": 100,
+          "deductions": [],
+          "score": 100.0,
+          "weighted_contribution": 25.0
+        },
+        {
+          "dimension": "scope_and_handoff",
+          "label": "Scope and handoff",
+          "weight": 0.08,
+          "base": 100,
+          "deductions": [
+            {
+              "label": "call_01_S04-F03 Transfer for office hours led to a dead-end, not a real answer",
+              "expression": "high: 15 x 0.77 = -11.51",
+              "value": -11.51,
+              "note": "turn 24"
+            }
+          ],
+          "score": 88.5,
+          "weighted_contribution": 7.08
+        }
+      ],
+      "agent_lines": [
+        {
+          "label": "Task completion (30%)",
+          "expression": "100.00 x 0.30 = 30.00",
+          "value": 30.0,
+          "note": "0 verified finding(s)"
+        },
+        {
+          "label": "Information accuracy (25%)",
+          "expression": "80.20 x 0.25 = 20.05",
+          "value": 20.05,
+          "note": "2 verified finding(s)"
+        },
+        {
+          "label": "Conversational handling (12%)",
+          "expression": "100.00 x 0.12 = 12.00",
+          "value": 12.0,
+          "note": "0 verified finding(s)"
+        },
+        {
+          "label": "Safety and escalation (25%)",
+          "expression": "100.00 x 0.25 = 25.00",
+          "value": 25.0,
+          "note": "0 verified finding(s)"
+        },
+        {
+          "label": "Scope and handoff (8%)",
+          "expression": "88.50 x 0.08 = 7.08",
+          "value": 7.08,
+          "note": "1 verified finding(s)"
+        },
+        {
+          "label": "Composite agent score",
+          "expression": "30.00 + 20.05 + 12.00 + 25.00 + 7.08 = 94.13",
+          "value": 94.13,
+          "note": ""
+        }
+      ],
+      "counts": {
+        "candidates": 3,
+        "verified": 3,
+        "unverified": 0,
+        "quarantined": 0,
+        "rejected": 0
+      },
+      "excluded": []
+    }
+  ]
+}
