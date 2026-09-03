@@ -68,13 +68,17 @@ class SpeechConfig:
     model: str = "nova-2-phonecall"
     # Endpointing is the single biggest lever on how natural the bot sounds.
     # Too low and it talks over the agent's mid-sentence pauses; too high and
-    # every turn carries a dead second. 320 ms was the original setting but a
-    # live call against the real agent (run_20260903_063047) showed it firing
-    # on the agent's natural pauses while it looked up appointment data -
-    # speech_final kept tripping mid-sentence, and every agent turn from that
-    # point on came back as a fragment. Raised after listening to that call.
-    endpointing_ms: int = 700
-    utterance_end_ms: int = 1500
+    # every turn carries a dead second. 320ms -> 700ms after run_20260903_063047
+    # still wasn't enough: run_20260903_073903 showed 9 truncated agent turns,
+    # confirmed by ear as real overlap, not just dead air. Worse, it cascades -
+    # once the caller's reply to a cut-off utterance is something like "you cut
+    # out, can you repeat that", the agent restarts its explanation and gets cut
+    # off again, so one early misfire snowballs through most of the call.
+    # Raised again; if this still isn't enough the barge-in guard likely needs
+    # to also gate on whether the agent has been continuously producing speech
+    # rather than trusting Deepgram's endpoint alone.
+    endpointing_ms: int = 1100
+    utterance_end_ms: int = 2200
     interim_results: bool = True
 
 

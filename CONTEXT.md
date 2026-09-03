@@ -133,14 +133,16 @@ that hangs up on dead air.
   agent for the harness's mistakes.
 - Probe coverage is checked by a model reading what the caller said. It is
   the one place a model judges the harness's own performance.
-- Endpointing (`endpointing_ms`, raised 320ms -> 700ms after a live call
-  showed it firing mid-sentence throughout) still occasionally cuts the
-  agent off during its opening exchange specifically - two calls out of
-  four show a short fragment ("Before we can look for appoint...") right
-  as the agent begins a multi-clause opening line, most likely a pause
-  longer than 700ms while it does some initial lookup. Deepgram's
-  confidence on these fragments is 0.99+, so it is a real cutoff, not a
-  mishearing. Raising the threshold further trades this away against
-  dead air on every other turn in every other call, which is the worse
-  failure mode - left as a known, contained limitation rather than
-  chased to zero.
+- Endpointing (`endpointing_ms`) went 320ms -> 700ms after run_20260903_063047
+  showed it firing mid-sentence throughout. 700ms still wasn't enough:
+  run_20260903_073903 (S05) showed 9 truncated agent turns, confirmed by ear
+  as genuine overlap, not agent hesitation. Worse, it cascades - once the
+  caller's reply to a cut-off utterance is something like "you cut out, can
+  you repeat that", the agent restarts its explanation and gets cut off
+  again, so one early misfire snowballs through most of the call. Raised
+  again to 1100ms / 2200ms. Deepgram's confidence on every one of these
+  fragments has been 0.95+ across both incidents, so this is a real cutoff
+  each time, not a mishearing. If 1100ms still isn't enough, the barge-in
+  guard likely needs to gate on sustained agent speech rather than trusting
+  Deepgram's endpoint alone - noted here rather than chased further without
+  more live evidence.
