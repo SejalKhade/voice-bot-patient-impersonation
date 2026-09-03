@@ -1,0 +1,14 @@
+{
+  "call_id": "call_01_S01",
+  "scenario_id": "S01",
+  "scenario_title": "New patient booking, flexible availability",
+  "started_at": "2026-09-03T05:21:19.376809+00:00",
+  "ended_at": null,
+  "call_sid": "CA18df28c8fe30a98184da5a0768034e08",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [],
+  "events": [],
+  "recording_path": null,
+  "termination_reason": null
+}

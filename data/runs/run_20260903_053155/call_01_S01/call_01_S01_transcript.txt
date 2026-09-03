@@ -1,0 +1,40 @@
+Call ID       : call_01_S01
+Scenario      : S01 - New patient booking, flexible availability
+Twilio SID    : CA115ddc2ee92fdd4a5962d998f101d2b1
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T05:31:59.462810+00:00
+Ended (UTC)   : 2026-09-03T05:33:01.150120+00:00
+Duration      : 61.7s
+Turns         : 6
+Ended because : twilio:completed
+========================================================================
+
+[000] 05:32:08 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 05:32:16 AGENT
+      Thank you for calling PivotPoint Orthopedics. Would you like to create a demo patient profile?
+
+[002] 05:32:19 AGENT
+      Just need your first and last name to get started.
+
+[003] 05:32:35 AGENT
+      Welcome to PivotPoint Orthopedics. Would you like to create a demo patient profile? I just need your first and last name.
+
+[004] 05:32:45 AGENT
+      Are you still there?
+
+[005] 05:32:56 AGENT
+      I am going to end the call now. Goodbye.
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T05:32:07.538431+00:00  tts_error: ElevenLabs returned 401: {"detail":{"type":"authentication_error","code":"unauthorized","message":"The API key you used is missing the permission text_to_speech to execute this operation.","status":"missing_permissions","requ
+  2026-09-03T05:32:08.971922+00:00  tts_error: ElevenLabs returned 401: {"detail":{"type":"authentication_error","code":"unauthorized","message":"The API key you used is missing the permission text_to_speech to execute this operation.","status":"missing_permissions","requ
+  2026-09-03T05:32:17.871868+00:00  tts_error: ElevenLabs returned 401: {"detail":{"type":"authentication_error","code":"unauthorized","message":"The API key you used is missing the permission text_to_speech to execute this operation.","status":"missing_permissions","requ
+  2026-09-03T05:32:20.421391+00:00  tts_error: ElevenLabs returned 401: {"detail":{"type":"authentication_error","code":"unauthorized","message":"The API key you used is missing the permission text_to_speech to execute this operation.","status":"missing_permissions","requ
+  2026-09-03T05:32:36.837290+00:00  tts_error: ElevenLabs returned 401: {"detail":{"type":"authentication_error","code":"unauthorized","message":"The API key you used is missing the permission text_to_speech to execute this operation.","status":"missing_permissions","requ
+  2026-09-03T05:32:46.379940+00:00  tts_error: ElevenLabs returned 401: {"detail":{"type":"authentication_error","code":"unauthorized","message":"The API key you used is missing the permission text_to_speech to execute this operation.","status":"missing_permissions","requ
+  2026-09-03T05:32:57.393373+00:00  tts_error: ElevenLabs returned 401: {"detail":{"type":"authentication_error","code":"unauthorized","message":"The API key you used is missing the permission text_to_speech to execute this operation.","status":"missing_permissions","requ
+  2026-09-03T05:33:01.150144+00:00  probe_coverage: 33% of scenario probes raised (1/3)

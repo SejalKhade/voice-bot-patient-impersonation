@@ -1,0 +1,489 @@
+{
+  "call_id": "call_01_S01",
+  "scenario_id": "S01",
+  "metrics": {
+    "call_id": "call_01_S01",
+    "scenario_id": "S01",
+    "duration_seconds": 223.9,
+    "total_turns": 29,
+    "agent_turns": 14,
+    "patient_turns": 15,
+    "exchanges": 14,
+    "median_response_latency": 0.92,
+    "p90_response_latency": 1.37,
+    "max_response_latency": 1.69,
+    "barge_in_count": 0,
+    "interrupted_turns": 0,
+    "tts_errors": 0,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": 0.968,
+    "low_confidence_turns": 0,
+    "probe_coverage": 1.0,
+    "termination_reason": "twilio:completed",
+    "recording_available": false
+  },
+  "findings": [
+    {
+      "id": "call_01_S01-F01",
+      "call_id": "call_01_S01",
+      "scenario_id": "S01",
+      "title": "Appointment confirmation cut off, never completed",
+      "turn_index": 27,
+      "evidence_quote": "Your appointment is Thursday,",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "The call ends with the agent's sentence trailing off mid-confirmation; no date, time, or what-to-bring information was ever delivered to the caller.",
+      "why_it_matters": "The caller's core objective was to leave the call knowing the date, time, and what to bring. Without a completed confirmation, the patient does not know if or when they have an appointment.",
+      "expected_behaviour": "The agent should have stated the full confirmed date and time clearly and verified the caller heard and accepted it before ending the interaction.",
+      "verification": {
+        "status": "unverified",
+        "confidence": 0.0,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 27, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"your appointment is thursday\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": false,
+            "detail": "3 independent samples returned {'INSUFFICIENT': 1, 'NOT_SUPPORTED': 2}. Majority verdict NOT_SUPPORTED at 67% agreement, mean confidence 0.85. Final = 0.85 x 0.67 = 0.00 against a 0.55 threshold.",
+            "evidence": "window turns 25-29"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.75,
+            "reasoning": "The excerpt shows the agent's sentence cut short at turn 027, but the conversation continues with the patient responding at turn 028, and we have no evidence the call actually ended at this point rather than continuing beyond the excerpt."
+          },
+          {
+            "verdict": "NOT_SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt shows the agent's sentence at turn 27 followed by a further patient response at turn 28, so the call did not end at that point as claimed; the excerpt does not show the call ending mid-confirmation."
+          },
+          {
+            "verdict": "NOT_SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt shows the conversation continuing after the agent's truncated 'Thursday,' statement, with the patient responding at turn 28 and the call clearly not ending there. The claim that 'the call ends with the agent's sentence trailing off' is contradicted by the excerpt itself."
+          }
+        ],
+        "agreement_rate": 0.667,
+        "summary": "Adjudicator majority was NOT_SUPPORTED. Reported for the reviewer's attention but contributes nothing to the score."
+      }
+    },
+    {
+      "id": "call_01_S01-F02",
+      "call_id": "call_01_S01",
+      "scenario_id": "S01",
+      "title": "Offered weekend slot after caller specified weekday mornings only",
+      "turn_index": 23,
+      "evidence_quote": "The soonest weekend",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "conversational_handling",
+      "what_happened": "The caller had twice stated a need for weekday morning appointments (turns 012 and 014, reiterated in 024), but the agent began presenting a weekend option instead.",
+      "why_it_matters": "Ignoring a caller's stated scheduling constraint could lead to booking an appointment the patient cannot attend, since they explicitly said they work weekends.",
+      "expected_behaviour": "The agent should have tracked the caller's stated constraint and only offered weekday morning slots as requested.",
+      "verification": {
+        "status": "unverified",
+        "confidence": 0.0,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 23, severity high, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"the soonest weekend\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": false,
+            "detail": "3 independent samples returned {'INSUFFICIENT': 2, 'NOT_SUPPORTED': 1}. Majority verdict INSUFFICIENT at 67% agreement, mean confidence 0.60. Final = 0.60 x 0.67 = 0.00 against a 0.55 threshold.",
+            "evidence": "window turns 21-25"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt begins at turn 021, so we cannot verify the claimed prior weekday-only requests at turns 012 and 014. Turn 023 is also truncated due to a connection issue, making it unclear if the agent was actually offering a weekend slot despite an earlier stated preference."
+          },
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt only shows turns 021-025, so we cannot verify the claimed prior statements at turns 012 and 014 about weekday mornings; without that context we can't confirm the agent ignored a repeated request before turn 23."
+          },
+          {
+            "verdict": "NOT_SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "In the excerpt, the patient's statement of needing a weekday morning appointment occurs at turn 024, after the agent's 'soonest weekend' reference at turn 023 - not after two prior weekday requests as claimed. The excerpt does not show turns 012 or 014, so it does not support the sequence described in the claim."
+          }
+        ],
+        "agreement_rate": 0.667,
+        "summary": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score."
+      }
+    },
+    {
+      "id": "call_01_S01-F03",
+      "call_id": "call_01_S01",
+      "scenario_id": "S01",
+      "title": "Garbled, nonsensical agent utterance",
+      "turn_index": 25,
+      "evidence_quote": "You're skid.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "conversational_handling",
+      "what_happened": "The agent produced an incoherent phrase that does not correspond to any meaningful response to the caller's question about appointment details and what to bring.",
+      "why_it_matters": "Incoherent output degrades trust in the system and forces the caller to repeatedly ask for clarification, extending call length and causing confusion about appointment status.",
+      "expected_behaviour": "The agent should have produced a clear, complete sentence addressing the caller's question, or explicitly asked the caller to hold if there was a system issue.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.9,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 25, severity medium, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"you re skid\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.90. Final = 0.90 x 1.00 = 0.90 against a 0.55 threshold.",
+            "evidence": "window turns 23-27"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent at turn 25 responding to the patient's question with the incoherent phrase 'You're skid.', which does not address the appointment details or what to bring, and the patient explicitly flags it as unclear."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The quoted agent line 'You're skid.' is indeed incoherent and does not address the patient's question about appointment timing or what to bring, and the patient's next turn confirms confusion over the unclear response."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The quoted agent line 'You're skid.' is indeed an incoherent phrase that does not answer the patient's question about appointment scheduling or what to bring, and the patient's next turn confirms confusion about understanding the agent's response."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.90 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S01-F04",
+      "call_id": "call_01_S01",
+      "scenario_id": "S01",
+      "title": "New-patient paperwork question never answered",
+      "turn_index": 27,
+      "evidence_quote": "Your appointment is Thursday,",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "The caller asked twice (turns 024 and 028) what documents or information to bring to the first visit, but by the end of the transcript the agent has not addressed this question at all.",
+      "why_it_matters": "A new patient left without knowing what to bring may arrive unprepared, causing delays or a wasted visit.",
+      "expected_behaviour": "The agent should have answered the new-patient paperwork question directly, or explicitly stated it would follow up with that information, before ending the call.",
+      "verification": {
+        "status": "unverified",
+        "confidence": 0.0,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 27, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"your appointment is thursday\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": false,
+            "detail": "3 independent samples returned {'INSUFFICIENT': 3}. Majority verdict INSUFFICIENT at 100% agreement, mean confidence 0.60. Final = 0.60 x 1.00 = 0.00 against a 0.55 threshold.",
+            "evidence": "window turns 25-29"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt only covers turns 025-028 and ends with the patient's second question at turn 028; there is no visible agent response after that, so we cannot determine whether the paperwork question was ultimately left unanswered by the end of the full transcript."
+          },
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt only covers turns 025-028, not the full transcript, so we cannot see whether the agent addressed the documents question at some later point after turn 028. The claim requires knowledge of the entire transcript's end state, which is not shown here."
+          },
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt only covers turns 025-028 and ends with the patient's question at turn 028 unanswered so far; we don't see any turns after 028, so we cannot confirm the claim that the question 'by the end of the transcript' remains unaddressed."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score."
+      }
+    }
+  ],
+  "score": {
+    "call_id": "call_01_S01",
+    "scenario_id": "S01",
+    "simulator_score": 100,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "14 exchanges",
+        "threshold": "at least 3",
+        "passed": true,
+        "weight": 25,
+        "points": 25
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "224s",
+        "threshold": "45s to 240s",
+        "passed": true,
+        "weight": 15,
+        "points": 15
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "0.92s",
+        "threshold": "at or below 2.50s",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "100%",
+        "threshold": "at least 60%",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "0.968",
+        "threshold": "at or above 0.750",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "0 errors",
+        "threshold": "zero",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      }
+    ],
+    "simulator_verdict": "Usable. Conversation quality supports the findings below.",
+    "agent_score": 99.24,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 30.0
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S01-F03 Garbled, nonsensical agent utterance",
+            "expression": "medium: 7 x 0.90 = -6.30",
+            "value": -6.3,
+            "note": "turn 25"
+          }
+        ],
+        "score": 93.7,
+        "weighted_contribution": 11.24
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 8.0
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "100.00 x 0.30 = 30.00",
+        "value": 30.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "93.70 x 0.12 = 11.24",
+        "value": 11.24,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "100.00 x 0.08 = 8.00",
+        "value": 8.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "30.00 + 25.00 + 11.24 + 25.00 + 8.00 = 99.24",
+        "value": 99.24,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 4,
+      "verified": 1,
+      "unverified": 3,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": [
+      {
+        "id": "call_01_S01-F01",
+        "title": "Appointment confirmation cut off, never completed",
+        "severity": "high",
+        "status": "unverified",
+        "reason": "Adjudicator majority was NOT_SUPPORTED. Reported for the reviewer's attention but contributes nothing to the score.",
+        "would_have_deducted": 4.5
+      },
+      {
+        "id": "call_01_S01-F02",
+        "title": "Offered weekend slot after caller specified weekday mornings only",
+        "severity": "high",
+        "status": "unverified",
+        "reason": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score.",
+        "would_have_deducted": 1.8
+      },
+      {
+        "id": "call_01_S01-F04",
+        "title": "New-patient paperwork question never answered",
+        "severity": "high",
+        "status": "unverified",
+        "reason": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score.",
+        "would_have_deducted": 4.5
+      }
+    ]
+  },
+  "analysis_error": null,
+  "discarded_candidates": []
+}

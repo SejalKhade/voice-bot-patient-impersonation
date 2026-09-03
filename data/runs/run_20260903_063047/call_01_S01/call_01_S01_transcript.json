@@ -1,0 +1,312 @@
+{
+  "call_id": "call_01_S01",
+  "scenario_id": "S01",
+  "scenario_title": "New patient booking, flexible availability",
+  "started_at": "2026-09-03T06:30:51.561940+00:00",
+  "ended_at": "2026-09-03T06:34:35.416166+00:00",
+  "call_sid": "CAbcf8e35b8858ec2539f923cb71a078c1",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T06:31:00.429176+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "Hi, I'm calling to book a new patient appointment, please.",
+      "started_at": "2026-09-03T06:31:01.576356+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "PATIENT",
+      "text": "That's fine with me, thanks for letting me know.",
+      "started_at": "2026-09-03T06:31:02.445167+00:00",
+      "ended_at": null,
+      "response_latency": 0.7444106000002648,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 3,
+      "speaker": "AGENT",
+      "text": "Would you like to create a demo patient profile first? I just need your first and last name to get started.",
+      "started_at": "2026-09-03T06:31:17.428082+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 4,
+      "speaker": "PATIENT",
+      "text": "Yes, it's Sarah Whitfield, W-H-I-T-F-I-E-L-D.",
+      "started_at": "2026-09-03T06:31:19.445821+00:00",
+      "ended_at": null,
+      "response_latency": 0.7965435000005527,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 5,
+      "speaker": "AGENT",
+      "text": "Thanks, Sarah. Let me create your demo patient profile now.",
+      "started_at": "2026-09-03T06:31:32.323108+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.953125
+    },
+    {
+      "index": 6,
+      "speaker": "PATIENT",
+      "text": "Sure, take your time.",
+      "started_at": "2026-09-03T06:31:35.479729+00:00",
+      "ended_at": null,
+      "response_latency": 0.5793803999995362,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 7,
+      "speaker": "AGENT",
+      "text": "I'm setting up your profile now. One moment, please.",
+      "started_at": "2026-09-03T06:31:37.242369+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 8,
+      "speaker": "PATIENT",
+      "text": "No problem, I'll wait.",
+      "started_at": "2026-09-03T06:31:38.802983+00:00",
+      "ended_at": null,
+      "response_latency": 0.5684517999998207,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 9,
+      "speaker": "AGENT",
+      "text": "Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How may I help you today?",
+      "started_at": "2026-09-03T06:31:44.431925+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 10,
+      "speaker": "PATIENT",
+      "text": "Actually, I need to correct that - my date of birth is July fourth, nineteen ninety, not two thousand. But yes, I'm a new patient and I'd like to book my first appointment with a doctor here.",
+      "started_at": "2026-09-03T06:31:48.418811+00:00",
+      "ended_at": null,
+      "response_latency": 1.3633060000001933,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 11,
+      "speaker": "AGENT",
+      "text": "Thanks for letting me know, Sarah.",
+      "started_at": "2026-09-03T06:32:07.433843+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99902344
+    },
+    {
+      "index": 12,
+      "speaker": "PATIENT",
+      "text": "I've just moved to the area, so I'm looking to establish care. Could you check what the earliest available appointment is on a weekday morning?",
+      "started_at": "2026-09-03T06:32:10.313925+00:00",
+      "ended_at": null,
+      "response_latency": 1.0347379000004366,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 13,
+      "speaker": "AGENT",
+      "text": "I have your date of birth as 07/04/1990.",
+      "started_at": "2026-09-03T06:32:18.825606+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 14,
+      "speaker": "PATIENT",
+      "text": "Yes, that's correct, thank you. Now about that appointment - do you have any weekday mornings available soon?",
+      "started_at": "2026-09-03T06:32:21.829767+00:00",
+      "ended_at": null,
+      "response_latency": 0.8997120999993058,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 15,
+      "speaker": "AGENT",
+      "text": "Since you're a new patient, would you like to book a new",
+      "started_at": "2026-09-03T06:32:29.430959+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99902344
+    },
+    {
+      "index": 16,
+      "speaker": "PATIENT",
+      "text": "Yes, I would, that's what I'm calling about today.",
+      "started_at": "2026-09-03T06:32:32.257971+00:00",
+      "ended_at": null,
+      "response_latency": 1.3764036000002307,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 17,
+      "speaker": "AGENT",
+      "text": "There are several weekday",
+      "started_at": "2026-09-03T06:32:36.665332+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 18,
+      "speaker": "PATIENT",
+      "text": "Great, I'm ready to hear the options whenever you are.",
+      "started_at": "2026-09-03T06:32:38.939767+00:00",
+      "ended_at": null,
+      "response_latency": 1.1795899999997346,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 19,
+      "speaker": "AGENT",
+      "text": "The earliest weekday morning",
+      "started_at": "2026-09-03T06:32:42.843245+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9526367
+    },
+    {
+      "index": 20,
+      "speaker": "PATIENT",
+      "text": "Sorry, could you say that again? I didn't quite catch the full details.",
+      "started_at": "2026-09-03T06:32:44.987244+00:00",
+      "ended_at": null,
+      "response_latency": 0.7860850000006394,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 21,
+      "speaker": "AGENT",
+      "text": "you are scheduled for your",
+      "started_at": "2026-09-03T06:32:49.453298+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.98535156
+    },
+    {
+      "index": 22,
+      "speaker": "PATIENT",
+      "text": "I'm sorry, you're breaking up a bit - can you give me the date and time of my appointment again?",
+      "started_at": "2026-09-03T06:32:51.704301+00:00",
+      "ended_at": null,
+      "response_latency": 0.8618503999996392,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 23,
+      "speaker": "AGENT",
+      "text": "The soonest weekend",
+      "started_at": "2026-09-03T06:32:57.165778+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9448242
+    },
+    {
+      "index": 24,
+      "speaker": "PATIENT",
+      "text": "I actually need a weekday morning if possible - I work weekends. And before I book, what should I bring with me to my first visit?",
+      "started_at": "2026-09-03T06:33:00.278253+00:00",
+      "ended_at": null,
+      "response_latency": 1.6937275000000227,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 25,
+      "speaker": "AGENT",
+      "text": "You're skid.",
+      "started_at": "2026-09-03T06:33:08.546412+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.7179362
+    },
+    {
+      "index": 26,
+      "speaker": "PATIENT",
+      "text": "I'm sorry, I'm having trouble understanding you - the line seems unclear. Can you confirm the appointment details and what I need to bring?",
+      "started_at": "2026-09-03T06:33:11.604030+00:00",
+      "ended_at": null,
+      "response_latency": 1.043092799999613,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 27,
+      "speaker": "AGENT",
+      "text": "Your appointment is Thursday,",
+      "started_at": "2026-09-03T06:33:19.985450+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 28,
+      "speaker": "PATIENT",
+      "text": "Thursday works great for me - can you give me the full date and time, and let me know what documents or information I should bring along?",
+      "started_at": "2026-09-03T06:33:23.952100+00:00",
+      "ended_at": null,
+      "response_latency": 0.9502686000005269,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T06:34:35.416214+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data/runs/run_20260903_063047/call_01_S01/call_01_S01_recording.mp3",
+  "termination_reason": "twilio:completed"
+}

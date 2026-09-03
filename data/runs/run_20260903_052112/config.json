@@ -1,0 +1,46 @@
+{
+  "twilio_account_sid": "ACf5af813f3a6909e5b8131ce5d5ee8381",
+  "twilio_auth_token": "<set:32 chars>",
+  "twilio_from_number": "+18564065318",
+  "anthropic_api_key": "<set:108 chars>",
+  "deepgram_api_key": "<set:40 chars>",
+  "elevenlabs_api_key": "<set:51 chars>",
+  "openai_api_key": "<unset>",
+  "public_base_url": "harmless-racoon-barbed.ngrok-free.dev",
+  "media_server_port": 8080,
+  "target_number": "+18054398008",
+  "models": {
+    "patient": "claude-haiku-4-5-20251001",
+    "analyst": "claude-sonnet-5",
+    "adjudicator": "claude-sonnet-5",
+    "patient_max_tokens": 160,
+    "patient_temperature": 0.85,
+    "analyst_max_tokens": 4000,
+    "analyst_temperature": 0.2,
+    "adjudicator_max_tokens": 800,
+    "adjudicator_temperature": 0.4,
+    "adjudicator_samples": 3
+  },
+  "voice": {
+    "provider": "elevenlabs",
+    "elevenlabs_voice_id": "21m00Tcm4TlvDq8ikWAM",
+    "elevenlabs_model": "eleven_turbo_v2_5",
+    "openai_voice": "alloy",
+    "openai_model": "gpt-4o-mini-tts"
+  },
+  "speech": {
+    "model": "nova-2-phonecall",
+    "endpointing_ms": 320,
+    "utterance_end_ms": 1000,
+    "interim_results": true
+  },
+  "policy": {
+    "max_call_seconds": 240,
+    "max_turns": 24,
+    "silence_timeout_seconds": 18,
+    "opening_delay_seconds": 1.2,
+    "barge_in_enabled": true,
+    "inter_call_cooldown_seconds": 25
+  },
+  "ground_truth_path": "data/ground_truth.yaml"
+}

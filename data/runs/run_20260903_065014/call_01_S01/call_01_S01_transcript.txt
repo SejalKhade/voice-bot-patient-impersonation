@@ -1,0 +1,81 @@
+Call ID       : call_01_S01
+Scenario      : S01 - New patient booking, flexible availability
+Twilio SID    : CAd53ae5fb292e07a00fcccc388b5e488c
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T06:50:18.615998+00:00
+Ended (UTC)   : 2026-09-03T06:54:27.005892+00:00
+Duration      : 248.4s
+Turns         : 22
+Ended because : policy:max-duration
+========================================================================
+
+[000] 06:50:28 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 06:50:28 PATIENT
+      Hi, I'm calling to book a new-patient appointment – I just moved to the area a couple of months ago and I'm looking to establish care with a doctor.
+
+[002] 06:50:31 PATIENT [+0.75s]
+      That's fine with me, thanks for letting me know.
+
+[003] 06:50:49 AGENT
+      Would you like to create a demo patient profile so I can help you get started? Just need your first and last name.
+
+[004] 06:50:53 PATIENT [+1.00s]
+      Sure, it's Sarah Whitfield, W-H-I-T-F-I-E-L-D.
+
+[005] 06:51:08 AGENT
+      Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How can I help you today?
+
+[006] 06:51:11 PATIENT [+1.37s]
+      Actually, my date of birth is July fourth, nineteen ninety, not two thousand. But anyway, I'm a new patient and I'd like to schedule my first appointment with a doctor here.
+
+[007] 06:51:28 AGENT
+      Do you have a specific doctor in mind, or would you like to see the first available provider?
+
+[008] 06:51:31 PATIENT [+1.02s]
+      I don't have a preference, so whoever's available soonest would be great – do you have any openings on a weekday morning?
+
+[009] 06:51:50 AGENT
+      You already have a new patient appointment booked for Thursday September 3 at 9AM. Would you like to keep this appointment
+
+[010] 06:51:53 PATIENT [+0.82s]
+      That sounds perfect, yes, I'd like to keep that appointment for Thursday, September third at nine AM.
+
+[011] 06:52:10 AGENT
+      You're all set for your new patient appointment. On Thursday, September 3 at 9AM. Is there anything else I can help you with today?
+
+[012] 06:52:12 PATIENT [+0.81s]
+      Yes, actually – what should I bring with me to my first visit?
+
+[013] 06:52:34 AGENT
+      For your first visit, please bring a photo ID, your insurance card, a list of current medications, and any recent medical records related to your orthopedic orthopedic concerns. If you have any imaging results, like x rays or MRI, bring those as well.
+
+[014] 06:52:38 PATIENT [+1.16s]
+      Got it, so photo ID, insurance card, my medication list, and any medical records – I don't have any orthopedic concerns though, I'm just looking for a general primary care doctor.
+
+[015] 06:53:16 AGENT
+      To this point, Orthopedic specializes in joint, muscle, and bone care. We do not offer general primary care, but we can help with orthopedic issues and physical therapy. If you need a primary care doctor, you may want to contact a family medicine or internal medicine clinic. Would you like to keep your appointment here for an orthopedic evaluation, or would you like to cancel it?
+
+[016] 06:53:20 PATIENT [+1.12s]
+      Oh, I see – that's not what I'm looking for, I need a general primary care doctor. I should probably cancel this appointment and find the right clinic instead, sorry for the confusion.
+
+[017] 06:53:51 AGENT
+      You have an appointment scheduled for Thursday, September 3 with Abreker. Would you like to cancel this appointment? If so, can you share a brief reason for the cancellation?
+
+[018] 06:53:54 PATIENT [+0.98s]
+      Yes, please cancel it – I didn't realize this was an orthopedic practice, and I'm actually looking for a primary care physician instead.
+
+[019] 06:54:19 AGENT
+      You'd like to cancel your appointment on Thursday, September 3 with Abreco because you need a primary care physician, not orthopedic care. Let me process that cancellation now.
+
+[020] 06:54:21 PATIENT
+      Alright, that's everything I needed. Thanks very much for your help. Goodbye.
+
+[021] 06:54:26 AGENT
+      Your appointment for Thursday, September 3 with Abricker has been canceled.
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T06:54:27.005942+00:00  probe_coverage: 100% of scenario probes raised (3/3)

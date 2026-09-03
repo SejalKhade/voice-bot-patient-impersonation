@@ -1,0 +1,102 @@
+Call ID       : call_01_S01
+Scenario      : S01 - New patient booking, flexible availability
+Twilio SID    : CAbcf8e35b8858ec2539f923cb71a078c1
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T06:30:51.561940+00:00
+Ended (UTC)   : 2026-09-03T06:34:35.416166+00:00
+Duration      : 223.9s
+Turns         : 29
+Ended because : twilio:completed
+========================================================================
+
+[000] 06:31:00 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 06:31:01 PATIENT
+      Hi, I'm calling to book a new patient appointment, please.
+
+[002] 06:31:02 PATIENT [+0.74s]
+      That's fine with me, thanks for letting me know.
+
+[003] 06:31:17 AGENT
+      Would you like to create a demo patient profile first? I just need your first and last name to get started.
+
+[004] 06:31:19 PATIENT [+0.80s]
+      Yes, it's Sarah Whitfield, W-H-I-T-F-I-E-L-D.
+
+[005] 06:31:32 AGENT
+      Thanks, Sarah. Let me create your demo patient profile now.
+
+[006] 06:31:35 PATIENT [+0.58s]
+      Sure, take your time.
+
+[007] 06:31:37 AGENT
+      I'm setting up your profile now. One moment, please.
+
+[008] 06:31:38 PATIENT [+0.57s]
+      No problem, I'll wait.
+
+[009] 06:31:44 AGENT
+      Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How may I help you today?
+
+[010] 06:31:48 PATIENT [+1.36s]
+      Actually, I need to correct that - my date of birth is July fourth, nineteen ninety, not two thousand. But yes, I'm a new patient and I'd like to book my first appointment with a doctor here.
+
+[011] 06:32:07 AGENT
+      Thanks for letting me know, Sarah.
+
+[012] 06:32:10 PATIENT [+1.03s]
+      I've just moved to the area, so I'm looking to establish care. Could you check what the earliest available appointment is on a weekday morning?
+
+[013] 06:32:18 AGENT
+      I have your date of birth as 07/04/1990.
+
+[014] 06:32:21 PATIENT [+0.90s]
+      Yes, that's correct, thank you. Now about that appointment - do you have any weekday mornings available soon?
+
+[015] 06:32:29 AGENT
+      Since you're a new patient, would you like to book a new
+
+[016] 06:32:32 PATIENT [+1.38s]
+      Yes, I would, that's what I'm calling about today.
+
+[017] 06:32:36 AGENT
+      There are several weekday
+
+[018] 06:32:38 PATIENT [+1.18s]
+      Great, I'm ready to hear the options whenever you are.
+
+[019] 06:32:42 AGENT
+      The earliest weekday morning
+
+[020] 06:32:44 PATIENT [+0.79s]
+      Sorry, could you say that again? I didn't quite catch the full details.
+
+[021] 06:32:49 AGENT
+      you are scheduled for your
+
+[022] 06:32:51 PATIENT [+0.86s]
+      I'm sorry, you're breaking up a bit - can you give me the date and time of my appointment again?
+
+[023] 06:32:57 AGENT
+      The soonest weekend
+
+[024] 06:33:00 PATIENT [+1.69s]
+      I actually need a weekday morning if possible - I work weekends. And before I book, what should I bring with me to my first visit?
+
+[025] 06:33:08 AGENT
+      You're skid.
+
+[026] 06:33:11 PATIENT [+1.04s]
+      I'm sorry, I'm having trouble understanding you - the line seems unclear. Can you confirm the appointment details and what I need to bring?
+
+[027] 06:33:19 AGENT
+      Your appointment is Thursday,
+
+[028] 06:33:23 PATIENT [+0.95s]
+      Thursday works great for me - can you give me the full date and time, and let me know what documents or information I should bring along?
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T06:34:35.416214+00:00  probe_coverage: 100% of scenario probes raised (3/3)

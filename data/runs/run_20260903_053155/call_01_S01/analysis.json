@@ -1,0 +1,409 @@
+{
+  "call_id": "call_01_S01",
+  "scenario_id": "S01",
+  "metrics": {
+    "call_id": "call_01_S01",
+    "scenario_id": "S01",
+    "duration_seconds": 61.7,
+    "total_turns": 6,
+    "agent_turns": 6,
+    "patient_turns": 0,
+    "exchanges": 0,
+    "median_response_latency": null,
+    "p90_response_latency": null,
+    "max_response_latency": null,
+    "barge_in_count": 0,
+    "interrupted_turns": 0,
+    "tts_errors": 7,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": 1.0,
+    "low_confidence_turns": 0,
+    "probe_coverage": 0.33,
+    "termination_reason": "twilio:completed",
+    "recording_available": true
+  },
+  "findings": [
+    {
+      "id": "call_01_S01-F01",
+      "call_id": "call_01_S01",
+      "scenario_id": "S01",
+      "title": "Agent asks to create 'demo patient profile' instead of booking",
+      "turn_index": 1,
+      "evidence_quote": "Would you like to create a demo patient profile?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "Instead of addressing the caller's request to book a new-patient appointment, the agent asked about creating a 'demo patient profile', which appears to be leaked internal/test language rather than a real booking step.",
+      "why_it_matters": "A real caller trying to book an appointment would be confused and unable to proceed, since the agent never attempts to gather appointment-relevant information or offer scheduling.",
+      "expected_behaviour": "The agent should have acknowledged the request to book a new-patient appointment and begun collecting the caller's name, date of birth, and reason for visit.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.9,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 1, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"would you like to create a demo patient profile\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.90. Final = 0.90 x 1.00 = 0.90 against a 0.55 threshold.",
+            "evidence": "window turns 0-3"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent literally asking 'Would you like to create a demo patient profile?' twice, without addressing a booking request, matching the claim that internal/test language leaked into the call instead of a real booking step."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent literally asking 'Would you like to create a demo patient profile?' twice, rather than addressing a booking request, matching the claim's description of leaked internal/test language."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent literally asking 'Would you like to create a demo patient profile?' at turn 1 and again at turn 3, instead of processing a booking request, matching the claim exactly as quoted."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.90 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S01-F02",
+      "call_id": "call_01_S01",
+      "scenario_id": "S01",
+      "title": "Agent repeats identical scripted prompt without progressing",
+      "turn_index": 3,
+      "evidence_quote": "Welcome to PivotPoint Orthopedics. Would you like to create a demo patient profile? I just need your first and last name.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "conversational_handling",
+      "what_happened": "The agent repeated its earlier greeting and question verbatim, with no acknowledgment of anything the caller may have said or any adaptation to the conversation state.",
+      "why_it_matters": "Looping the same script signals the agent lost track of the conversation, frustrating the caller and stalling task progress.",
+      "expected_behaviour": "The agent should track that it already asked this question and either move forward with new information or ask a clarifying follow-up rather than repeating itself verbatim.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.567,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 3, severity medium, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"welcome to pivotpoint orthopedics would you like to create a demo patient profile i just need your first and last name\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 2, 'INSUFFICIENT': 1}. Majority verdict SUPPORTED at 67% agreement, mean confidence 0.85. Final = 0.85 x 0.67 = 0.57 against a 0.55 threshold.",
+            "evidence": "window turns 1-5"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "Turns 001-002 and turn 003 both greet the caller and ask the same question with no caller input shown in between, and turn 003 repeats the request for name verbatim without acknowledging any prior response, matching the claim of repeated scripted prompting without progression."
+          },
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.0,
+            "reasoning": "Unparseable adjudicator response."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "Turns 001-002 and turn 003 both greet the caller and ask for first/last name with no indication any caller input occurred between them, and turn 003 repeats the same content without acknowledging or adapting to any prior response."
+          }
+        ],
+        "agreement_rate": 0.667,
+        "summary": "Verified at 0.57 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S01-F03",
+      "call_id": "call_01_S01",
+      "scenario_id": "S01",
+      "title": "Call ends with no appointment booked or information confirmed",
+      "turn_index": 5,
+      "evidence_quote": "I am going to end the call now. Goodbye.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "The agent terminates the call without having collected the caller's name, offered any appointment times, booked anything, or provided any information about new-patient paperwork.",
+      "why_it_matters": "The caller's core objective\u2014booking a new-patient appointment and knowing the date/time/what to bring\u2014was completely unmet, leaving the patient without care and needing to call back or seek help elsewhere.",
+      "expected_behaviour": "The agent should have continued attempting to assist, offered concrete appointment slots, and confirmed the booking details, or clearly transferred to a human before ending the call.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.85,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 5, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"i am going to end the call now goodbye\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.85. Final = 0.85 x 1.00 = 0.85 against a 0.55 threshold.",
+            "evidence": "window turns 3-7"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent asking for the caller's name but receiving no response, then ending the call at turn 5 without ever collecting a name, offering appointment times, booking anything, or discussing new-patient paperwork."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt shows the agent asking for the caller's name, receiving no response, and then ending the call without collecting a name, offering appointment times, booking anything, or providing paperwork information."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.8,
+            "reasoning": "The excerpt shows the agent asking for the caller's name, receiving no visible response, and then ending the call without collecting any information, offering appointment times, or booking anything."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.85 confidence across all four gates."
+      }
+    }
+  ],
+  "score": {
+    "call_id": "call_01_S01",
+    "scenario_id": "S01",
+    "simulator_score": 25,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "0 exchanges",
+        "threshold": "at least 3",
+        "passed": false,
+        "weight": 25,
+        "points": 0
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "62s",
+        "threshold": "45s to 240s",
+        "passed": true,
+        "weight": 15,
+        "points": 15
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "not measured",
+        "threshold": "at or below 2.50s",
+        "passed": false,
+        "weight": 20,
+        "points": 0
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "33%",
+        "threshold": "at least 60%",
+        "passed": false,
+        "weight": 20,
+        "points": 0
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "1.000",
+        "threshold": "at or above 0.750",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "7 errors",
+        "threshold": "zero",
+        "passed": false,
+        "weight": 10,
+        "points": 0
+      }
+    ],
+    "simulator_verdict": "Not usable. Re-run this scenario; findings from it are unreliable.",
+    "agent_score": 91.64,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S01-F01 Agent asks to create 'demo patient profile' instead of booking",
+            "expression": "high: 15 x 0.90 = -13.50",
+            "value": -13.5,
+            "note": "turn 1"
+          },
+          {
+            "label": "call_01_S01-F03 Call ends with no appointment booked or information confirmed",
+            "expression": "high: 15 x 0.85 = -12.75",
+            "value": -12.75,
+            "note": "turn 5"
+          }
+        ],
+        "score": 73.75,
+        "weighted_contribution": 22.12
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S01-F02 Agent repeats identical scripted prompt without progressing",
+            "expression": "medium: 7 x 0.57 = -3.97",
+            "value": -3.97,
+            "note": "turn 3"
+          }
+        ],
+        "score": 96.03,
+        "weighted_contribution": 11.52
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 8.0
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "73.75 x 0.30 = 22.12",
+        "value": 22.12,
+        "note": "2 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "96.03 x 0.12 = 11.52",
+        "value": 11.52,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "100.00 x 0.08 = 8.00",
+        "value": 8.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "22.12 + 25.00 + 11.52 + 25.00 + 8.00 = 91.64",
+        "value": 91.64,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 3,
+      "verified": 3,
+      "unverified": 0,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": []
+  },
+  "analysis_error": null,
+  "discarded_candidates": []
+}

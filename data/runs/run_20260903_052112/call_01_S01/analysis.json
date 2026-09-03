@@ -1,0 +1,184 @@
+{
+  "call_id": "call_01_S01",
+  "scenario_id": "S01",
+  "metrics": {
+    "call_id": "call_01_S01",
+    "scenario_id": "S01",
+    "duration_seconds": 0.0,
+    "total_turns": 0,
+    "agent_turns": 0,
+    "patient_turns": 0,
+    "exchanges": 0,
+    "median_response_latency": null,
+    "p90_response_latency": null,
+    "max_response_latency": null,
+    "barge_in_count": 0,
+    "interrupted_turns": 0,
+    "tts_errors": 0,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": null,
+    "low_confidence_turns": 0,
+    "probe_coverage": 0.0,
+    "termination_reason": "unknown",
+    "recording_available": false
+  },
+  "findings": [],
+  "score": {
+    "call_id": "call_01_S01",
+    "scenario_id": "S01",
+    "simulator_score": 10,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "0 exchanges",
+        "threshold": "at least 3",
+        "passed": false,
+        "weight": 25,
+        "points": 0
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "0s",
+        "threshold": "45s to 240s",
+        "passed": false,
+        "weight": 15,
+        "points": 0
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "not measured",
+        "threshold": "at or below 2.50s",
+        "passed": false,
+        "weight": 20,
+        "points": 0
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "0%",
+        "threshold": "at least 60%",
+        "passed": false,
+        "weight": 20,
+        "points": 0
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "not measured",
+        "threshold": "at or above 0.750",
+        "passed": false,
+        "weight": 10,
+        "points": 0
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "0 errors",
+        "threshold": "zero",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      }
+    ],
+    "simulator_verdict": "Not usable. Re-run this scenario; findings from it are unreliable.",
+    "agent_score": 100.0,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 30.0
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 12.0
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 8.0
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "100.00 x 0.30 = 30.00",
+        "value": 30.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "100.00 x 0.12 = 12.00",
+        "value": 12.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "100.00 x 0.08 = 8.00",
+        "value": 8.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "30.00 + 25.00 + 12.00 + 25.00 + 8.00 = 100.00",
+        "value": 100.0,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 0,
+      "verified": 0,
+      "unverified": 0,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": []
+  },
+  "analysis_error": "No agent turns were captured. Nothing to analyse.",
+  "discarded_candidates": []
+}

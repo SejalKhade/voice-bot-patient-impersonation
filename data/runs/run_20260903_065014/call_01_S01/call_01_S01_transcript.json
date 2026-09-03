@@ -1,0 +1,242 @@
+{
+  "call_id": "call_01_S01",
+  "scenario_id": "S01",
+  "scenario_title": "New patient booking, flexible availability",
+  "started_at": "2026-09-03T06:50:18.615998+00:00",
+  "ended_at": "2026-09-03T06:54:27.005892+00:00",
+  "call_sid": "CAd53ae5fb292e07a00fcccc388b5e488c",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T06:50:28.491252+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "Hi, I'm calling to book a new-patient appointment \u2013 I just moved to the area a couple of months ago and I'm looking to establish care with a doctor.",
+      "started_at": "2026-09-03T06:50:28.680484+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "PATIENT",
+      "text": "That's fine with me, thanks for letting me know.",
+      "started_at": "2026-09-03T06:50:31.182189+00:00",
+      "ended_at": null,
+      "response_latency": 0.7537168999997448,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 3,
+      "speaker": "AGENT",
+      "text": "Would you like to create a demo patient profile so I can help you get started? Just need your first and last name.",
+      "started_at": "2026-09-03T06:50:49.659181+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 4,
+      "speaker": "PATIENT",
+      "text": "Sure, it's Sarah Whitfield, W-H-I-T-F-I-E-L-D.",
+      "started_at": "2026-09-03T06:50:53.042818+00:00",
+      "ended_at": null,
+      "response_latency": 0.9997265000001789,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 5,
+      "speaker": "AGENT",
+      "text": "Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How can I help you today?",
+      "started_at": "2026-09-03T06:51:08.070012+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 6,
+      "speaker": "PATIENT",
+      "text": "Actually, my date of birth is July fourth, nineteen ninety, not two thousand. But anyway, I'm a new patient and I'd like to schedule my first appointment with a doctor here.",
+      "started_at": "2026-09-03T06:51:11.273545+00:00",
+      "ended_at": null,
+      "response_latency": 1.3739157999998497,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 7,
+      "speaker": "AGENT",
+      "text": "Do you have a specific doctor in mind, or would you like to see the first available provider?",
+      "started_at": "2026-09-03T06:51:28.679396+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99951172
+    },
+    {
+      "index": 8,
+      "speaker": "PATIENT",
+      "text": "I don't have a preference, so whoever's available soonest would be great \u2013 do you have any openings on a weekday morning?",
+      "started_at": "2026-09-03T06:51:31.324636+00:00",
+      "ended_at": null,
+      "response_latency": 1.0188882000002195,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 9,
+      "speaker": "AGENT",
+      "text": "You already have a new patient appointment booked for Thursday September 3 at 9AM. Would you like to keep this appointment",
+      "started_at": "2026-09-03T06:51:50.648049+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99951172
+    },
+    {
+      "index": 10,
+      "speaker": "PATIENT",
+      "text": "That sounds perfect, yes, I'd like to keep that appointment for Thursday, September third at nine AM.",
+      "started_at": "2026-09-03T06:51:53.103151+00:00",
+      "ended_at": null,
+      "response_latency": 0.8163756000003559,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 11,
+      "speaker": "AGENT",
+      "text": "You're all set for your new patient appointment. On Thursday, September 3 at 9AM. Is there anything else I can help you with today?",
+      "started_at": "2026-09-03T06:52:10.877915+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9998372333333334
+    },
+    {
+      "index": 12,
+      "speaker": "PATIENT",
+      "text": "Yes, actually \u2013 what should I bring with me to my first visit?",
+      "started_at": "2026-09-03T06:52:12.757772+00:00",
+      "ended_at": null,
+      "response_latency": 0.8106319000007716,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 13,
+      "speaker": "AGENT",
+      "text": "For your first visit, please bring a photo ID, your insurance card, a list of current medications, and any recent medical records related to your orthopedic orthopedic concerns. If you have any imaging results, like x rays or MRI, bring those as well.",
+      "started_at": "2026-09-03T06:52:34.957187+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99941406
+    },
+    {
+      "index": 14,
+      "speaker": "PATIENT",
+      "text": "Got it, so photo ID, insurance card, my medication list, and any medical records \u2013 I don't have any orthopedic concerns though, I'm just looking for a general primary care doctor.",
+      "started_at": "2026-09-03T06:52:38.052544+00:00",
+      "ended_at": null,
+      "response_latency": 1.1567742999995971,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 15,
+      "speaker": "AGENT",
+      "text": "To this point, Orthopedic specializes in joint, muscle, and bone care. We do not offer general primary care, but we can help with orthopedic issues and physical therapy. If you need a primary care doctor, you may want to contact a family medicine or internal medicine clinic. Would you like to keep your appointment here for an orthopedic evaluation, or would you like to cancel it?",
+      "started_at": "2026-09-03T06:53:16.807294+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9975586
+    },
+    {
+      "index": 16,
+      "speaker": "PATIENT",
+      "text": "Oh, I see \u2013 that's not what I'm looking for, I need a general primary care doctor. I should probably cancel this appointment and find the right clinic instead, sorry for the confusion.",
+      "started_at": "2026-09-03T06:53:20.224121+00:00",
+      "ended_at": null,
+      "response_latency": 1.1226660000002084,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 17,
+      "speaker": "AGENT",
+      "text": "You have an appointment scheduled for Thursday, September 3 with Abreker. Would you like to cancel this appointment? If so, can you share a brief reason for the cancellation?",
+      "started_at": "2026-09-03T06:53:51.363792+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 18,
+      "speaker": "PATIENT",
+      "text": "Yes, please cancel it \u2013 I didn't realize this was an orthopedic practice, and I'm actually looking for a primary care physician instead.",
+      "started_at": "2026-09-03T06:53:54.284347+00:00",
+      "ended_at": null,
+      "response_latency": 0.9845077999998466,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 19,
+      "speaker": "AGENT",
+      "text": "You'd like to cancel your appointment on Thursday, September 3 with Abreco because you need a primary care physician, not orthopedic care. Let me process that cancellation now.",
+      "started_at": "2026-09-03T06:54:19.662869+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99951172
+    },
+    {
+      "index": 20,
+      "speaker": "PATIENT",
+      "text": "Alright, that's everything I needed. Thanks very much for your help. Goodbye.",
+      "started_at": "2026-09-03T06:54:21.014669+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 21,
+      "speaker": "AGENT",
+      "text": "Your appointment for Thursday, September 3 with Abricker has been canceled.",
+      "started_at": "2026-09-03T06:54:26.152777+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99951172
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T06:54:27.005942+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data/runs/run_20260903_065014/call_01_S01/call_01_S01_recording.mp3",
+  "termination_reason": "policy:max-duration"
+}

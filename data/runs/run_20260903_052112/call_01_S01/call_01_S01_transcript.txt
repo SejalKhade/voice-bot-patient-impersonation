@@ -1,0 +1,10 @@
+Call ID       : call_01_S01
+Scenario      : S01 - New patient booking, flexible availability
+Twilio SID    : CA18df28c8fe30a98184da5a0768034e08
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T05:21:19.376809+00:00
+Ended (UTC)   : n/a
+Duration      : 0.0s
+Turns         : 0
+Ended because : n/a
+========================================================================
