@@ -1,0 +1,99 @@
+Call ID       : call_01_S13
+Scenario      : S13 - Contradictory information mid-call
+Twilio SID    : CAa5bb31e54589189dad63ac2c33f1d2fa
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T08:41:54.359947+00:00
+Ended (UTC)   : 2026-09-03T08:46:04.107912+00:00
+Duration      : 249.7s
+Turns         : 27
+Ended because : policy:max-duration
+========================================================================
+
+[000] 08:42:06 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 08:42:09 PATIENT [+1.05s]
+      Yeah, that's fine. I'm calling because I need to book an appointment and I was hoping to get in on Monday if you have anything available.
+
+[002] 08:42:16 AGENT
+      Thank you for calling PivotPoint Orthopedic.
+
+[003] 08:42:18 PATIENT [+0.87s]
+      Thanks, yeah, I'm looking to schedule an appointment for next week if possible, ideally on Monday.
+
+[004] 08:42:26 AGENT
+      Would you like to create a demo pay
+
+[005] 08:42:29 PATIENT [+0.93s] [interrupted]
+      Sorry, I'm not sure what you mean by that. I just need to book an appointment—do you have Monday open?
+
+[006] 08:42:37 AGENT
+      to help you book an appointment. I'll need to create a demo patient profile for you Can I have your first and last name?
+
+[007] 08:42:40 PATIENT [+0.87s]
+      Oh okay, sure. My name is Nina Petrov, N-I-N-A P-E-T-R-O-V.
+
+[008] 08:43:12 AGENT
+      Your patient profile is set up and your date of birth is 07/04/2000. How can I help you today?
+
+[009] 08:43:15 PATIENT [+1.35s]
+      Actually, my date of birth is wrong—it's nineteen ninety-seven, not two thousand. But like I said, I'm trying to book an appointment for Monday if you have any slots.
+
+[010] 08:43:56 AGENT
+      I understand your request to update your date of birth to one thousand nine hundred ninety seven hectares has been sent to the clinic staff and will be reviewed. Now let me check the schedule for available appointments on Monday. I've documented the your date of birth should be 1997. The clinic support team will update your record and get back to you as soon as they can. Would you still like to look for an appointment on Monday next week?
+
+[011] 08:43:58 PATIENT [+0.69s]
+      Yes, Monday works for me. What times do you have available?
+
+[012] 08:44:14 AGENT
+      Let me check the schedule for Monday and see what times are open.
+
+[013] 08:44:16 PATIENT [+0.78s]
+      Actually, wait—I just realized I meant Wednesday, not Monday. Can you check Wednesday instead?
+
+[014] 08:44:22 AGENT
+      You already have an office
+
+[015] 08:44:25 PATIENT [+0.84s] [interrupted]
+      Sorry, what do you mean I already have an office? I'm just trying to book an appointment for Wednesday.
+
+[016] 08:44:28 AGENT
+      You already have an office visit scheduled for Thursday?
+
+[017] 08:44:30 PATIENT [+0.74s]
+      No, I don't have anything scheduled yet. I'm looking to book a new appointment for Wednesday next week.
+
+[018] 08:44:39 AGENT
+      You already have an office visit scheduled for
+
+[019] 08:44:41 PATIENT [+0.95s] [interrupted]
+      I'm not sure what you're saying. Let me ask you to read back what you have so far—my name, my date of birth, and the day I want to come in.
+
+[020] 08:44:44 AGENT
+      You have an office visit already scheduled.
+
+[021] 08:45:03 AGENT
+      You have an office visit already scheduled for Thursday, September 10 at 2PM. Because of this, I can't book another office visit of the same type right now. Would you like to reschedule your current appointment to Wednesday instead?
+
+[022] 08:45:06 PATIENT [+1.10s]
+      I'm confused because I don't think I have any appointment scheduled. But okay, can you just tell me back what information you're holding—my name, my birth year, and what day I asked for?
+
+[023] 08:45:43 AGENT
+      Here's what I have. Your name is Nina Petrov. Your birth year is 1997, and you asked to book an appointment for Wednesday next week. You also mentioned you don't think you have any appointments scheduled, but the system shows an office visit for Thursday, September 10. At 2PM. Would you like to move that appointment to Wednesday? Or do you want me to double check anything else?
+
+[024] 08:45:46 PATIENT [+1.15s]
+      Okay, that's correct—Nina Petrov, born 1997, and Wednesday is the day I need. Thanks for reading that back to me, that all sounds right.
+
+[025] 08:46:00 AGENT
+      You're welcome.
+
+[026] 08:46:01 PATIENT
+      Alright, that's everything I needed. Thanks very much for your help. Goodbye.
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T08:42:29.628875+00:00  barge_in: Agent began speaking during caller playback
+  2026-09-03T08:44:27.192045+00:00  barge_in: Agent began speaking during caller playback
+  2026-09-03T08:44:44.994501+00:00  barge_in: Agent began speaking during caller playback
+  2026-09-03T08:46:04.107961+00:00  probe_coverage: 100% of scenario probes raised (3/3)

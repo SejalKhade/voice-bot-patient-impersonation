@@ -1,0 +1,412 @@
+{
+  "call_id": "call_01_S13",
+  "scenario_id": "S13",
+  "metrics": {
+    "call_id": "call_01_S13",
+    "scenario_id": "S13",
+    "duration_seconds": 249.7,
+    "total_turns": 27,
+    "agent_turns": 14,
+    "patient_turns": 13,
+    "exchanges": 13,
+    "median_response_latency": 0.9,
+    "p90_response_latency": 1.15,
+    "max_response_latency": 1.35,
+    "barge_in_count": 3,
+    "interrupted_turns": 3,
+    "tts_errors": 0,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": 1.0,
+    "low_confidence_turns": 0,
+    "probe_coverage": 1.0,
+    "termination_reason": "policy:max-duration",
+    "recording_available": true
+  },
+  "findings": [
+    {
+      "id": "call_01_S13-F01",
+      "call_id": "call_01_S13",
+      "scenario_id": "S13",
+      "title": "Introduces confusing 'demo patient profile' jargon",
+      "turn_index": 6,
+      "evidence_quote": "to help you book an appointment. I'll need to create a demo patient profile for you Can I have your first and last name?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "conversational_handling",
+      "what_happened": "The agent introduced an undefined term ('demo patient profile') that the caller had already flagged as confusing in the prior turn, without ever explaining what it meant.",
+      "why_it_matters": "Unexplained internal/system terminology can make a real patient worried their information is being handled incorrectly or that they are being enrolled in something unintended.",
+      "expected_behaviour": "The agent should have simply proceeded to collect the caller's name to book the appointment without referencing internal system labels like 'demo' profile.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.85,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 6, severity medium, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"to help you book an appointment i ll need to create a demo patient profile for you can i have your first and last name\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.85. Final = 0.85 x 1.00 = 0.85 against a 0.55 threshold.",
+            "evidence": "window turns 4-8"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The patient explicitly said they didn't understand the term in turn 5, yet the agent repeated 'demo patient profile' in turn 6 without any explanation of what it meant before moving on to collect information."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The patient explicitly said she was confused by the term in turn 5, and the agent repeated 'demo patient profile' in turn 6 without ever explaining what it meant, proceeding directly to ask for her name."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The patient explicitly said they were confused by the term in turn 5, and the agent's turn 6 response repeats 'demo patient profile' again without ever clarifying what it means before asking for personal info."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.85 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S13-F02",
+      "call_id": "call_01_S13",
+      "scenario_id": "S13",
+      "title": "Fabricates an appointment never established in the call",
+      "turn_index": 21,
+      "evidence_quote": "You have an office visit already scheduled for Thursday, September 10 at 2PM. Because of this, I can't book another office visit of the same type right now. Would you like to reschedule your current appointment to Wednesday instead?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "information_accuracy",
+      "what_happened": "The agent asserted the caller already had a scheduled office visit for Thursday, September 10 at 2PM, a detail that never appeared anywhere earlier in the conversation, and which the caller explicitly denied ('No, I don't have anything scheduled yet').",
+      "why_it_matters": "Presenting a fabricated or contradicted fact as established truth could block a real booking, confuse the patient about their own records, and erode trust in the system's accuracy.",
+      "expected_behaviour": "The agent should not have introduced an appointment that was never mentioned or confirmed, and should have accepted the caller's correction that no appointment existed, or checked the actual record and reported honestly if uncertain.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.783,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 21, severity high, dimension information_accuracy"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"you have an office visit already scheduled for thursday september 10 at 2pm because of this i can t book another office \""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.78. Final = 0.78 x 1.00 = 0.78 against a 0.55 threshold.",
+            "evidence": "window turns 19-23"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "The agent asserts a specific pre-existing appointment (Thursday, Sept 10 at 2PM) that never appeared earlier in the excerpt, and the patient explicitly denies having any appointment scheduled, indicating the agent fabricated this detail."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The agent asserts a specific pre-existing appointment (Thursday, Sept 10 at 2PM) that never appears earlier in the excerpt, and the caller explicitly denies having any appointment scheduled, yet the agent repeats the claim as fact rather than acknowledging the discrepancy."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "The agent asserted a specific pre-existing appointment (Thursday, September 10 at 2PM) that never appeared earlier in the excerpt, and the caller explicitly denied having any appointment scheduled, yet the agent repeated the claim as fact rather than correcting or verifying it."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.78 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S13-F03",
+      "call_id": "call_01_S13",
+      "scenario_id": "S13",
+      "title": "Call ends without a confirmed appointment or time offered",
+      "turn_index": 23,
+      "evidence_quote": "Would you like to move that appointment to Wednesday? Or do you want me to double check anything else?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "Despite the caller's repeated requests to book (or check availability for) an appointment, the call ends after a readback confirmation with no appointment time offered, no availability given, and no booking confirmed.",
+      "why_it_matters": "The caller's core objective\u2014booking an appointment\u2014was never accomplished, meaning the call failed its primary purpose despite consuming significant time.",
+      "expected_behaviour": "The agent should have provided concrete available times for Wednesday and confirmed a booked appointment before the call ended.",
+      "verification": {
+        "status": "unverified",
+        "confidence": 0.55,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 23, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"would you like to move that appointment to wednesday or do you want me to double check anything else\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": false,
+            "detail": "3 independent samples returned {'NOT_SUPPORTED': 1, 'SUPPORTED': 2}. Majority verdict SUPPORTED at 67% agreement, mean confidence 0.82. Final = 0.82 x 0.67 = 0.55 against a 0.55 threshold.",
+            "evidence": "window turns 21-25"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "NOT_SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "The agent did offer a specific time (moving the appointment to Wednesday) in turn 23, contradicting the claim that no appointment time was offered; the call ends after the patient confirms the readback information without explicitly rejecting or accepting the Wednesday offer, but the excerpt does not show a complete absence of a time being proposed."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.8,
+            "reasoning": "The patient reaffirms that Wednesday is the day they need, but the agent only responds with 'You're welcome' without confirming a booking, offering a specific time, or checking availability, leaving the call ended without a resolved appointment."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt shows the agent offering to move the appointment to Wednesday at turn 23, but the patient's turn 24 response only confirms the readback details without explicitly accepting the offer, and the call ends at turn 25 with the agent simply saying 'You're welcome'\u2014no appointment time, availability, or booking confirmation is given despite the patient stating Wednesday is the day needed."
+          }
+        ],
+        "agreement_rate": 0.667,
+        "summary": "Supported but unstable: 0.55 falls below the 0.55 threshold. Contributes nothing to the score."
+      }
+    }
+  ],
+  "score": {
+    "call_id": "call_01_S13",
+    "scenario_id": "S13",
+    "simulator_score": 85,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "13 exchanges",
+        "threshold": "at least 3",
+        "passed": true,
+        "weight": 25,
+        "points": 25
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "250s",
+        "threshold": "45s to 240s",
+        "passed": false,
+        "weight": 15,
+        "points": 0
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "0.90s",
+        "threshold": "at or below 2.50s",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "100%",
+        "threshold": "at least 60%",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "1.000",
+        "threshold": "at or above 0.750",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "0 errors",
+        "threshold": "zero",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      }
+    ],
+    "simulator_verdict": "Usable. Conversation quality supports the findings below.",
+    "agent_score": 96.35,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 30.0
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S13-F02 Fabricates an appointment never established in the call",
+            "expression": "high: 15 x 0.78 = -11.75",
+            "value": -11.75,
+            "note": "turn 21"
+          }
+        ],
+        "score": 88.25,
+        "weighted_contribution": 22.06
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S13-F01 Introduces confusing 'demo patient profile' jargon",
+            "expression": "medium: 7 x 0.85 = -5.95",
+            "value": -5.95,
+            "note": "turn 6"
+          }
+        ],
+        "score": 94.05,
+        "weighted_contribution": 11.29
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 8.0
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "100.00 x 0.30 = 30.00",
+        "value": 30.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "88.25 x 0.25 = 22.06",
+        "value": 22.06,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "94.05 x 0.12 = 11.29",
+        "value": 11.29,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "100.00 x 0.08 = 8.00",
+        "value": 8.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "30.00 + 22.06 + 11.29 + 25.00 + 8.00 = 96.35",
+        "value": 96.35,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 3,
+      "verified": 2,
+      "unverified": 1,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": [
+      {
+        "id": "call_01_S13-F03",
+        "title": "Call ends without a confirmed appointment or time offered",
+        "severity": "high",
+        "status": "unverified",
+        "reason": "Supported but unstable: 0.55 falls below the 0.55 threshold. Contributes nothing to the score.",
+        "would_have_deducted": 4.5
+      }
+    ]
+  },
+  "analysis_error": null,
+  "discarded_candidates": []
+}

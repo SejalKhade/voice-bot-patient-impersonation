@@ -1,0 +1,310 @@
+{
+  "call_id": "call_01_S13",
+  "scenario_id": "S13",
+  "scenario_title": "Contradictory information mid-call",
+  "started_at": "2026-09-03T08:41:54.359947+00:00",
+  "ended_at": "2026-09-03T08:46:04.107912+00:00",
+  "call_sid": "CAa5bb31e54589189dad63ac2c33f1d2fa",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T08:42:06.543003+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "Yeah, that's fine. I'm calling because I need to book an appointment and I was hoping to get in on Monday if you have anything available.",
+      "started_at": "2026-09-03T08:42:09.120286+00:00",
+      "ended_at": null,
+      "response_latency": 1.0502369000005274,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "AGENT",
+      "text": "Thank you for calling PivotPoint Orthopedic.",
+      "started_at": "2026-09-03T08:42:16.730635+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 3,
+      "speaker": "PATIENT",
+      "text": "Thanks, yeah, I'm looking to schedule an appointment for next week if possible, ideally on Monday.",
+      "started_at": "2026-09-03T08:42:18.940850+00:00",
+      "ended_at": null,
+      "response_latency": 0.8737999999993917,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "speaker": "AGENT",
+      "text": "Would you like to create a demo pay",
+      "started_at": "2026-09-03T08:42:26.811937+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 5,
+      "speaker": "PATIENT",
+      "text": "Sorry, I'm not sure what you mean by that. I just need to book an appointment\u2014do you have Monday open?",
+      "started_at": "2026-09-03T08:42:29.252482+00:00",
+      "ended_at": null,
+      "response_latency": 0.9311321000004682,
+      "interrupted": true,
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "speaker": "AGENT",
+      "text": "to help you book an appointment. I'll need to create a demo patient profile for you Can I have your first and last name?",
+      "started_at": "2026-09-03T08:42:37.614977+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 7,
+      "speaker": "PATIENT",
+      "text": "Oh okay, sure. My name is Nina Petrov, N-I-N-A P-E-T-R-O-V.",
+      "started_at": "2026-09-03T08:42:40.288576+00:00",
+      "ended_at": null,
+      "response_latency": 0.8707462000002124,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "speaker": "AGENT",
+      "text": "Your patient profile is set up and your date of birth is 07/04/2000. How can I help you today?",
+      "started_at": "2026-09-03T08:43:12.008444+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 9,
+      "speaker": "PATIENT",
+      "text": "Actually, my date of birth is wrong\u2014it's nineteen ninety-seven, not two thousand. But like I said, I'm trying to book an appointment for Monday if you have any slots.",
+      "started_at": "2026-09-03T08:43:15.739139+00:00",
+      "ended_at": null,
+      "response_latency": 1.3514873000003718,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 10,
+      "speaker": "AGENT",
+      "text": "I understand your request to update your date of birth to one thousand nine hundred ninety seven hectares has been sent to the clinic staff and will be reviewed. Now let me check the schedule for available appointments on Monday. I've documented the your date of birth should be 1997. The clinic support team will update your record and get back to you as soon as they can. Would you still like to look for an appointment on Monday next week?",
+      "started_at": "2026-09-03T08:43:56.016787+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9996093800000001
+    },
+    {
+      "index": 11,
+      "speaker": "PATIENT",
+      "text": "Yes, Monday works for me. What times do you have available?",
+      "started_at": "2026-09-03T08:43:58.032419+00:00",
+      "ended_at": null,
+      "response_latency": 0.6865841999988334,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 12,
+      "speaker": "AGENT",
+      "text": "Let me check the schedule for Monday and see what times are open.",
+      "started_at": "2026-09-03T08:44:14.196002+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 13,
+      "speaker": "PATIENT",
+      "text": "Actually, wait\u2014I just realized I meant Wednesday, not Monday. Can you check Wednesday instead?",
+      "started_at": "2026-09-03T08:44:16.103986+00:00",
+      "ended_at": null,
+      "response_latency": 0.7771628999998939,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 14,
+      "speaker": "AGENT",
+      "text": "You already have an office",
+      "started_at": "2026-09-03T08:44:22.780701+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99902344
+    },
+    {
+      "index": 15,
+      "speaker": "PATIENT",
+      "text": "Sorry, what do you mean I already have an office? I'm just trying to book an appointment for Wednesday.",
+      "started_at": "2026-09-03T08:44:25.256684+00:00",
+      "ended_at": null,
+      "response_latency": 0.8411964999995689,
+      "interrupted": true,
+      "confidence": null
+    },
+    {
+      "index": 16,
+      "speaker": "AGENT",
+      "text": "You already have an office visit scheduled for Thursday?",
+      "started_at": "2026-09-03T08:44:28.658753+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 17,
+      "speaker": "PATIENT",
+      "text": "No, I don't have anything scheduled yet. I'm looking to book a new appointment for Wednesday next week.",
+      "started_at": "2026-09-03T08:44:30.854259+00:00",
+      "ended_at": null,
+      "response_latency": 0.7351805999987846,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 18,
+      "speaker": "AGENT",
+      "text": "You already have an office visit scheduled for",
+      "started_at": "2026-09-03T08:44:39.465510+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99951172
+    },
+    {
+      "index": 19,
+      "speaker": "PATIENT",
+      "text": "I'm not sure what you're saying. Let me ask you to read back what you have so far\u2014my name, my date of birth, and the day I want to come in.",
+      "started_at": "2026-09-03T08:44:41.848675+00:00",
+      "ended_at": null,
+      "response_latency": 0.9543210000010731,
+      "interrupted": true,
+      "confidence": null
+    },
+    {
+      "index": 20,
+      "speaker": "AGENT",
+      "text": "You have an office visit already scheduled.",
+      "started_at": "2026-09-03T08:44:44.065212+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 21,
+      "speaker": "AGENT",
+      "text": "You have an office visit already scheduled for Thursday, September 10 at 2PM. Because of this, I can't book another office visit of the same type right now. Would you like to reschedule your current appointment to Wednesday instead?",
+      "started_at": "2026-09-03T08:45:03.805577+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 22,
+      "speaker": "PATIENT",
+      "text": "I'm confused because I don't think I have any appointment scheduled. But okay, can you just tell me back what information you're holding\u2014my name, my birth year, and what day I asked for?",
+      "started_at": "2026-09-03T08:45:06.807827+00:00",
+      "ended_at": null,
+      "response_latency": 1.0997331999988091,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 23,
+      "speaker": "AGENT",
+      "text": "Here's what I have. Your name is Nina Petrov. Your birth year is 1997, and you asked to book an appointment for Wednesday next week. You also mentioned you don't think you have any appointments scheduled, but the system shows an office visit for Thursday, September 10. At 2PM. Would you like to move that appointment to Wednesday? Or do you want me to double check anything else?",
+      "started_at": "2026-09-03T08:45:43.888301+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99967448
+    },
+    {
+      "index": 24,
+      "speaker": "PATIENT",
+      "text": "Okay, that's correct\u2014Nina Petrov, born 1997, and Wednesday is the day I need. Thanks for reading that back to me, that all sounds right.",
+      "started_at": "2026-09-03T08:45:46.988961+00:00",
+      "ended_at": null,
+      "response_latency": 1.1536582999997336,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 25,
+      "speaker": "AGENT",
+      "text": "You're welcome.",
+      "started_at": "2026-09-03T08:46:00.435337+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9995117
+    },
+    {
+      "index": 26,
+      "speaker": "PATIENT",
+      "text": "Alright, that's everything I needed. Thanks very much for your help. Goodbye.",
+      "started_at": "2026-09-03T08:46:01.536389+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T08:42:29.628875+00:00",
+      "kind": "barge_in",
+      "detail": "Agent began speaking during caller playback",
+      "turn_index": null
+    },
+    {
+      "at": "2026-09-03T08:44:27.192045+00:00",
+      "kind": "barge_in",
+      "detail": "Agent began speaking during caller playback",
+      "turn_index": null
+    },
+    {
+      "at": "2026-09-03T08:44:44.994501+00:00",
+      "kind": "barge_in",
+      "detail": "Agent began speaking during caller playback",
+      "turn_index": null
+    },
+    {
+      "at": "2026-09-03T08:46:04.107961+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_084150\\call_01_S13.mp3",
+  "termination_reason": "policy:max-duration"
+}
