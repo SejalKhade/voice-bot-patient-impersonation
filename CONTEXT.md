@@ -134,7 +134,8 @@ that hangs up on dead air.
 - Probe coverage is checked by a model reading what the caller said. It is
   the one place a model judges the harness's own performance.
 - Endpointing (`endpointing_ms`) went 320ms -> 700ms after run_20260903_063047
-  showed it firing mid-sentence throughout, then 700ms -> 1100ms after
+  showed 6 of the last 7 agent turns truncated mid-sentence (from turn 15
+  onward), then 700ms -> 1100ms after
   run_20260903_073903 (S05) still showed 9 truncated turns, confirmed by ear
   as genuine overlap. Neither pass fixed it: run_20260903_075232 at 1100ms
   still showed 6 of 12 agent turns cut, with 1.6-3.5s gaps before the next
