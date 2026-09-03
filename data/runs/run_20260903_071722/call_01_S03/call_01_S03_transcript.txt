@@ -1,0 +1,93 @@
+Call ID       : call_01_S03
+Scenario      : S03 - Reschedule with a narrow window
+Twilio SID    : CA47ebc24cbb9373f4c31b183090b7fe9c
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T07:17:25.990528+00:00
+Ended (UTC)   : 2026-09-03T07:21:35.770876+00:00
+Duration      : 249.8s
+Turns         : 26
+Ended because : policy:max-duration
+========================================================================
+
+[000] 07:17:36 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 07:17:40 PATIENT [+1.25s]
+      That's fine with me. I'm calling because I need to reschedule an appointment I have for next Tuesday at two o'clock.
+
+[002] 07:17:47 AGENT
+      Thank you for calling PivotPoint Orthopedics.
+
+[003] 07:17:50 PATIENT [+0.81s]
+      Hi, thanks for picking up. I have an appointment next Tuesday at 2pm that I need to move because of a work conflict.
+
+[004] 07:17:57 AGENT
+      Before we just
+
+[005] 07:17:59 PATIENT [+1.04s]
+      Sorry, you cut out there for a second—could you say that again?
+
+[006] 07:18:03 AGENT
+      I can help with that.
+
+[007] 07:18:05 PATIENT [+1.23s]
+      Great, thank you. The only times that work for me are Thursday or Friday after three in the afternoon.
+
+[008] 07:18:12 AGENT
+      No problem.
+
+[009] 07:18:13 PATIENT [+0.81s]
+      Perfect. Do you have anything available in that window?
+
+[010] 07:18:31 AGENT
+      Let me check the schedule for Thursday or Friday after three in the afternoon. First, would you like to create a demo patient profile? I just need your first and last name to get started.
+
+[011] 07:18:34 PATIENT [+1.03s]
+      Sure, it's Maria Delgado. And you should already have my details on file since I have the existing appointment for Tuesday.
+
+[012] 07:18:51 AGENT
+      Your patient profile is set up. And your date of birth is 07/04/2000. How can I help you today?
+
+[013] 07:18:54 PATIENT [+1.17s]
+      Actually, that date of birth isn't right—I'm forty-two years old. But like I said, I'm calling to reschedule my Tuesday appointment to Thursday or Friday after three pm.
+
+[014] 07:19:16 AGENT
+      I don't see any upcoming appointments for you on the system. Would you like me to help you book a new appointment for Thursday or Friday after 3PM?
+
+[015] 07:19:19 PATIENT [+1.17s]
+      I definitely have an appointment next Tuesday at two o'clock—I received a confirmation. Can you double-check the system, or do you need any other information from me?
+
+[016] 07:19:46 AGENT
+      I checked the system again, and still don't see any upcoming appointments for you. Would you like to book a new appointment for Thursday or Friday after 3PM? If you have more details about your appointment, let me know, and I'll do my best to help.
+
+[017] 07:19:51 PATIENT [+1.22s]
+      Okay, I understand there may be a system issue. Let me just book a new appointment then—do you have anything available Thursday or Friday after three?
+
+[018] 07:20:10 AGENT
+      Let me check for openings on Thursday or Friday after 3PM. One moment while I fetch the available times.
+
+[019] 07:20:13 PATIENT [+1.03s]
+      Thank you, I appreciate it. I'm a bit pressed for time, so I'm hoping you find something soon.
+
+[020] 07:20:31 AGENT
+      I found openings on Friday after 3PM. The first available is at three with doctor Zidmio Lukaske. Would you like to book that time?
+
+[021] 07:20:34 PATIENT [+0.98s]
+      Three o'clock is right at the edge of my window, but that's cutting it close with work. Do you have anything a bit later, like three thirty or four?
+
+[022] 07:20:54 AGENT
+      Yes. There is a 03:30 slot available on Friday with doctor Zetmio Lukowski. Would you like to book the 03:30 appointment?
+
+[023] 07:20:57 PATIENT [+0.86s]
+      Yes, three thirty on Friday works perfectly for me. Can you confirm that appointment for Maria Delgado?
+
+[024] 07:21:27 AGENT
+      Your appointment is confirmed for Friday, September 4 at 03:30PM with doctor Zbigniew Lacoste at Pivot Point Orthopaedics. Please bring your photo ID, insurance card, a list of your current medications, and any imaging disks you have. Would you like a text message with your appointment details?
+
+[025] 07:21:28 PATIENT
+      Alright, that's everything I needed. Thanks very much for your help. Goodbye.
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T07:21:35.770961+00:00  probe_coverage: 100% of scenario probes raised (3/3)

@@ -1,0 +1,562 @@
+{
+  "call_id": "call_01_S03",
+  "scenario_id": "S03",
+  "metrics": {
+    "call_id": "call_01_S03",
+    "scenario_id": "S03",
+    "duration_seconds": 249.8,
+    "total_turns": 26,
+    "agent_turns": 13,
+    "patient_turns": 13,
+    "exchanges": 13,
+    "median_response_latency": 1.03,
+    "p90_response_latency": 1.23,
+    "max_response_latency": 1.25,
+    "barge_in_count": 0,
+    "interrupted_turns": 0,
+    "tts_errors": 0,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": 0.99,
+    "low_confidence_turns": 0,
+    "probe_coverage": 1.0,
+    "termination_reason": "policy:max-duration",
+    "recording_available": true
+  },
+  "findings": [
+    {
+      "id": "call_01_S03-F01",
+      "call_id": "call_01_S03",
+      "scenario_id": "S03",
+      "title": "Agent diverts to demo profile instead of reschedule",
+      "turn_index": 10,
+      "evidence_quote": "First, would you like to create a demo patient profile? I just need your first and last name to get started.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "task_completion",
+      "what_happened": "After the caller twice stated they needed to reschedule a specific Tuesday 2pm appointment and gave their desired window, the agent instead asked to create a 'demo patient profile' rather than addressing the reschedule.",
+      "why_it_matters": "This derails the call, forces the caller to repeat their request, and delays resolution of a time-sensitive scheduling conflict.",
+      "expected_behaviour": "The agent should have proceeded to look up the existing appointment or asked identifying details directly relevant to locating it, not introduced an unrelated 'demo profile' step.",
+      "verification": {
+        "status": "unverified",
+        "confidence": 0.483,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 10, severity medium, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"first would you like to create a demo patient profile i just need your first and last name to get started\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": false,
+            "detail": "3 independent samples returned {'INSUFFICIENT': 1, 'SUPPORTED': 2}. Majority verdict SUPPORTED at 67% agreement, mean confidence 0.72. Final = 0.72 x 0.67 = 0.48 against a 0.55 threshold.",
+            "evidence": "window turns 8-12"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.0,
+            "reasoning": "Unparseable adjudicator response."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "In turn 10, after the patient asks about appointment availability, the agent begins to check the schedule but immediately pivots to asking for a 'demo patient profile' instead of continuing with the scheduling request, exactly as the quote shows. The excerpt does not confirm the caller stated 'Tuesday 2pm' twice, but the core defect\u2014diverting from scheduling to demo profile creation\u2014is directly visible in the transcript."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.7,
+            "reasoning": "The excerpt confirms the agent's turn 10 quote verbatim: after the patient asked about availability in a specific window, the agent diverted to asking for a demo patient profile instead of continuing the scheduling task. However, the excerpt does not show the caller stating 'Tuesday 2pm' twice as part of a reschedule request; that detail is not visible here."
+          }
+        ],
+        "agreement_rate": 0.667,
+        "summary": "Supported but unstable: 0.48 falls below the 0.55 threshold. Contributes nothing to the score."
+      }
+    },
+    {
+      "id": "call_01_S03-F02",
+      "call_id": "call_01_S03",
+      "scenario_id": "S03",
+      "title": "Agent invents a date of birth never provided",
+      "turn_index": 12,
+      "evidence_quote": "Your patient profile is set up. And your date of birth is 07/04/2000. How can I help you today?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "information_accuracy",
+      "what_happened": "The agent states a specific date of birth for the caller that was never given in the conversation, and the caller immediately confirms it is wrong.",
+      "why_it_matters": "Fabricating identifying patient information is a serious data-integrity failure that could lead to matching the wrong patient record or corrupting the correct one.",
+      "expected_behaviour": "The agent should never assert patient identifying details that were not supplied; it should ask the caller to provide or confirm date of birth.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.95,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 12, severity high, dimension information_accuracy"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"your patient profile is set up and your date of birth is 07 04 2000 how can i help you today\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.95. Final = 0.95 x 1.00 = 0.95 against a 0.55 threshold.",
+            "evidence": "window turns 10-14"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "The agent states a specific date of birth (07/04/2000) that was never provided anywhere in the excerpt, and the patient immediately responds that it is incorrect, confirming the agent invented it."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "The agent states a specific date of birth (07/04/2000) that was never provided anywhere in the excerpt, and the patient immediately corrects it, confirming it was fabricated and wrong."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "The agent states a specific date of birth (07/04/2000) that was never provided anywhere in the excerpt, and the patient immediately responds that it is incorrect, confirming the agent fabricated it."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.95 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S03-F03",
+      "call_id": "call_01_S03",
+      "scenario_id": "S03",
+      "title": "Agent fails to locate confirmed existing appointment",
+      "turn_index": 14,
+      "evidence_quote": "I don't see any upcoming appointments for you on the system. Would you like me to help you book a new appointment for Thursday or Friday after 3PM?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "The caller clearly stated an existing Tuesday 2pm appointment with a confirmation received, but the agent reports no record and pivots to booking a new appointment without further identity verification attempts (e.g., asking for phone number, confirmation number, or correct DOB).",
+      "why_it_matters": "If the original appointment is not actually cancelled, the patient may end up double-booked or the old appointment may go unaddressed, causing confusion or a missed/duplicate visit.",
+      "expected_behaviour": "The agent should have asked for additional identifying information (correct DOB, phone number, confirmation number) before concluding the appointment does not exist, and should have addressed the fate of the original Tuesday appointment explicitly.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.817,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 14, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"i don t see any upcoming appointments for you on the system would you like me to help you book a new appointment for thu\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.82. Final = 0.82 x 1.00 = 0.82 against a 0.55 threshold.",
+            "evidence": "window turns 12-16"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.8,
+            "reasoning": "The excerpt shows the agent reporting no record of the appointment despite the patient's clear claim of a confirmed Tuesday 2pm appointment, and pivoting to booking a new slot without asking for phone number, confirmation number, or the corrected DOB (which the patient had just flagged as wrong)."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.8,
+            "reasoning": "The excerpt shows the agent reporting no record twice despite the patient citing a specific Tuesday 2pm appointment and a confirmation, and despite the patient correcting an apparently wrong DOB in turn 013. The agent never asks for a phone number, confirmation number, or corrected DOB, instead offering a vague 'if you have more details' before pivoting to booking a new appointment."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The transcript shows the patient clearly stating an existing Tuesday 2pm appointment with a confirmation received, and the agent reporting no record found twice while pivoting to booking a new appointment, without explicitly requesting verification details like phone number, confirmation number, or correcting the earlier mismatched DOB."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.82 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S03-F04",
+      "call_id": "call_01_S03",
+      "scenario_id": "S03",
+      "title": "Old Tuesday appointment cancellation never confirmed",
+      "turn_index": 24,
+      "evidence_quote": "Your appointment is confirmed for Friday, September 4 at 03:30PM with doctor Zbigniew Lacoste at Pivot Point Orthopaedics.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "The final confirmation only addresses the new Friday appointment and never confirms whether the original Tuesday 2pm appointment (which the caller insists exists) was located, cancelled, or otherwise resolved.",
+      "why_it_matters": "The caller may believe their reschedule is complete while the original appointment remains active elsewhere in the system, risking a missed cancellation or duplicate booking.",
+      "expected_behaviour": "The agent should explicitly confirm the disposition of the original appointment (cancelled, or note that no record was found and advise the caller to verify) alongside confirming the new booking.",
+      "verification": {
+        "status": "unverified",
+        "confidence": 0.0,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 24, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"your appointment is confirmed for friday september 4 at 03 30pm with doctor zbigniew lacoste at pivot point orthopaedics\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": false,
+            "detail": "3 independent samples returned {'INSUFFICIENT': 3}. Majority verdict INSUFFICIENT at 100% agreement, mean confidence 0.57. Final = 0.57 x 1.00 = 0.00 against a 0.55 threshold.",
+            "evidence": "window turns 22-26"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt only covers booking the Friday appointment and does not mention any Tuesday 2pm appointment at all, so there is no information here about whether such an appointment existed or was addressed elsewhere in the call."
+          },
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.55,
+            "reasoning": "The excerpt only shows the Friday booking confirmation and does not mention a Tuesday appointment at all, so there is no information here about whether such an appointment existed or was addressed earlier in the call."
+          },
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.55,
+            "reasoning": "The excerpt only shows the booking and confirmation of the Friday appointment; it does not contain any discussion of a Tuesday appointment, so we cannot determine from this excerpt alone whether such an appointment existed or was addressed elsewhere in the call."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score."
+      }
+    },
+    {
+      "id": "call_01_S03-F05",
+      "call_id": "call_01_S03",
+      "scenario_id": "S03",
+      "title": "Doctor's name changes across three consecutive turns",
+      "turn_index": 24,
+      "evidence_quote": "Your appointment is confirmed for Friday, September 4 at 03:30PM with doctor Zbigniew Lacoste at Pivot Point Orthopaedics.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "information_accuracy",
+      "what_happened": "The agent refers to the provider as 'doctor Zidmio Lukaske' in turn 020, 'doctor Zetmio Lukowski' in turn 022, and 'doctor Zbigniew Lacoste' in the final confirmation in turn 024 \u2014 three different names for what should be the same provider.",
+      "why_it_matters": "Inconsistent provider identification in a booking confirmation could cause the patient to arrive expecting the wrong doctor or doubt the reliability of the confirmation altogether.",
+      "expected_behaviour": "The agent should consistently state the same, correct provider name throughout the call and in the final confirmation.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.85,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 24, severity medium, dimension information_accuracy"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"your appointment is confirmed for friday september 4 at 03 30pm with doctor zbigniew lacoste at pivot point orthopaedics\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.85. Final = 0.85 x 1.00 = 0.85 against a 0.55 threshold.",
+            "evidence": "window turns 22-26"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt itself shows the doctor's name change from 'Zetmio Lukowski' in turn 022 to 'Zbigniew Lacoste' in turn 024 for what is presented as the same booked appointment, confirming inconsistent naming within the shown transcript."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt shows the agent naming the doctor 'Zetmio Lukowski' in turn 022 and then 'Zbigniew Lacoste' in turn 024 for the same appointment, a clear inconsistency within the visible transcript."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The excerpt shows the agent naming the provider 'doctor Zetmio Lukowski' in turn 022 and then 'doctor Zbigniew Lacoste' in turn 024's confirmation for the same appointment, a clear inconsistency in the provider's name for the same booking."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.85 confidence across all four gates."
+      }
+    }
+  ],
+  "score": {
+    "call_id": "call_01_S03",
+    "scenario_id": "S03",
+    "simulator_score": 85,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "13 exchanges",
+        "threshold": "at least 3",
+        "passed": true,
+        "weight": 25,
+        "points": 25
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "250s",
+        "threshold": "45s to 240s",
+        "passed": false,
+        "weight": 15,
+        "points": 0
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "1.03s",
+        "threshold": "at or below 2.50s",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "100%",
+        "threshold": "at least 60%",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "0.990",
+        "threshold": "at or above 0.750",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "0 errors",
+        "threshold": "zero",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      }
+    ],
+    "simulator_verdict": "Usable. Conversation quality supports the findings below.",
+    "agent_score": 91.27,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S03-F03 Agent fails to locate confirmed existing appointment",
+            "expression": "high: 15 x 0.82 = -12.25",
+            "value": -12.25,
+            "note": "turn 14"
+          }
+        ],
+        "score": 87.75,
+        "weighted_contribution": 26.32
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S03-F02 Agent invents a date of birth never provided",
+            "expression": "high: 15 x 0.95 = -14.25",
+            "value": -14.25,
+            "note": "turn 12"
+          },
+          {
+            "label": "call_01_S03-F05 Doctor's name changes across three consecutive turns",
+            "expression": "medium: 7 x 0.85 = -5.95",
+            "value": -5.95,
+            "note": "turn 24"
+          }
+        ],
+        "score": 79.8,
+        "weighted_contribution": 19.95
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 12.0
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 8.0
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "87.75 x 0.30 = 26.32",
+        "value": 26.32,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "79.80 x 0.25 = 19.95",
+        "value": 19.95,
+        "note": "2 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "100.00 x 0.12 = 12.00",
+        "value": 12.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "100.00 x 0.08 = 8.00",
+        "value": 8.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "26.32 + 19.95 + 12.00 + 25.00 + 8.00 = 91.27",
+        "value": 91.27,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 5,
+      "verified": 3,
+      "unverified": 2,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": [
+      {
+        "id": "call_01_S03-F01",
+        "title": "Agent diverts to demo profile instead of reschedule",
+        "severity": "medium",
+        "status": "unverified",
+        "reason": "Supported but unstable: 0.48 falls below the 0.55 threshold. Contributes nothing to the score.",
+        "would_have_deducted": 2.1
+      },
+      {
+        "id": "call_01_S03-F04",
+        "title": "Old Tuesday appointment cancellation never confirmed",
+        "severity": "high",
+        "status": "unverified",
+        "reason": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score.",
+        "would_have_deducted": 4.5
+      }
+    ]
+  },
+  "analysis_error": null,
+  "discarded_candidates": []
+}
