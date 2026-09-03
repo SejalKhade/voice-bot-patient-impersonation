@@ -85,6 +85,7 @@ class Session:
     generation: int = 0          # bumped on barge-in to abandon stale playback
     turns_taken: int = 0
     error: str | None = None
+    agent_has_spoken: bool = False  # set the instant Deepgram sees agent speech
 
     def note(self, message: str) -> None:
         stamp = datetime.now(timezone.utc).strftime("%H:%M:%S")
@@ -312,6 +313,7 @@ async def stream(websocket: WebSocket, session_id: str) -> None:
         the agent's clarifying questions and the call degenerates into two
         monologues.
         """
+        session.agent_has_spoken = True
         if session.speaking and session.config.policy.barge_in_enabled:
             session.transcript.add_event("barge_in", "Agent began speaking during caller playback")
             await clear_playback()
@@ -408,9 +410,21 @@ async def _open_conversation(session: Session, brain: PatientBrain, send_speech)
     A real caller lets the other end say hello. Jumping in at zero
     milliseconds clips the agent's greeting, which both sounds wrong and
     corrupts the first agent turn in the transcript.
+
+    The delay alone isn't enough: it fires unconditionally once elapsed,
+    with no regard for whether the agent's own greeting happened to start
+    during that same window (call_01_S02 in run_20260903_070441 showed a
+    patient turn and an agent turn starting 61ms apart). Re-checked right
+    before speaking, and once more after synthesis - synthesis itself can
+    take a second or more, which is long enough for the agent to start in
+    the meantime.
     """
     await asyncio.sleep(session.config.policy.opening_delay_seconds)
+    if session.agent_has_spoken:
+        return
     opening = await brain.opening_line()
+    if session.agent_has_spoken:
+        return
     await send_speech(opening)
 
 
