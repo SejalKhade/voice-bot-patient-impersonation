@@ -291,7 +291,11 @@ class Verifier:
                 json={
                     "model": self._models.adjudicator,
                     "max_tokens": self._models.adjudicator_max_tokens,
-                    "temperature": self._models.adjudicator_temperature,
+                    # claude-sonnet-5 rejects `temperature` outright (400,
+                    # "deprecated for this model"), so adjudicator_temperature
+                    # goes unused here. The stability signal (see gate 4 in
+                    # CONTEXT.md) now reflects this model's own default sample
+                    # variance rather than a tuned value.
                     "system": ADJUDICATOR_SYSTEM,
                     "messages": [
                         {

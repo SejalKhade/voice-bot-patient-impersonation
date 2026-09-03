@@ -250,7 +250,9 @@ class Analyst:
             json={
                 "model": self._models.analyst,
                 "max_tokens": self._models.analyst_max_tokens,
-                "temperature": self._models.analyst_temperature,
+                # claude-sonnet-5 rejects `temperature` outright (400,
+                # "deprecated for this model") rather than ignoring it, so it
+                # is omitted rather than sent at analyst_temperature.
                 "system": system,
                 "messages": [{"role": "user", "content": user}],
             },

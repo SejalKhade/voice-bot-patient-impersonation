@@ -128,6 +128,8 @@ class RunConfig:
         )
         if os.getenv("ELEVENLABS_VOICE_ID"):
             cfg.voice.elevenlabs_voice_id = os.environ["ELEVENLABS_VOICE_ID"]
+        if os.getenv("VOICE_PROVIDER"):
+            cfg.voice.provider = os.environ["VOICE_PROVIDER"]
         return cfg
 
     def missing_requirements(self) -> list[str]:
