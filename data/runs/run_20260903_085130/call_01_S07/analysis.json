@@ -1,0 +1,410 @@
+{
+  "call_id": "call_01_S07",
+  "scenario_id": "S07",
+  "metrics": {
+    "call_id": "call_01_S07",
+    "scenario_id": "S07",
+    "duration_seconds": 177.6,
+    "total_turns": 20,
+    "agent_turns": 10,
+    "patient_turns": 10,
+    "exchanges": 10,
+    "median_response_latency": 1.01,
+    "p90_response_latency": 1.07,
+    "max_response_latency": 1.09,
+    "barge_in_count": 1,
+    "interrupted_turns": 1,
+    "tts_errors": 0,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": 0.996,
+    "low_confidence_turns": 0,
+    "probe_coverage": 1.0,
+    "termination_reason": "twilio:completed",
+    "recording_available": true
+  },
+  "findings": [
+    {
+      "id": "call_01_S07-F01",
+      "call_id": "call_01_S07",
+      "scenario_id": "S07",
+      "title": "Agent repeats truncated onboarding prompt twice",
+      "turn_index": 4,
+      "evidence_quote": "I can help with that. Before we continue, would you like to create",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "conversational_handling",
+      "what_happened": "After being cut off mid-sentence in turn 002, the agent repeats the same unfinished prompt again in turn 004 instead of adapting to the caller's repeated statement of their request.",
+      "why_it_matters": "Looping an unresponsive prompt after interruption wastes the caller's time and signals the agent is not tracking the conversation state, which can frustrate callers and delay resolution of urgent requests.",
+      "expected_behaviour": "The agent should have acknowledged the interruption and moved directly to addressing the caller's stated cancellation request rather than repeating the same truncated line.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.883,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 4, severity medium, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"i can help with that before we continue would you like to create\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.88. Final = 0.88 x 1.00 = 0.88 against a 0.55 threshold.",
+            "evidence": "window turns 2-6"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "Turn 002 and turn 004 both show the agent cutting off mid-sentence with the same 'would you like to create' prompt, despite the patient in turn 003 already stating their request to cancel an appointment, showing the agent repeated the truncated prompt instead of adapting."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.85,
+            "reasoning": "The agent's truncated 'would you like to create' prompt in turn 002 is repeated verbatim in turn 004 despite the patient having already stated their request to cancel an appointment, showing the agent failed to adapt to the caller's input."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "In turn 002 the agent's prompt is cut off at 'Would you like to create', and after the patient explicitly restates their request to cancel an appointment, the agent in turn 004 again gets cut off at the same unfinished phrase 'would you like to create' instead of addressing the caller's stated request."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.88 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S07-F02",
+      "call_id": "call_01_S07",
+      "scenario_id": "S07",
+      "title": "Agent asks 'how can I help' after request already stated three times",
+      "turn_index": 8,
+      "evidence_quote": "Your patient profile is set up, and I have your date of birth as 07/04/2000. How can I help you today?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "By this point the caller had explicitly stated the intent to cancel their Monday appointment three separate times (turns 001, 003, 007), yet the agent asks 'How can I help you today?' as if no request had been made.",
+      "why_it_matters": "Failing to register a clearly repeated request forces the caller to restate themselves, delays the core task, and could cause a caller to give up or become frustrated, especially if they are calling about a time-sensitive cancellation.",
+      "expected_behaviour": "The agent should have carried forward the caller's stated cancellation request and proceeded to locate the appointment instead of asking an open-ended question that ignores prior context.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.75,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 8, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"your patient profile is set up and i have your date of birth as 07 04 2000 how can i help you today\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.75. Final = 0.75 x 1.00 = 0.75 against a 0.55 threshold.",
+            "evidence": "window turns 6-10"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "At turn 007 the patient explicitly requested cancellation of the Monday appointment, but the agent's next turn (008) ignores this and instead asks 'How can I help you today?' as if no request had been made, matching the claim for at least that instance."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.7,
+            "reasoning": "The excerpt shows the patient stating the cancellation request at turn 007, yet the agent's turn 008 response ignores this and asks 'How can I help you today?' as if no request had been made, matching the claim for at least one of the three cited instances within the excerpt."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.8,
+            "reasoning": "At turn 007 the patient explicitly asked to cancel the Monday appointment, but the agent's turn 008 response ignores this and asks 'How can I help you today?' as if no request had been made, confirming at least one instance of the described disconnect."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.75 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S07-F03",
+      "call_id": "call_01_S07",
+      "scenario_id": "S07",
+      "title": "Doctor's name stated inconsistently across turns",
+      "turn_index": 10,
+      "evidence_quote": "I see you have an appointment with doctor Zdmyu Lukovsky on Thursday, September 10.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "information_accuracy",
+      "what_happened": "The agent refers to the provider on the appointment as 'Zdmyu Lukovsky' in turn 010, 'Zbigniew Lukaske' in turn 012, and 'Zobigniew Lukaske' in turn 014, three different renderings for what should be the same person.",
+      "why_it_matters": "Inconsistent identification of the provider tied to the appointment being cancelled undermines the caller's confidence that the correct appointment/record was found and cancelled.",
+      "expected_behaviour": "The agent should state the provider's name consistently across the call so the caller can be confident the same appointment is being discussed and cancelled.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.9,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 10, severity medium, dimension information_accuracy"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"i see you have an appointment with doctor zdmyu lukovsky on thursday september 10\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.90. Final = 0.90 x 1.00 = 0.90 against a 0.55 threshold.",
+            "evidence": "window turns 8-12"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent naming the doctor as 'Zdmyu Lukovsky' in turn 010 and then 'Zbigniew Lukaske' in turn 012 for what is presented as the same appointment, confirming inconsistent naming across turns (turn 014 is not in the excerpt but the two shown instances already establish the inconsistency)."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent naming the doctor as 'Zdmyu Lukovsky' in turn 010 and then 'Zbigniew Lukaske' in turn 012, two different renderings for what is presented as the same appointment/provider."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.9,
+            "reasoning": "The excerpt shows the agent naming the doctor as 'Zdmyu Lukovsky' in turn 010 and then 'Zbigniew Lukaske' in turn 012, two different renderings for what is presented as the same appointment, confirming inconsistent naming within the visible transcript."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.90 confidence across all four gates."
+      }
+    }
+  ],
+  "score": {
+    "call_id": "call_01_S07",
+    "scenario_id": "S07",
+    "simulator_score": 100,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "10 exchanges",
+        "threshold": "at least 3",
+        "passed": true,
+        "weight": 25,
+        "points": 25
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "178s",
+        "threshold": "45s to 240s",
+        "passed": true,
+        "weight": 15,
+        "points": 15
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "1.01s",
+        "threshold": "at or below 2.50s",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "100%",
+        "threshold": "at least 60%",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "0.996",
+        "threshold": "at or above 0.750",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "0 errors",
+        "threshold": "zero",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      }
+    ],
+    "simulator_verdict": "Usable. Conversation quality supports the findings below.",
+    "agent_score": 94.31,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S07-F02 Agent asks 'how can I help' after request already stated three times",
+            "expression": "high: 15 x 0.75 = -11.25",
+            "value": -11.25,
+            "note": "turn 8"
+          }
+        ],
+        "score": 88.75,
+        "weighted_contribution": 26.62
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S07-F03 Doctor's name stated inconsistently across turns",
+            "expression": "medium: 7 x 0.90 = -6.30",
+            "value": -6.3,
+            "note": "turn 10"
+          }
+        ],
+        "score": 93.7,
+        "weighted_contribution": 23.43
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S07-F01 Agent repeats truncated onboarding prompt twice",
+            "expression": "medium: 7 x 0.88 = -6.18",
+            "value": -6.18,
+            "note": "turn 4"
+          }
+        ],
+        "score": 93.82,
+        "weighted_contribution": 11.26
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 8.0
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "88.75 x 0.30 = 26.62",
+        "value": 26.62,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "93.70 x 0.25 = 23.43",
+        "value": 23.43,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "93.82 x 0.12 = 11.26",
+        "value": 11.26,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "100.00 x 0.08 = 8.00",
+        "value": 8.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "26.62 + 23.43 + 11.26 + 25.00 + 8.00 = 94.31",
+        "value": 94.31,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 3,
+      "verified": 3,
+      "unverified": 0,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": []
+  },
+  "analysis_error": null,
+  "discarded_candidates": []
+}

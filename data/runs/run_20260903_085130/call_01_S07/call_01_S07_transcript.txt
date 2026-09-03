@@ -1,0 +1,76 @@
+Call ID       : call_01_S07
+Scenario      : S07 - Cancellation with refusal to rebook
+Twilio SID    : CAa71f3c0ece2e0c7c42862992f171c862
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T08:51:34.929392+00:00
+Ended (UTC)   : 2026-09-03T08:54:32.536923+00:00
+Duration      : 177.6s
+Turns         : 20
+Ended because : twilio:completed
+========================================================================
+
+[000] 08:51:47 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 08:51:50 PATIENT [+1.00s]
+      That's fine, thanks for letting me know. I'm calling because I need to cancel my appointment on Monday.
+
+[002] 08:51:58 AGENT
+      Thank you for calling PivotPoint Orthopedics. Would you like to create
+
+[003] 08:52:00 PATIENT [+1.07s] [interrupted]
+      Sorry, I think you were cut off there. But yes, I'm calling to cancel my Monday appointment—can you help me with that?
+
+[004] 08:52:05 AGENT
+      I can help with that. Before we continue, would you like to create
+
+[005] 08:52:07 PATIENT [+0.93s]
+      I'm sorry, you're breaking up again. Let me just give you my name so we can get this sorted—it's Jennifer Ross.
+
+[006] 08:52:14 AGENT
+      Thanks for confirming.
+
+[007] 08:52:17 PATIENT [+0.83s]
+      So can you cancel that Monday appointment for me?
+
+[008] 08:52:27 AGENT
+      Your patient profile is set up, and I have your date of birth as 07/04/2000. How can I help you today?
+
+[009] 08:52:29 PATIENT [+1.02s]
+      Actually, that date of birth isn't right—I'm forty-four, so it should be nineteen eighty. But anyway, I need to cancel my appointment on Monday.
+
+[010] 08:52:53 AGENT
+      I see you have an appointment with doctor Zdmyu Lukovsky on Thursday, September 10. Can you tell me the reason for canceling?
+
+[011] 08:52:56 PATIENT [+1.02s]
+      I think there might be some confusion—my appointment is on Monday, not Thursday. As for the reason, I just need to cancel it.
+
+[012] 08:53:22 AGENT
+      Thank you for letting me know. The only appointment I see on file is for Thursday, September 10. With doctor Zbigniew Lukaske. Just to confirm, is this the one you want to cancel?
+
+[013] 08:53:25 PATIENT [+0.85s]
+      Yes, that must be it—sorry for the confusion. I do want to cancel that appointment.
+
+[014] 08:53:48 AGENT
+      No problem. I'm processing your cancellation for Thursday, September 10 with doctor Zobigniew Lukaske now. One moment. No problem. That appointment has been canceled. Is there anything else I can help you with today?
+
+[015] 08:53:51 PATIENT [+1.01s]
+      Actually, I was wondering if you could get me in with the doctor another time, since I do need to be seen eventually.
+
+[016] 08:54:09 AGENT
+      Of course. What kind of visit do you need? Something urgent, a routine checkup, a follow-up, or something else?
+
+[017] 08:54:12 PATIENT [+1.09s]
+      Thanks for asking, but actually I don't think I'm ready to rebook right now. I'll call back when I figure out my schedule.
+
+[018] 08:54:27 AGENT
+      That's perfectly fine. Feel free to call back whenever you're ready. Take care.
+
+[019] 08:54:29 PATIENT [+1.02s]
+      Wait, before you go—can you just send me a confirmation email that the appointment has been canceled? I want to make sure it's all squared away.
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T08:52:05.195963+00:00  barge_in: Agent began speaking during caller playback
+  2026-09-03T08:54:32.536979+00:00  probe_coverage: 100% of scenario probes raised (3/3)

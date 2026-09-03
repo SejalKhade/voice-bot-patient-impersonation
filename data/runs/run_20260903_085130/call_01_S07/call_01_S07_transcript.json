@@ -1,0 +1,228 @@
+{
+  "call_id": "call_01_S07",
+  "scenario_id": "S07",
+  "scenario_title": "Cancellation with refusal to rebook",
+  "started_at": "2026-09-03T08:51:34.929392+00:00",
+  "ended_at": "2026-09-03T08:54:32.536923+00:00",
+  "call_sid": "CAa71f3c0ece2e0c7c42862992f171c862",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T08:51:47.777518+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "That's fine, thanks for letting me know. I'm calling because I need to cancel my appointment on Monday.",
+      "started_at": "2026-09-03T08:51:50.453787+00:00",
+      "ended_at": null,
+      "response_latency": 1.0030397000009543,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "AGENT",
+      "text": "Thank you for calling PivotPoint Orthopedics. Would you like to create",
+      "started_at": "2026-09-03T08:51:58.130035+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99902344
+    },
+    {
+      "index": 3,
+      "speaker": "PATIENT",
+      "text": "Sorry, I think you were cut off there. But yes, I'm calling to cancel my Monday appointment\u2014can you help me with that?",
+      "started_at": "2026-09-03T08:52:00.968907+00:00",
+      "ended_at": null,
+      "response_latency": 1.0660346999993635,
+      "interrupted": true,
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "speaker": "AGENT",
+      "text": "I can help with that. Before we continue, would you like to create",
+      "started_at": "2026-09-03T08:52:05.272706+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 5,
+      "speaker": "PATIENT",
+      "text": "I'm sorry, you're breaking up again. Let me just give you my name so we can get this sorted\u2014it's Jennifer Ross.",
+      "started_at": "2026-09-03T08:52:07.620703+00:00",
+      "ended_at": null,
+      "response_latency": 0.9262048000000505,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "speaker": "AGENT",
+      "text": "Thanks for confirming.",
+      "started_at": "2026-09-03T08:52:14.629347+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.96728516
+    },
+    {
+      "index": 7,
+      "speaker": "PATIENT",
+      "text": "So can you cancel that Monday appointment for me?",
+      "started_at": "2026-09-03T08:52:17.088990+00:00",
+      "ended_at": null,
+      "response_latency": 0.8284106999999494,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "speaker": "AGENT",
+      "text": "Your patient profile is set up, and I have your date of birth as 07/04/2000. How can I help you today?",
+      "started_at": "2026-09-03T08:52:27.185467+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 9,
+      "speaker": "PATIENT",
+      "text": "Actually, that date of birth isn't right\u2014I'm forty-four, so it should be nineteen eighty. But anyway, I need to cancel my appointment on Monday.",
+      "started_at": "2026-09-03T08:52:29.802216+00:00",
+      "ended_at": null,
+      "response_latency": 1.0194004999993922,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 10,
+      "speaker": "AGENT",
+      "text": "I see you have an appointment with doctor Zdmyu Lukovsky on Thursday, September 10. Can you tell me the reason for canceling?",
+      "started_at": "2026-09-03T08:52:53.502219+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99951172
+    },
+    {
+      "index": 11,
+      "speaker": "PATIENT",
+      "text": "I think there might be some confusion\u2014my appointment is on Monday, not Thursday. As for the reason, I just need to cancel it.",
+      "started_at": "2026-09-03T08:52:56.962085+00:00",
+      "ended_at": null,
+      "response_latency": 1.020776700001079,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 12,
+      "speaker": "AGENT",
+      "text": "Thank you for letting me know. The only appointment I see on file is for Thursday, September 10. With doctor Zbigniew Lukaske. Just to confirm, is this the one you want to cancel?",
+      "started_at": "2026-09-03T08:53:22.992392+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9960327125
+    },
+    {
+      "index": 13,
+      "speaker": "PATIENT",
+      "text": "Yes, that must be it\u2014sorry for the confusion. I do want to cancel that appointment.",
+      "started_at": "2026-09-03T08:53:25.585136+00:00",
+      "ended_at": null,
+      "response_latency": 0.8485882999993919,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 14,
+      "speaker": "AGENT",
+      "text": "No problem. I'm processing your cancellation for Thursday, September 10 with doctor Zobigniew Lukaske now. One moment. No problem. That appointment has been canceled. Is there anything else I can help you with today?",
+      "started_at": "2026-09-03T08:53:48.173787+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9975585975
+    },
+    {
+      "index": 15,
+      "speaker": "PATIENT",
+      "text": "Actually, I was wondering if you could get me in with the doctor another time, since I do need to be seen eventually.",
+      "started_at": "2026-09-03T08:53:51.055582+00:00",
+      "ended_at": null,
+      "response_latency": 1.010768399999506,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 16,
+      "speaker": "AGENT",
+      "text": "Of course. What kind of visit do you need? Something urgent, a routine checkup, a follow-up, or something else?",
+      "started_at": "2026-09-03T08:54:09.442588+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99951172
+    },
+    {
+      "index": 17,
+      "speaker": "PATIENT",
+      "text": "Thanks for asking, but actually I don't think I'm ready to rebook right now. I'll call back when I figure out my schedule.",
+      "started_at": "2026-09-03T08:54:12.274487+00:00",
+      "ended_at": null,
+      "response_latency": 1.0878365000007761,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 18,
+      "speaker": "AGENT",
+      "text": "That's perfectly fine. Feel free to call back whenever you're ready. Take care.",
+      "started_at": "2026-09-03T08:54:27.135563+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 19,
+      "speaker": "PATIENT",
+      "text": "Wait, before you go\u2014can you just send me a confirmation email that the appointment has been canceled? I want to make sure it's all squared away.",
+      "started_at": "2026-09-03T08:54:29.623134+00:00",
+      "ended_at": null,
+      "response_latency": 1.0177335999997013,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T08:52:05.195963+00:00",
+      "kind": "barge_in",
+      "detail": "Agent began speaking during caller playback",
+      "turn_index": null
+    },
+    {
+      "at": "2026-09-03T08:54:32.536979+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_085130\\call_01_S07.mp3",
+  "termination_reason": "twilio:completed"
+}
