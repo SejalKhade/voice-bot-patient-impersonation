@@ -1,0 +1,99 @@
+Call ID       : call_01_S05
+Scenario      : S05 - Insurance coverage and copay
+Twilio SID    : CAd0af4ed81a0ea20c07211889f835572d
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T07:39:07.973453+00:00
+Ended (UTC)   : 2026-09-03T07:42:10.247068+00:00
+Duration      : 182.3s
+Turns         : 28
+Ended because : caller:objective-resolved
+========================================================================
+
+[000] 07:39:19 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 07:39:23 PATIENT [+1.16s]
+      That's fine with me. I'm calling because I just switched to a Blue Cross Blue Shield PPO plan and I need to make sure you accept it before I book an appointment.
+
+[002] 07:39:32 AGENT
+      Thank you for calling Pivot Point Orthopaedics. Would you like to create a dev
+
+[003] 07:39:35 PATIENT [+0.92s]
+      Oh, hi. No, I'm not a new patient—I just need to check something real quick. Do you take Blue Cross Blue Shield PPO?
+
+[004] 07:39:44 AGENT
+      Great. Let's get your demo profile started.
+
+[005] 07:39:47 PATIENT [+0.96s]
+      Wait, I need to know if you actually accept my insurance first. Does Pivot Point take Blue Cross Blue Shield PPO plans?
+
+[006] 07:39:54 AGENT
+      I can help check that for you.
+
+[007] 07:39:56 PATIENT [+0.83s]
+      Okay, great. So can you confirm that you're in-network with Blue Cross Blue Shield PPO?
+
+[008] 07:40:01 AGENT
+      May I
+
+[009] 07:40:03 PATIENT [+0.68s]
+      Of course, go ahead.
+
+[010] 07:40:05 AGENT
+      I don't have
+
+[011] 07:40:07 PATIENT [+0.84s]
+      Hello? Are you still there?
+
+[012] 07:40:10 AGENT
+      To help you further
+
+[013] 07:40:13 PATIENT [+1.02s]
+      I'm sorry, the line cut out a bit. Can you tell me whether Blue Cross Blue Shield PPO is accepted at your office or not?
+
+[014] 07:40:20 AGENT
+      yes. I'm here. I wanna make sure I
+
+[015] 07:40:23 PATIENT [+0.92s]
+      Okay, no problem. So just to be clear—you do accept Blue Cross Blue Shield PPO, right?
+
+[016] 07:40:29 AGENT
+      I don't have real time access to
+
+[017] 07:40:32 PATIENT [+0.88s]
+      I understand, but can you at least tell me if Blue Cross Blue Shield PPO is generally accepted at your practice?
+
+[018] 07:40:39 AGENT
+      I don't have direct
+
+[019] 07:40:41 PATIENT [+0.89s]
+      Okay, so you're saying you don't know if you take my plan or not?
+
+[020] 07:40:45 AGENT
+      I don't have direct
+
+[021] 07:40:47 PATIENT [+0.77s]
+      Can you at least tell me what the copay would be for a routine visit with your office?
+
+[022] 07:41:07 AGENT
+      I don't have access to specific co pay amounts. These can vary based on your insurance plan and the type of visit. It's best to check your insurance card or contact Blue Cross Blue Shield directly for your exact co pay.
+
+[023] 07:41:10 PATIENT [+1.04s]
+      I appreciate that, but you still haven't told me whether you're in-network with Blue Cross Blue Shield PPO at all. Can you at least confirm that?
+
+[024] 07:41:36 AGENT
+      I'm not able to confirm in network status for Blue Cross Blue Shield PPO. For the most accurate answer, please contact your insurance provider or our clinic's billing department directly. They can confirm if we're in network with your plan,
+
+[025] 07:41:39 PATIENT [+0.97s]
+      Alright, I understand. Do you have a direct number for your billing department so I can call them about this?
+
+[026] 07:41:58 AGENT
+      I don't have a direct number for the billing department. You can reach out to the main clinic line, and they'll connect you to billing for insurance questions.
+
+[027] 07:42:00 PATIENT [+0.99s]
+      Okay, thank you for your help. I'll call back and speak to billing directly about my Blue Cross Blue Shield PPO coverage. .
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T07:42:10.247129+00:00  probe_coverage: 100% of scenario probes raised (3/3)

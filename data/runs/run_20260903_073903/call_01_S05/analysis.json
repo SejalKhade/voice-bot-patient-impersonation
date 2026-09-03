@@ -1,0 +1,334 @@
+{
+  "call_id": "call_01_S05",
+  "scenario_id": "S05",
+  "metrics": {
+    "call_id": "call_01_S05",
+    "scenario_id": "S05",
+    "duration_seconds": 182.3,
+    "total_turns": 28,
+    "agent_turns": 14,
+    "patient_turns": 14,
+    "exchanges": 14,
+    "median_response_latency": 0.92,
+    "p90_response_latency": 1.03,
+    "max_response_latency": 1.16,
+    "barge_in_count": 0,
+    "interrupted_turns": 0,
+    "tts_errors": 0,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": 0.996,
+    "low_confidence_turns": 0,
+    "probe_coverage": 1.0,
+    "termination_reason": "caller:objective-resolved",
+    "recording_available": true
+  },
+  "findings": [
+    {
+      "id": "call_01_S05-F01",
+      "call_id": "call_01_S05",
+      "scenario_id": "S05",
+      "title": "Agent ignored caller's stated status, pushed new-patient flow",
+      "turn_index": 4,
+      "evidence_quote": "Great. Let's get your demo profile started.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "conversational_handling",
+      "what_happened": "The caller explicitly said twice that she was not a new patient and only wanted to check insurance acceptance, but the agent responded by trying to start a 'demo profile' / new patient intake process, ignoring the stated request entirely.",
+      "why_it_matters": "A real caller trying to get a quick yes/no on insurance coverage before booking would be derailed into an irrelevant workflow, wasting time and creating confusion about whether the call is even being handled correctly.",
+      "expected_behaviour": "The agent should have acknowledged the caller's stated intent (checking insurance) and proceeded to address that, rather than initiating an unrelated intake process.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.733,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 4, severity high, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"great let s get your demo profile started\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.73. Final = 0.73 x 1.00 = 0.73 against a 0.55 threshold.",
+            "evidence": "window turns 2-6"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.7,
+            "reasoning": "The patient states she is not a new patient and asks about insurance acceptance, yet the agent's next turn says 'Let's get your demo profile started,' ignoring her stated status and insurance question. The claim's assertion that she said it 'twice' isn't fully verified in the excerpt, but the core behavior of ignoring her status and pushing a new-patient/demo flow is shown."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "At turn 3 the patient explicitly states she is not a new patient and only wants to check insurance, yet the agent's next turn (4) says 'Let's get your demo profile started,' ignoring her stated status and pushing a new-patient/demo flow. The claim's assertion that this was stated 'twice' isn't clearly shown in the excerpt, but the core described defect\u2014agent ignoring the stated status and pushing the new-patient flow\u2014is directly supported by the quoted exchange."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.75,
+            "reasoning": "At turn 3 the caller explicitly states she is not a new patient and asks about insurance, yet the agent's next turn (4) responds with 'Let's get your demo profile started,' ignoring her stated status and pushing a new-patient/demo flow. The claim's assertion that she said this twice is not fully verified in the excerpt, but the core described behavior\u2014agent disregarding her stated status and pursuing intake\u2014is shown."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.73 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S05-F02",
+      "call_id": "call_01_S05",
+      "scenario_id": "S05",
+      "title": "Agent repeated identical incomplete phrase twice in a row",
+      "turn_index": 20,
+      "evidence_quote": "I don't have direct",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "conversational_handling",
+      "what_happened": "The agent produced the exact same truncated sentence fragment 'I don't have direct' in two consecutive agent turns (018 and 020), without completing a coherent answer to the caller's repeated question.",
+      "why_it_matters": "Looping the same unfinished phrase signals a breakdown in dialogue state tracking, forcing the caller to repeat the same question multiple times before getting any substantive response, which degrades trust and efficiency.",
+      "expected_behaviour": "The agent should have completed its sentence and given a clear, single answer (as it eventually did in turn 024) rather than repeating an unfinished statement.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.95,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 20, severity medium, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"i don t have direct\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.95. Final = 0.95 x 1.00 = 0.95 against a 0.55 threshold.",
+            "evidence": "window turns 18-22"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "The excerpt shows the agent producing the identical truncated fragment 'I don't have direct' in turns 018 and 020, with no completed answer to the caller's question between them."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "The excerpt shows the agent producing the identical truncated fragment 'I don't have direct' in turns 018 and 020, with no coherent completion, while the patient's question about plan coverage remains unanswered until turn 022 addresses a different question."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "The excerpt shows the agent producing the identical truncated fragment 'I don't have direct' in turns 018 and 020, both times without completing a coherent sentence or answering the caller's question."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.95 confidence across all four gates."
+      }
+    }
+  ],
+  "score": {
+    "call_id": "call_01_S05",
+    "scenario_id": "S05",
+    "simulator_score": 100,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "14 exchanges",
+        "threshold": "at least 3",
+        "passed": true,
+        "weight": 25,
+        "points": 25
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "182s",
+        "threshold": "45s to 240s",
+        "passed": true,
+        "weight": 15,
+        "points": 15
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "0.92s",
+        "threshold": "at or below 2.50s",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "100%",
+        "threshold": "at least 60%",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "0.996",
+        "threshold": "at or above 0.750",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "0 errors",
+        "threshold": "zero",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      }
+    ],
+    "simulator_verdict": "Usable. Conversation quality supports the findings below.",
+    "agent_score": 97.88,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 30.0
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S05-F01 Agent ignored caller's stated status, pushed new-patient flow",
+            "expression": "high: 15 x 0.73 = -10.99",
+            "value": -10.99,
+            "note": "turn 4"
+          },
+          {
+            "label": "call_01_S05-F02 Agent repeated identical incomplete phrase twice in a row",
+            "expression": "medium: 7 x 0.95 = -6.65",
+            "value": -6.65,
+            "note": "turn 20"
+          }
+        ],
+        "score": 82.35,
+        "weighted_contribution": 9.88
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 8.0
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "100.00 x 0.30 = 30.00",
+        "value": 30.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "82.35 x 0.12 = 9.88",
+        "value": 9.88,
+        "note": "2 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "100.00 x 0.08 = 8.00",
+        "value": 8.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "30.00 + 25.00 + 9.88 + 25.00 + 8.00 = 97.88",
+        "value": 97.88,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 2,
+      "verified": 2,
+      "unverified": 0,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": []
+  },
+  "analysis_error": null,
+  "discarded_candidates": []
+}

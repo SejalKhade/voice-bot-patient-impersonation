@@ -1,0 +1,87 @@
+Call ID       : call_01_S05
+Scenario      : S05 - Insurance coverage and copay
+Twilio SID    : CA67263e1791ccf09f0efe120f54bbd22f
+From / To     : +18564065318 -> +18054398008
+Started (UTC) : 2026-09-03T07:52:38.478067+00:00
+Ended (UTC)   : 2026-09-03T07:54:51.085840+00:00
+Duration      : 132.6s
+Turns         : 24
+Ended because : twilio:completed
+========================================================================
+
+[000] 07:52:52 AGENT
+      This call may be recorded for quality and training purposes.
+
+[001] 07:52:56 PATIENT [+1.15s]
+      That's fine with me. I'm calling because I just switched to a Blue Cross Blue Shield PPO plan and I need to make sure you accept it before I book an appointment.
+
+[002] 07:53:06 AGENT
+      Thank you for calling PivotPoint Orthopedics. Would you like to create a demo patient profile?
+
+[003] 07:53:09 PATIENT [+0.96s]
+      No, I don't need a demo profile. I just need to know if you take Blue Cross Blue Shield PPO insurance.
+
+[004] 07:53:16 AGENT
+      Great. Let's get your demo patient.
+
+[005] 07:53:19 PATIENT [+1.00s]
+      Wait, I'm not looking to set up a demo—I'm a real patient trying to find out if my insurance is accepted. Do you actually take Blue Cross Blue Shield PPO?
+
+[006] 07:53:29 AGENT
+      Understood. You can
+
+[007] 07:53:31 PATIENT [+0.72s]
+      Hello? Are you still there?
+
+[008] 07:53:35 AGENT
+      I don't have
+
+[009] 07:53:37 PATIENT [+0.68s]
+      I'm sorry, you're breaking up. Can you hear me okay?
+
+[010] 07:53:40 AGENT
+      yes? I'm here.
+
+[011] 07:53:42 PATIENT [+0.89s]
+      Okay good, I can hear you now. So does your practice accept Blue Cross Blue Shield PPO insurance?
+
+[012] 07:53:49 AGENT
+      I don't have
+
+[013] 07:53:51 PATIENT [+0.84s]
+      You don't have what? Can you finish that thought for me?
+
+[014] 07:53:57 AGENT
+      I can hear you.
+
+[015] 07:53:59 PATIENT [+0.79s]
+      Okay, I hear you too. Let me ask you directly—do you accept Blue Cross Blue Shield PPO plans?
+
+[016] 07:54:06 AGENT
+      I don't have access to the assure
+
+[017] 07:54:09 PATIENT [+0.85s]
+      I'm sorry, you're cutting out again. You don't have access to what?
+
+[018] 07:54:13 AGENT
+      I don't have access to the clinic's insurance list right now.
+
+[019] 07:54:15 PATIENT [+0.78s]
+      Okay, so you can't tell me if Blue Cross Blue Shield PPO is accepted right now?
+
+[020] 07:54:21 AGENT
+      I don't have access
+
+[021] 07:54:23 PATIENT [+0.90s]
+      I understand you don't have access. Is there someone else I can speak to who does have that information?
+
+[022] 07:54:29 AGENT
+      I don't have axe
+
+[023] 07:54:32 PATIENT [+1.03s]
+      I'm sorry, the line is really bad. Can you call me back or transfer me to someone who can help verify my insurance and tell me the copay?
+
+========================================================================
+CALL EVENTS
+
+  2026-09-03T07:54:51.085885+00:00  probe_coverage: 100% of scenario probes raised (3/3)

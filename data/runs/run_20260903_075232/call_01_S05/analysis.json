@@ -1,0 +1,488 @@
+{
+  "call_id": "call_01_S05",
+  "scenario_id": "S05",
+  "metrics": {
+    "call_id": "call_01_S05",
+    "scenario_id": "S05",
+    "duration_seconds": 132.6,
+    "total_turns": 24,
+    "agent_turns": 12,
+    "patient_turns": 12,
+    "exchanges": 12,
+    "median_response_latency": 0.87,
+    "p90_response_latency": 1.02,
+    "max_response_latency": 1.15,
+    "barge_in_count": 0,
+    "interrupted_turns": 0,
+    "tts_errors": 0,
+    "watchdog_triggered": false,
+    "mean_stt_confidence": 0.986,
+    "low_confidence_turns": 0,
+    "probe_coverage": 1.0,
+    "termination_reason": "twilio:completed",
+    "recording_available": true
+  },
+  "findings": [
+    {
+      "id": "call_01_S05-F01",
+      "call_id": "call_01_S05",
+      "scenario_id": "S05",
+      "title": "Agent offers irrelevant demo profile instead of answering",
+      "turn_index": 2,
+      "evidence_quote": "Would you like to create a demo patient profile?",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "task_completion",
+      "what_happened": "The patient asked directly whether the practice accepts Blue Cross Blue Shield PPO insurance, but the agent responded with an unrelated offer to create a demo patient profile.",
+      "why_it_matters": "The caller's core question is ignored from the very first response, delaying resolution of a real insurance verification need.",
+      "expected_behaviour": "The agent should have addressed the insurance question directly, either confirming, denying, or stating it needs to verify.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.97,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 2, severity high, dimension task_completion"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"would you like to create a demo patient profile\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.97. Final = 0.97 x 1.00 = 0.97 against a 0.55 threshold.",
+            "evidence": "window turns 0-4"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.97,
+            "reasoning": "The patient explicitly asked whether the practice accepts Blue Cross Blue Shield PPO, but the agent responded with an unrelated demo profile offer, and even after the patient reiterated the insurance question, the agent again pushed the demo profile instead of answering."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.97,
+            "reasoning": "The patient directly asked whether Blue Cross Blue Shield PPO is accepted, but the agent instead asked about creating a demo patient profile, and even after being told no, proceeded to push the demo profile again without addressing the insurance question."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.97,
+            "reasoning": "The patient directly asked whether the practice accepts Blue Cross Blue Shield PPO insurance, but the agent responded with an unrelated offer to create a demo patient profile instead of addressing the insurance question, and even after being told 'no' persisted in pursuing the demo profile."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.97 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S05-F02",
+      "call_id": "call_01_S05",
+      "scenario_id": "S05",
+      "title": "Agent repeats demo prompt after explicit correction",
+      "turn_index": 4,
+      "evidence_quote": "Great. Let's get your demo patient.",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "conversational_handling",
+      "what_happened": "After the patient explicitly said they were not looking for a demo profile and restated their insurance question, the agent again pushed forward with the demo patient flow.",
+      "why_it_matters": "Ignoring an explicit correction shows the agent is not tracking conversation state, frustrating the caller and stalling the interaction.",
+      "expected_behaviour": "The agent should have acknowledged the correction and moved to address the insurance question instead of repeating the same irrelevant prompt.",
+      "verification": {
+        "status": "verified",
+        "confidence": 0.95,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 4, severity high, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"great let s get your demo patient\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": true,
+            "detail": "3 independent samples returned {'SUPPORTED': 3}. Majority verdict SUPPORTED at 100% agreement, mean confidence 0.95. Final = 0.95 x 1.00 = 0.95 against a 0.55 threshold.",
+            "evidence": "window turns 2-6"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "At turn 3 the patient explicitly declined the demo and asked about BCBS PPO coverage, yet at turn 4 the agent responded by pushing forward with the demo patient flow ('Let's get your demo patient'), matching the claim exactly."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "At turn 003 the patient explicitly declined the demo and asked about insurance, yet at turn 004 the agent replied 'Great. Let's get your demo patient,' pushing forward with the demo flow despite the correction."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.95,
+            "reasoning": "After the patient explicitly declined the demo and asked about BCBS PPO coverage in turn 3, the agent's turn 4 response 'Let's get your demo patient' shows it pushed forward with the demo flow despite the correction."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Verified at 0.95 confidence across all four gates."
+      }
+    },
+    {
+      "id": "call_01_S05-F03",
+      "call_id": "call_01_S05",
+      "scenario_id": "S05",
+      "title": "Agent produces repeated incomplete/truncated responses",
+      "turn_index": 6,
+      "evidence_quote": "Understood. You can",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "medium",
+      "dimension": "conversational_handling",
+      "what_happened": "The agent's turn cuts off mid-sentence, and this pattern of incomplete responses recurs across multiple turns (e.g. turns 8, 12, 16, 20, 22), preventing the caller from getting a full answer.",
+      "why_it_matters": "Repeated truncated responses degrade the caller's ability to get information and create confusion about what the agent is trying to say.",
+      "expected_behaviour": "The agent should deliver complete, coherent responses rather than cutting off mid-thought repeatedly.",
+      "verification": {
+        "status": "unverified",
+        "confidence": 0.0,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 6, severity medium, dimension conversational_handling"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"understood you can\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": false,
+            "detail": "3 independent samples returned {'INSUFFICIENT': 3}. Majority verdict INSUFFICIENT at 100% agreement, mean confidence 0.60. Final = 0.60 x 1.00 = 0.00 against a 0.55 threshold.",
+            "evidence": "window turns 4-8"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt only shows truncation at turns 6 and 8; it does not include turns 12, 16, 20, or 22, so the claimed recurring pattern across those turns cannot be verified from this excerpt alone."
+          },
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt only shows truncation at turns 6 and 8, not the full set of turns (8, 12, 16, 20, 22) cited in the claim, so I cannot verify the recurring pattern across those specific turns from this excerpt alone."
+          },
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt only shows truncated responses at turns 6 and 8, not at turns 12, 16, 20, or 22 as claimed, since the transcript ends at turn 8. Without those later turns, the claim of a recurring pattern across multiple specified turns cannot be verified from this excerpt alone."
+          }
+        ],
+        "agreement_rate": 1.0,
+        "summary": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score."
+      }
+    },
+    {
+      "id": "call_01_S05-F04",
+      "call_id": "call_01_S05",
+      "scenario_id": "S05",
+      "title": "No transfer or callback offered when explicitly requested",
+      "turn_index": 22,
+      "evidence_quote": "I don't have axe",
+      "claim_type": "behavioural",
+      "required_fact": null,
+      "severity": "high",
+      "dimension": "safety_and_escalation",
+      "what_happened": "When the patient explicitly asked if there was someone else who could provide the insurance information, the agent's response was truncated and did not offer a transfer, callback, or any concrete escalation path.",
+      "why_it_matters": "Failing to route the caller to a human or offer a callback when the agent cannot answer leaves the patient's core request unresolved and could delay their care or billing clarity.",
+      "expected_behaviour": "The agent should have offered a specific escalation path, such as transferring to a staff member or scheduling a callback to verify insurance and copay.",
+      "verification": {
+        "status": "unverified",
+        "confidence": 0.0,
+        "gates": [
+          {
+            "number": 1,
+            "name": "Structure",
+            "passed": true,
+            "detail": "Schema, turn range and speaker attribution accepted at extraction.",
+            "evidence": "turn 22, severity high, dimension safety_and_escalation"
+          },
+          {
+            "number": 2,
+            "name": "Evidence grounding",
+            "passed": true,
+            "detail": "Quote matches the cited turn after whitespace, case and punctuation normalisation.",
+            "evidence": "needle=\"i don t have axe\""
+          },
+          {
+            "number": 3,
+            "name": "Fact dependency",
+            "passed": true,
+            "detail": "Behavioural claim. Provable from the transcript alone, no external fact required.",
+            "evidence": "claim_type=behavioural"
+          },
+          {
+            "number": 4,
+            "name": "Independent adjudication",
+            "passed": false,
+            "detail": "3 independent samples returned {'INSUFFICIENT': 2, 'SUPPORTED': 1}. Majority verdict INSUFFICIENT at 67% agreement, mean confidence 0.60. Final = 0.60 x 0.67 = 0.00 against a 0.55 threshold.",
+            "evidence": "window turns 20-24"
+          }
+        ],
+        "adjudicator_votes": [
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt cuts off at turn 023 with the patient's request; the agent's actual response to that explicit request for transfer/callback is not shown, so we cannot confirm whether it failed to offer escalation."
+          },
+          {
+            "verdict": "SUPPORTED",
+            "confidence": 0.65,
+            "reasoning": "At turn 021 the patient explicitly asks if someone else can help, and the agent's reply at 022 is truncated ('I don't have axe') with no offer of transfer, callback, or escalation shown in the excerpt."
+          },
+          {
+            "verdict": "INSUFFICIENT",
+            "confidence": 0.6,
+            "reasoning": "The excerpt cuts off at turn 023 with the patient's request; there is no subsequent agent response shown, so we cannot determine whether the agent ultimately failed to offer a transfer, callback, or escalation path."
+          }
+        ],
+        "agreement_rate": 0.667,
+        "summary": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score."
+      }
+    }
+  ],
+  "score": {
+    "call_id": "call_01_S05",
+    "scenario_id": "S05",
+    "simulator_score": 100,
+    "simulator_gates": [
+      {
+        "name": "Conversation depth",
+        "description": "A real conversation, not a question and a hangup.",
+        "measured": "12 exchanges",
+        "threshold": "at least 3",
+        "passed": true,
+        "weight": 25,
+        "points": 25
+      },
+      {
+        "name": "Call duration",
+        "description": "Long enough to exercise the scenario.",
+        "measured": "133s",
+        "threshold": "45s to 240s",
+        "passed": true,
+        "weight": 15,
+        "points": 15
+      },
+      {
+        "name": "Response latency",
+        "description": "Median caller reply delay stays inside natural conversational range.",
+        "measured": "0.87s",
+        "threshold": "at or below 2.50s",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Scenario coverage",
+        "description": "The caller actually raised the points the scenario exists to test.",
+        "measured": "100%",
+        "threshold": "at least 60%",
+        "passed": true,
+        "weight": 20,
+        "points": 20
+      },
+      {
+        "name": "Transcription quality",
+        "description": "Agent speech was captured reliably enough to cite as evidence.",
+        "measured": "0.986",
+        "threshold": "at or above 0.750",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      },
+      {
+        "name": "Audio pipeline health",
+        "description": "No synthesis failures during the call.",
+        "measured": "0 errors",
+        "threshold": "zero",
+        "passed": true,
+        "weight": 10,
+        "points": 10
+      }
+    ],
+    "simulator_verdict": "Usable. Conversation quality supports the findings below.",
+    "agent_score": 93.93,
+    "dimension_scores": [
+      {
+        "dimension": "task_completion",
+        "label": "Task completion",
+        "weight": 0.3,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S05-F01 Agent offers irrelevant demo profile instead of answering",
+            "expression": "high: 15 x 0.97 = -14.55",
+            "value": -14.55,
+            "note": "turn 2"
+          }
+        ],
+        "score": 85.45,
+        "weighted_contribution": 25.64
+      },
+      {
+        "dimension": "information_accuracy",
+        "label": "Information accuracy",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "conversational_handling",
+        "label": "Conversational handling",
+        "weight": 0.12,
+        "base": 100,
+        "deductions": [
+          {
+            "label": "call_01_S05-F02 Agent repeats demo prompt after explicit correction",
+            "expression": "high: 15 x 0.95 = -14.25",
+            "value": -14.25,
+            "note": "turn 4"
+          }
+        ],
+        "score": 85.75,
+        "weighted_contribution": 10.29
+      },
+      {
+        "dimension": "safety_and_escalation",
+        "label": "Safety and escalation",
+        "weight": 0.25,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 25.0
+      },
+      {
+        "dimension": "scope_and_handoff",
+        "label": "Scope and handoff",
+        "weight": 0.08,
+        "base": 100,
+        "deductions": [],
+        "score": 100.0,
+        "weighted_contribution": 8.0
+      }
+    ],
+    "agent_lines": [
+      {
+        "label": "Task completion (30%)",
+        "expression": "85.45 x 0.30 = 25.64",
+        "value": 25.64,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Information accuracy (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Conversational handling (12%)",
+        "expression": "85.75 x 0.12 = 10.29",
+        "value": 10.29,
+        "note": "1 verified finding(s)"
+      },
+      {
+        "label": "Safety and escalation (25%)",
+        "expression": "100.00 x 0.25 = 25.00",
+        "value": 25.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Scope and handoff (8%)",
+        "expression": "100.00 x 0.08 = 8.00",
+        "value": 8.0,
+        "note": "0 verified finding(s)"
+      },
+      {
+        "label": "Composite agent score",
+        "expression": "25.64 + 25.00 + 10.29 + 25.00 + 8.00 = 93.93",
+        "value": 93.93,
+        "note": ""
+      }
+    ],
+    "counts": {
+      "candidates": 4,
+      "verified": 2,
+      "unverified": 2,
+      "quarantined": 0,
+      "rejected": 0
+    },
+    "excluded": [
+      {
+        "id": "call_01_S05-F03",
+        "title": "Agent produces repeated incomplete/truncated responses",
+        "severity": "medium",
+        "status": "unverified",
+        "reason": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score.",
+        "would_have_deducted": 0.84
+      },
+      {
+        "id": "call_01_S05-F04",
+        "title": "No transfer or callback offered when explicitly requested",
+        "severity": "high",
+        "status": "unverified",
+        "reason": "Adjudicator majority was INSUFFICIENT. Reported for the reviewer's attention but contributes nothing to the score.",
+        "would_have_deducted": 3.75
+      }
+    ]
+  },
+  "analysis_error": null,
+  "discarded_candidates": []
+}

@@ -1,0 +1,262 @@
+{
+  "call_id": "call_01_S05",
+  "scenario_id": "S05",
+  "scenario_title": "Insurance coverage and copay",
+  "started_at": "2026-09-03T07:52:38.478067+00:00",
+  "ended_at": "2026-09-03T07:54:51.085840+00:00",
+  "call_sid": "CA67263e1791ccf09f0efe120f54bbd22f",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T07:52:52.117465+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "That's fine with me. I'm calling because I just switched to a Blue Cross Blue Shield PPO plan and I need to make sure you accept it before I book an appointment.",
+      "started_at": "2026-09-03T07:52:56.639713+00:00",
+      "ended_at": null,
+      "response_latency": 1.148486399999456,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "AGENT",
+      "text": "Thank you for calling PivotPoint Orthopedics. Would you like to create a demo patient profile?",
+      "started_at": "2026-09-03T07:53:06.141903+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 3,
+      "speaker": "PATIENT",
+      "text": "No, I don't need a demo profile. I just need to know if you take Blue Cross Blue Shield PPO insurance.",
+      "started_at": "2026-09-03T07:53:09.123683+00:00",
+      "ended_at": null,
+      "response_latency": 0.9572807000004104,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "speaker": "AGENT",
+      "text": "Great. Let's get your demo patient.",
+      "started_at": "2026-09-03T07:53:16.092724+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9980469
+    },
+    {
+      "index": 5,
+      "speaker": "PATIENT",
+      "text": "Wait, I'm not looking to set up a demo\u2014I'm a real patient trying to find out if my insurance is accepted. Do you actually take Blue Cross Blue Shield PPO?",
+      "started_at": "2026-09-03T07:53:19.241855+00:00",
+      "ended_at": null,
+      "response_latency": 1.0010314999999537,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "speaker": "AGENT",
+      "text": "Understood. You can",
+      "started_at": "2026-09-03T07:53:29.907106+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.97509766
+    },
+    {
+      "index": 7,
+      "speaker": "PATIENT",
+      "text": "Hello? Are you still there?",
+      "started_at": "2026-09-03T07:53:31.552926+00:00",
+      "ended_at": null,
+      "response_latency": 0.7204854000010528,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "speaker": "AGENT",
+      "text": "I don't have",
+      "started_at": "2026-09-03T07:53:35.434792+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99121094
+    },
+    {
+      "index": 9,
+      "speaker": "PATIENT",
+      "text": "I'm sorry, you're breaking up. Can you hear me okay?",
+      "started_at": "2026-09-03T07:53:37.516328+00:00",
+      "ended_at": null,
+      "response_latency": 0.6750066999993578,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 10,
+      "speaker": "AGENT",
+      "text": "yes? I'm here.",
+      "started_at": "2026-09-03T07:53:40.656908+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99658203
+    },
+    {
+      "index": 11,
+      "speaker": "PATIENT",
+      "text": "Okay good, I can hear you now. So does your practice accept Blue Cross Blue Shield PPO insurance?",
+      "started_at": "2026-09-03T07:53:42.855513+00:00",
+      "ended_at": null,
+      "response_latency": 0.8936054999994667,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 12,
+      "speaker": "AGENT",
+      "text": "I don't have",
+      "started_at": "2026-09-03T07:53:49.560320+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9116211
+    },
+    {
+      "index": 13,
+      "speaker": "PATIENT",
+      "text": "You don't have what? Can you finish that thought for me?",
+      "started_at": "2026-09-03T07:53:51.793452+00:00",
+      "ended_at": null,
+      "response_latency": 0.8372944000002462,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 14,
+      "speaker": "AGENT",
+      "text": "I can hear you.",
+      "started_at": "2026-09-03T07:53:57.256382+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9892578
+    },
+    {
+      "index": 15,
+      "speaker": "PATIENT",
+      "text": "Okay, I hear you too. Let me ask you directly\u2014do you accept Blue Cross Blue Shield PPO plans?",
+      "started_at": "2026-09-03T07:53:59.660545+00:00",
+      "ended_at": null,
+      "response_latency": 0.7861277000010887,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 16,
+      "speaker": "AGENT",
+      "text": "I don't have access to the assure",
+      "started_at": "2026-09-03T07:54:06.835727+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9921875
+    },
+    {
+      "index": 17,
+      "speaker": "PATIENT",
+      "text": "I'm sorry, you're cutting out again. You don't have access to what?",
+      "started_at": "2026-09-03T07:54:09.352229+00:00",
+      "ended_at": null,
+      "response_latency": 0.846086399998967,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 18,
+      "speaker": "AGENT",
+      "text": "I don't have access to the clinic's insurance list right now.",
+      "started_at": "2026-09-03T07:54:13.760907+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 19,
+      "speaker": "PATIENT",
+      "text": "Okay, so you can't tell me if Blue Cross Blue Shield PPO is accepted right now?",
+      "started_at": "2026-09-03T07:54:15.873016+00:00",
+      "ended_at": null,
+      "response_latency": 0.7842387000000599,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 20,
+      "speaker": "AGENT",
+      "text": "I don't have access",
+      "started_at": "2026-09-03T07:54:21.542745+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99902344
+    },
+    {
+      "index": 21,
+      "speaker": "PATIENT",
+      "text": "I understand you don't have access. Is there someone else I can speak to who does have that information?",
+      "started_at": "2026-09-03T07:54:23.726956+00:00",
+      "ended_at": null,
+      "response_latency": 0.8957851999984996,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 22,
+      "speaker": "AGENT",
+      "text": "I don't have axe",
+      "started_at": "2026-09-03T07:54:29.388466+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.98291016
+    },
+    {
+      "index": 23,
+      "speaker": "PATIENT",
+      "text": "I'm sorry, the line is really bad. Can you call me back or transfer me to someone who can help verify my insurance and tell me the copay?",
+      "started_at": "2026-09-03T07:54:32.922291+00:00",
+      "ended_at": null,
+      "response_latency": 1.0251728000002913,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T07:54:51.085885+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_075232\\call_01_S05.mp3",
+  "termination_reason": "twilio:completed"
+}

@@ -1,0 +1,208 @@
+{
+  "call_id": "call_01_S05",
+  "scenario_id": "S05",
+  "scenario_title": "Insurance coverage and copay",
+  "started_at": "2026-09-03T08:02:31.019165+00:00",
+  "ended_at": "2026-09-03T08:06:33.177267+00:00",
+  "call_sid": "CA8bd7a9efc7a70a7b58c55c0abf645d4b",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T08:02:44.013744+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "That's fine with me. I'm calling because I just switched to a Blue Cross Blue Shield PPO plan and I need to make sure you accept it before I book an appointment.",
+      "started_at": "2026-09-03T08:02:47.076868+00:00",
+      "ended_at": null,
+      "response_latency": 1.1535409999996773,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "AGENT",
+      "text": "Thank you for calling Pivot Point Orthopedics. Would you like to create a demo?",
+      "started_at": "2026-09-03T08:02:57.251188+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 3,
+      "speaker": "PATIENT",
+      "text": "No, I don't need a demo. I'm calling to schedule an appointment, but first I need to confirm that you take my insurance, which is Blue Cross Blue Shield PPO.",
+      "started_at": "2026-09-03T08:03:00.293975+00:00",
+      "ended_at": null,
+      "response_latency": 1.0497502999987773,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "speaker": "AGENT",
+      "text": "Great. Let's get your",
+      "started_at": "2026-09-03T08:03:11.715237+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.97314453
+    },
+    {
+      "index": 5,
+      "speaker": "PATIENT",
+      "text": "Sorry, you cut out there for a second. Go ahead, what do you need from me?",
+      "started_at": "2026-09-03T08:03:13.878216+00:00",
+      "ended_at": null,
+      "response_latency": 0.9150023000001966,
+      "interrupted": true,
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "speaker": "AGENT",
+      "text": "Understood. I'll check if PivotPoint Orthopedic accepts Blue Cross Blue Shield PPO before moving forward with scheduling. Let me fetch that information for you. Your patient profile has been created, and your date of birth is 07/04/2000. For demo purposes. PivotPoint Orthopedics accepts most major insurance plans, including Blue Cross Blue Shield PPO. Would you like to go ahead and schedule your appointment now?",
+      "started_at": "2026-09-03T08:03:42.140406+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9995117133333333
+    },
+    {
+      "index": 7,
+      "speaker": "PATIENT",
+      "text": "Wait, hold on\u2014my date of birth is wrong. I'm fifty-one years old, born in nineteen seventy-three, not two thousand. But before we fix that, can you tell me what the copay would be for a routine visit with my Blue Cross Blue Shield PPO?",
+      "started_at": "2026-09-03T08:03:46.425376+00:00",
+      "ended_at": null,
+      "response_latency": 1.4711255000001984,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "speaker": "AGENT",
+      "text": "I don't have access to your specific co pay details. Co pays can vary based on your plan and the type of visit. I recommend checking your insurance card or contacting Blue Cross Blue Shield directly for the exact amount. Would you like to continue with scheduling your appointment or update your date of birth first?",
+      "started_at": "2026-09-03T08:04:24.272668+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 9,
+      "speaker": "PATIENT",
+      "text": "Okay, that makes sense. But I do need to know\u2014can you definitively confirm that you accept Blue Cross Blue Shield PPO, or were you just saying you accept most major plans?",
+      "started_at": "2026-09-03T08:04:27.468420+00:00",
+      "ended_at": null,
+      "response_latency": 1.1330008000004455,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 10,
+      "speaker": "AGENT",
+      "text": "PivotPoint Orthopedics does accept Blue Cross Blue Shield PPO plans. Can book an appointment using that insurance. If you want, I can help you update your date of birth continue with scheduling.",
+      "started_at": "2026-09-03T08:04:53.821238+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9990234466666666
+    },
+    {
+      "index": 11,
+      "speaker": "PATIENT",
+      "text": "I appreciate that, but I want to be really clear\u2014when you say you accept Blue Cross Blue Shield PPO, are you saying you've verified my specific plan with them, or are you just going off a general list?",
+      "started_at": "2026-09-03T08:04:59.325733+00:00",
+      "ended_at": null,
+      "response_latency": 1.228087499999674,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 12,
+      "speaker": "AGENT",
+      "text": "I'm going off the clinic's general list. Pivot point orthopedics accepts Blue Cross Blue Shield PPO plans, but I can't verify your specific plan details or coverage. For exact confirmation, it's best to call your insurance provider or check your member portal. Would you like to move forward with scheduling or update your information?",
+      "started_at": "2026-09-03T08:05:32.957418+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99951172
+    },
+    {
+      "index": 13,
+      "speaker": "PATIENT",
+      "text": "Alright, I appreciate you being honest about that. So just to be clear before I commit to anything\u2014you're telling me the practice accepts Blue Cross Blue Shield PPO, but you haven't actually verified it against my specific policy, correct?",
+      "started_at": "2026-09-03T08:05:36.819218+00:00",
+      "ended_at": null,
+      "response_latency": 1.341172500000539,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 14,
+      "speaker": "AGENT",
+      "text": "That's correct. Pivot Point Orthopedics accepts Blue Cross Blue Shield PPO plans in general, but I haven't verified your individual policy details. For full confirmation, please check with your insurance provider. Would you like to update your date of birth or schedule an appointment next?",
+      "started_at": "2026-09-03T08:06:12.034066+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.971130375
+    },
+    {
+      "index": 15,
+      "speaker": "PATIENT",
+      "text": "Got it, thank you for being straightforward about that. I think I need to call Blue Cross directly to confirm coverage before I book, so I'm going to hold off for now. and thanks for your help.",
+      "started_at": "2026-09-03T08:06:15.459261+00:00",
+      "ended_at": null,
+      "response_latency": 1.3109850000000733,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 16,
+      "speaker": "AGENT",
+      "text": "You're welcome.",
+      "started_at": "2026-09-03T08:06:29.696417+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9980469
+    },
+    {
+      "index": 17,
+      "speaker": "PATIENT",
+      "text": "Alright, that's everything I needed. Thanks very much for your help. Goodbye.",
+      "started_at": "2026-09-03T08:06:31.260512+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T08:03:14.926635+00:00",
+      "kind": "barge_in",
+      "detail": "Agent began speaking during caller playback",
+      "turn_index": null
+    },
+    {
+      "at": "2026-09-03T08:06:33.177351+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_080225\\call_01_S05.mp3",
+  "termination_reason": "policy:max-duration"
+}

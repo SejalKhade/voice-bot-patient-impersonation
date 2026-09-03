@@ -1,0 +1,302 @@
+{
+  "call_id": "call_01_S05",
+  "scenario_id": "S05",
+  "scenario_title": "Insurance coverage and copay",
+  "started_at": "2026-09-03T07:39:07.973453+00:00",
+  "ended_at": "2026-09-03T07:42:10.247068+00:00",
+  "call_sid": "CAd0af4ed81a0ea20c07211889f835572d",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T07:39:19.555266+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "That's fine with me. I'm calling because I just switched to a Blue Cross Blue Shield PPO plan and I need to make sure you accept it before I book an appointment.",
+      "started_at": "2026-09-03T07:39:23.736325+00:00",
+      "ended_at": null,
+      "response_latency": 1.1602743999992526,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "AGENT",
+      "text": "Thank you for calling Pivot Point Orthopaedics. Would you like to create a dev",
+      "started_at": "2026-09-03T07:39:32.010639+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99902344
+    },
+    {
+      "index": 3,
+      "speaker": "PATIENT",
+      "text": "Oh, hi. No, I'm not a new patient\u2014I just need to check something real quick. Do you take Blue Cross Blue Shield PPO?",
+      "started_at": "2026-09-03T07:39:35.652877+00:00",
+      "ended_at": null,
+      "response_latency": 0.9214701000000787,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "speaker": "AGENT",
+      "text": "Great. Let's get your demo profile started.",
+      "started_at": "2026-09-03T07:39:44.022824+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99902344
+    },
+    {
+      "index": 5,
+      "speaker": "PATIENT",
+      "text": "Wait, I need to know if you actually accept my insurance first. Does Pivot Point take Blue Cross Blue Shield PPO plans?",
+      "started_at": "2026-09-03T07:39:47.554374+00:00",
+      "ended_at": null,
+      "response_latency": 0.9618293000003177,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "speaker": "AGENT",
+      "text": "I can help check that for you.",
+      "started_at": "2026-09-03T07:39:54.359098+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 7,
+      "speaker": "PATIENT",
+      "text": "Okay, great. So can you confirm that you're in-network with Blue Cross Blue Shield PPO?",
+      "started_at": "2026-09-03T07:39:56.374282+00:00",
+      "ended_at": null,
+      "response_latency": 0.8260338000000047,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "speaker": "AGENT",
+      "text": "May I",
+      "started_at": "2026-09-03T07:40:01.985916+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9658203
+    },
+    {
+      "index": 9,
+      "speaker": "PATIENT",
+      "text": "Of course, go ahead.",
+      "started_at": "2026-09-03T07:40:03.671474+00:00",
+      "ended_at": null,
+      "response_latency": 0.6803906000004645,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 10,
+      "speaker": "AGENT",
+      "text": "I don't have",
+      "started_at": "2026-09-03T07:40:05.583877+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.98828125
+    },
+    {
+      "index": 11,
+      "speaker": "PATIENT",
+      "text": "Hello? Are you still there?",
+      "started_at": "2026-09-03T07:40:07.714194+00:00",
+      "ended_at": null,
+      "response_latency": 0.8394599000002927,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 12,
+      "speaker": "AGENT",
+      "text": "To help you further",
+      "started_at": "2026-09-03T07:40:10.983252+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 13,
+      "speaker": "PATIENT",
+      "text": "I'm sorry, the line cut out a bit. Can you tell me whether Blue Cross Blue Shield PPO is accepted at your office or not?",
+      "started_at": "2026-09-03T07:40:13.591981+00:00",
+      "ended_at": null,
+      "response_latency": 1.0170952000007674,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 14,
+      "speaker": "AGENT",
+      "text": "yes. I'm here. I wanna make sure I",
+      "started_at": "2026-09-03T07:40:20.657603+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9980469
+    },
+    {
+      "index": 15,
+      "speaker": "PATIENT",
+      "text": "Okay, no problem. So just to be clear\u2014you do accept Blue Cross Blue Shield PPO, right?",
+      "started_at": "2026-09-03T07:40:23.022521+00:00",
+      "ended_at": null,
+      "response_latency": 0.9218679000005068,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 16,
+      "speaker": "AGENT",
+      "text": "I don't have real time access to",
+      "started_at": "2026-09-03T07:40:29.828056+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9980469
+    },
+    {
+      "index": 17,
+      "speaker": "PATIENT",
+      "text": "I understand, but can you at least tell me if Blue Cross Blue Shield PPO is generally accepted at your practice?",
+      "started_at": "2026-09-03T07:40:32.288357+00:00",
+      "ended_at": null,
+      "response_latency": 0.8780342999998538,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 18,
+      "speaker": "AGENT",
+      "text": "I don't have direct",
+      "started_at": "2026-09-03T07:40:39.554620+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9980469
+    },
+    {
+      "index": 19,
+      "speaker": "PATIENT",
+      "text": "Okay, so you're saying you don't know if you take my plan or not?",
+      "started_at": "2026-09-03T07:40:41.472456+00:00",
+      "ended_at": null,
+      "response_latency": 0.8947384000002785,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 20,
+      "speaker": "AGENT",
+      "text": "I don't have direct",
+      "started_at": "2026-09-03T07:40:45.141474+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.9970703
+    },
+    {
+      "index": 21,
+      "speaker": "PATIENT",
+      "text": "Can you at least tell me what the copay would be for a routine visit with your office?",
+      "started_at": "2026-09-03T07:40:47.178634+00:00",
+      "ended_at": null,
+      "response_latency": 0.768602699999974,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 22,
+      "speaker": "AGENT",
+      "text": "I don't have access to specific co pay amounts. These can vary based on your insurance plan and the type of visit. It's best to check your insurance card or contact Blue Cross Blue Shield directly for your exact co pay.",
+      "started_at": "2026-09-03T07:41:07.522517+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99975586
+    },
+    {
+      "index": 23,
+      "speaker": "PATIENT",
+      "text": "I appreciate that, but you still haven't told me whether you're in-network with Blue Cross Blue Shield PPO at all. Can you at least confirm that?",
+      "started_at": "2026-09-03T07:41:10.538141+00:00",
+      "ended_at": null,
+      "response_latency": 1.0407925999988947,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 24,
+      "speaker": "AGENT",
+      "text": "I'm not able to confirm in network status for Blue Cross Blue Shield PPO. For the most accurate answer, please contact your insurance provider or our clinic's billing department directly. They can confirm if we're in network with your plan,",
+      "started_at": "2026-09-03T07:41:36.746047+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 25,
+      "speaker": "PATIENT",
+      "text": "Alright, I understand. Do you have a direct number for your billing department so I can call them about this?",
+      "started_at": "2026-09-03T07:41:39.011754+00:00",
+      "ended_at": null,
+      "response_latency": 0.9704430000001594,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 26,
+      "speaker": "AGENT",
+      "text": "I don't have a direct number for the billing department. You can reach out to the main clinic line, and they'll connect you to billing for insurance questions.",
+      "started_at": "2026-09-03T07:41:58.067301+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 27,
+      "speaker": "PATIENT",
+      "text": "Okay, thank you for your help. I'll call back and speak to billing directly about my Blue Cross Blue Shield PPO coverage. .",
+      "started_at": "2026-09-03T07:42:00.372064+00:00",
+      "ended_at": null,
+      "response_latency": 0.9937934000008681,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T07:42:10.247129+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_073903\\call_01_S05.mp3",
+  "termination_reason": "caller:objective-resolved"
+}

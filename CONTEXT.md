@@ -134,15 +134,16 @@ that hangs up on dead air.
 - Probe coverage is checked by a model reading what the caller said. It is
   the one place a model judges the harness's own performance.
 - Endpointing (`endpointing_ms`) went 320ms -> 700ms after run_20260903_063047
-  showed it firing mid-sentence throughout. 700ms still wasn't enough:
-  run_20260903_073903 (S05) showed 9 truncated agent turns, confirmed by ear
-  as genuine overlap, not agent hesitation. Worse, it cascades - once the
-  caller's reply to a cut-off utterance is something like "you cut out, can
-  you repeat that", the agent restarts its explanation and gets cut off
-  again, so one early misfire snowballs through most of the call. Raised
-  again to 1100ms / 2200ms. Deepgram's confidence on every one of these
-  fragments has been 0.95+ across both incidents, so this is a real cutoff
-  each time, not a mishearing. If 1100ms still isn't enough, the barge-in
-  guard likely needs to gate on sustained agent speech rather than trusting
-  Deepgram's endpoint alone - noted here rather than chased further without
-  more live evidence.
+  showed it firing mid-sentence throughout, then 700ms -> 1100ms after
+  run_20260903_073903 (S05) still showed 9 truncated turns, confirmed by ear
+  as genuine overlap. Neither pass fixed it: run_20260903_075232 at 1100ms
+  still showed 6 of 12 agent turns cut, with 1.6-3.5s gaps before the next
+  patient reply - past both thresholds, so timer height was not the actual
+  lever. What fixed it was a content check instead of a bigger number: an
+  agent utterance with no terminal punctuation and under 12 words ("I don't
+  have") is now held 1.2s for a possible continuation and merged rather than
+  replied to immediately (see `_looks_complete` / `_finalize_agent_turn` in
+  `media_server.py`). run_20260903_080225 confirmed it working - one early
+  fragment, caught and merged into a single coherent agent turn, zero
+  cascade for the rest of the call. Endpointing stayed at 1100ms/2200ms;
+  raising it further was a dead end for this specific failure mode.
