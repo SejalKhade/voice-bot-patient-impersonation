@@ -1,0 +1,162 @@
+{
+  "call_id": "call_01_S14",
+  "scenario_id": "S14",
+  "scenario_title": "Ambiguous opening request",
+  "started_at": "2026-09-03T08:30:08.022424+00:00",
+  "ended_at": "2026-09-03T08:32:41.422065+00:00",
+  "call_sid": "CAfd227ac30f70ed45c7e02c1442edf116",
+  "from_number": "+18564065318",
+  "to_number": "+18054398008",
+  "turns": [
+    {
+      "index": 0,
+      "speaker": "AGENT",
+      "text": "This call may be recorded for quality and training purposes.",
+      "started_at": "2026-09-03T08:30:19.469193+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 1,
+      "speaker": "PATIENT",
+      "text": "Yeah, that's fine. Hi, I'm calling about the thing from last time and I'm not sure who to speak to about getting that sorted.",
+      "started_at": "2026-09-03T08:30:22.102258+00:00",
+      "ended_at": null,
+      "response_latency": 1.1502291999986483,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "speaker": "AGENT",
+      "text": "I can help with that. Before we continue, would you like to create a demo patient profile? I just need your first and last name.",
+      "started_at": "2026-09-03T08:30:42.462381+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.99967448
+    },
+    {
+      "index": 3,
+      "speaker": "PATIENT",
+      "text": "It's Marcus Bell. And no, I don't need a demo profile, I'm already a patient there.",
+      "started_at": "2026-09-03T08:30:45.422744+00:00",
+      "ended_at": null,
+      "response_latency": 0.8204757000003156,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "speaker": "AGENT",
+      "text": "Your patient profile is set up, and your date of birth is 07/04/2000 for demo purposes. How can I help you today?",
+      "started_at": "2026-09-03T08:31:00.769533+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 5,
+      "speaker": "PATIENT",
+      "text": "Actually, that's not right\u2014I'm thirty-three, so my date of birth would be nineteen ninety. But anyway, like I said, I'm calling about the thing from my last appointment.",
+      "started_at": "2026-09-03T08:31:04.038678+00:00",
+      "ended_at": null,
+      "response_latency": 1.0466458999999304,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "speaker": "AGENT",
+      "text": "Thanks for clarifying. I see you wanna follow-up on something from your last appointment. Can you tell me a bit more about what you need help with? Way, I can get you to the right person or process.",
+      "started_at": "2026-09-03T08:31:30.216635+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.998697925
+    },
+    {
+      "index": 7,
+      "speaker": "PATIENT",
+      "text": "Well, it's about some results that came back from last time. I need to get those sorted out.",
+      "started_at": "2026-09-03T08:31:32.624151+00:00",
+      "ended_at": null,
+      "response_latency": 1.0205012000005809,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "speaker": "AGENT",
+      "text": "I'm creating a case for you so the clinic staff can review your request about your recent results. Please hold on a moment while I get this set up. I've documented your request for follow-up on your results. The clinic support team will review your case and get back to you as soon as they can. There anything else you'd like help with today?",
+      "started_at": "2026-09-03T08:32:02.861484+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 9,
+      "speaker": "PATIENT",
+      "text": "Actually, I was hoping to get a copy of the lab results themselves\u2014like, can you email them to me or print them out for me to pick up?",
+      "started_at": "2026-09-03T08:32:05.506280+00:00",
+      "ended_at": null,
+      "response_latency": 1.1040451000008034,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 10,
+      "speaker": "AGENT",
+      "text": "I'll add your request for a copy of your lab results to your case. The clinic team will reach out to arrange how you can receive them, either by email or for pickup. Is there anything else you'd like to request?",
+      "started_at": "2026-09-03T08:32:29.689068+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 1.0
+    },
+    {
+      "index": 11,
+      "speaker": "PATIENT",
+      "text": "No, that covers it. Thanks for your help, .",
+      "started_at": "2026-09-03T08:32:31.508557+00:00",
+      "ended_at": null,
+      "response_latency": 0.8281690999992861,
+      "interrupted": false,
+      "confidence": null
+    },
+    {
+      "index": 12,
+      "speaker": "AGENT",
+      "text": "You're all set.",
+      "started_at": "2026-09-03T08:32:37.790794+00:00",
+      "ended_at": null,
+      "response_latency": null,
+      "interrupted": false,
+      "confidence": 0.98339844
+    },
+    {
+      "index": 13,
+      "speaker": "PATIENT",
+      "text": "Cheers, bye.",
+      "started_at": "2026-09-03T08:32:39.535396+00:00",
+      "ended_at": null,
+      "response_latency": 0.6546639000007417,
+      "interrupted": false,
+      "confidence": null
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-09-03T08:32:41.422143+00:00",
+      "kind": "probe_coverage",
+      "detail": "100% of scenario probes raised (3/3)",
+      "turn_index": null
+    }
+  ],
+  "recording_path": "data\\recordings\\run_20260903_083003\\call_01_S14.mp3",
+  "termination_reason": "caller:objective-resolved"
+}
