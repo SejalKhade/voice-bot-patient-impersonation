@@ -105,6 +105,7 @@ class Pipeline:
         payload = {
             "scenario_id": scenario.id,
             "call_id": call_id,
+            "run_id": self.store.run_id,
             "config": _serialise(self.config),
         }
         try:
@@ -137,13 +138,21 @@ class Pipeline:
             transcript_data = state.get("transcript")
 
             if state.get("status") in {"finished", "failed"}:
-                # Give the recording fetcher a moment to attach its path.
-                time.sleep(6)
-                try:
-                    state = httpx.get(f"{self.server.base_url}/calls/{session_id}", timeout=15.0).json()
-                    transcript_data = state.get("transcript")
-                except Exception:  # noqa: BLE001
-                    pass
+                # _fetch_recording polls Twilio for up to ~60s (Twilio does not
+                # expose the asset the instant a call ends), so wait on a
+                # matching budget rather than one short nap - a single 6s
+                # sleep meant recording_path was reliably still None here,
+                # even though the file showed up in data/recordings/ moments
+                # after this function had already returned.
+                for _ in range(12):
+                    time.sleep(5)
+                    try:
+                        state = httpx.get(f"{self.server.base_url}/calls/{session_id}", timeout=15.0).json()
+                        transcript_data = state.get("transcript")
+                    except Exception:  # noqa: BLE001
+                        continue
+                    if transcript_data and transcript_data.get("recording_path"):
+                        break
                 break
 
         if not transcript_data:

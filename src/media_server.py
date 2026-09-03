@@ -69,6 +69,9 @@ class Session:
     scenario: Scenario
     config: RunConfig
     transcript: Transcript
+    run_id: str = ""             # namespaces the recording so re-running the
+                                  # same scenario in a later run can't clobber
+                                  # an earlier one's saved audio
     call_sid: str | None = None
     stream_sid: str | None = None
     status: str = "created"
@@ -110,12 +113,14 @@ async def create_call(request: Request) -> JSONResponse:
     config = _config_from_payload(body["config"])
     scenario = by_id(body["scenario_id"])
     call_id = body.get("call_id") or f"call_{scenario.id}"
+    run_id = body.get("run_id") or ""
 
     session_id = uuid.uuid4().hex
     session = Session(
         session_id=session_id,
         scenario=scenario,
         config=config,
+        run_id=run_id,
         transcript=Transcript(
             call_id=call_id,
             scenario_id=scenario.id,
@@ -469,7 +474,11 @@ async def _fetch_recording(session: Session) -> None:
     """
     if not session.call_sid:
         return
-    RECORDINGS_DIR.mkdir(parents=True, exist_ok=True)
+    # Namespaced by run_id so re-running the same scenario id in a later,
+    # separate invocation can't silently overwrite an earlier run's audio -
+    # call_id alone (e.g. "call_01_S01") repeats across runs.
+    recordings_dir = RECORDINGS_DIR / session.run_id if session.run_id else RECORDINGS_DIR
+    recordings_dir.mkdir(parents=True, exist_ok=True)
     auth = (session.config.twilio_account_sid, session.config.twilio_auth_token)
 
     async with httpx.AsyncClient(timeout=60.0) as client:
@@ -493,7 +502,7 @@ async def _fetch_recording(session: Session) -> None:
                 )
                 if media.status_code != 200 or len(media.content) < 1024:
                     continue
-                destination = RECORDINGS_DIR / f"{session.transcript.call_id}.mp3"
+                destination = recordings_dir / f"{session.transcript.call_id}.mp3"
                 destination.write_bytes(media.content)
                 session.transcript.recording_path = str(destination)
                 session.note(f"Recording saved: {destination} ({len(media.content) // 1024} KB)")
