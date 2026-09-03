@@ -5,6 +5,11 @@ patient conversation, and produces evidence-backed defect reports.
 
 Built against the Pretty Good AI test line, `+1-805-439-8008`.
 
+**Bug report:** [`BUG_REPORT.md`](BUG_REPORT.md) — findings from 10 calls,
+organised by pattern (a bug reproduced across independent calls is stronger
+evidence than a single instance). Per-call transcripts and recordings are
+under `data/runs/` and `data/recordings/`.
+
 **What it does**
 
 - Places real outbound calls through Twilio and speaks with a synthesised voice
